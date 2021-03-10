@@ -16,10 +16,10 @@
 extents = Vector2( 16, 16 )
 
 [node name="Main Page" type="Node2D"]
-scale = Vector2( 10, 10 )
+scale = Vector2( 6, 6 )
 
 [node name="BigOrangeMap" type="Sprite" parent="."]
-position = Vector2( 280, 87.6436 )
+position = Vector2( 277.65, 86.0063 )
 scale = Vector2( 2.18311, 0.768539 )
 texture = ExtResource( 11 )
 
@@ -60,10 +60,10 @@ transform = Transform2D( 6, 0, 0, 6, 0, 0 )
 follow_viewport_scale = 0.001
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 133.0
-margin_top = 8.0
-margin_right = 207.0
-margin_bottom = 22.0
+margin_left = 40.0
+margin_top = 1.23423
+margin_right = 133.168
+margin_bottom = 17.8585
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Main Page"
 align = 1
@@ -73,10 +73,10 @@ __meta__ = {
 }
 
 [node name="Settings" type="Control" parent="CanvasLayer"]
-margin_left = 296.0
-margin_top = 1.0
-margin_right = 320.0
-margin_bottom = 25.0
+margin_left = 150.0
+margin_top = -3.05946
+margin_right = 174.0
+margin_bottom = 20.9405
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -84,8 +84,8 @@ __meta__ = {
 setting_scene = ExtResource( 9 )
 
 [node name="Settings_Button" type="Button" parent="CanvasLayer/Settings"]
-margin_right = 24.0
-margin_bottom = 24.0
+margin_right = 20.0
+margin_bottom = 20.0
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -93,7 +93,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Settings/Settings_Button"]
 position = Vector2( 12, 12 )
-scale = Vector2( 0.046875, 0.046875 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 6 )
 
 [node name="Back_Button" type="Button" parent="CanvasLayer/Settings"]

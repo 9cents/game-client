@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Resources/Picture1.png" type="Texture" id=1]
-[ext_resource path="res://Resources/username&passwordlabelfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Login/Resources/Picture1.png" type="Texture" id=1]
+[ext_resource path="res://Login/Resources/username&passwordlabelfont.tres" type="DynamicFont" id=2]
 
 [sub_resource type="DynamicFontData" id=1]
-font_path = "res://GamePlayed-vYL7.ttf"
+font_path = "res://Login/GamePlayedOutline-wrX8.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 31
@@ -14,7 +14,7 @@ use_filter = true
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFontData" id=3]
-font_path = "res://GamePlayed-vYL7.ttf"
+font_path = "res://Login/GamePlayed-vYL7.ttf"
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
@@ -35,26 +35,26 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_right = 344.0
-margin_bottom = 38.0
+margin_right = 954.0
+margin_bottom = 2.0
 custom_fonts/font = SubResource( 2 )
 text = "Create New Account"
 align = 1
 valign = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_top = 42.0
-margin_right = 344.0
-margin_bottom = 52.0
+margin_top = 6.0
+margin_right = 954.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 0, 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="EmailTitle" type="Label" parent="."]
-margin_top = 56.0
-margin_right = 344.0
-margin_bottom = 87.0
+margin_top = 20.0
+margin_right = 954.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 2 )
 text = "Email"
 __meta__ = {
@@ -62,15 +62,15 @@ __meta__ = {
 }
 
 [node name="Email" type="LineEdit" parent="."]
-margin_top = 91.0
-margin_right = 344.0
-margin_bottom = 115.0
+margin_top = 26.0
+margin_right = 954.0
+margin_bottom = 50.0
 clear_button_enabled = true
 
 [node name="UsernameTitle" type="Label" parent="."]
-margin_top = 119.0
-margin_right = 344.0
-margin_bottom = 150.0
+margin_top = 54.0
+margin_right = 954.0
+margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 text = "Username"
 __meta__ = {
@@ -78,15 +78,15 @@ __meta__ = {
 }
 
 [node name="Username" type="LineEdit" parent="."]
-margin_top = 154.0
-margin_right = 344.0
-margin_bottom = 178.0
+margin_top = 60.0
+margin_right = 954.0
+margin_bottom = 84.0
 clear_button_enabled = true
 
 [node name="PasswordTitle" type="Label" parent="."]
-margin_top = 182.0
-margin_right = 344.0
-margin_bottom = 213.0
+margin_top = 88.0
+margin_right = 954.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 2 )
 text = "Password"
 __meta__ = {
@@ -94,16 +94,16 @@ __meta__ = {
 }
 
 [node name="Password" type="LineEdit" parent="."]
-margin_top = 217.0
-margin_right = 344.0
-margin_bottom = 241.0
+margin_top = 94.0
+margin_right = 954.0
+margin_bottom = 118.0
 secret = true
 clear_button_enabled = true
 
 [node name="ConfirmPasswordTitle" type="Label" parent="."]
-margin_top = 245.0
-margin_right = 344.0
-margin_bottom = 276.0
+margin_top = 122.0
+margin_right = 954.0
+margin_bottom = 124.0
 custom_fonts/font = ExtResource( 2 )
 text = "Repeat password"
 __meta__ = {
@@ -111,26 +111,26 @@ __meta__ = {
 }
 
 [node name="ConfirmPassword" type="LineEdit" parent="."]
-margin_top = 280.0
-margin_right = 344.0
-margin_bottom = 304.0
+margin_top = 128.0
+margin_right = 954.0
+margin_bottom = 152.0
 secret = true
 clear_button_enabled = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-margin_top = 308.0
-margin_right = 344.0
-margin_bottom = 318.0
+margin_top = 156.0
+margin_right = 954.0
+margin_bottom = 166.0
 rect_min_size = Vector2( 0, 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ConfirmButton" type="TextureButton" parent="."]
-margin_left = 62.0
-margin_top = 322.0
-margin_right = 282.0
-margin_bottom = 377.0
+margin_left = 367.0
+margin_top = 170.0
+margin_right = 587.0
+margin_bottom = 225.0
 rect_min_size = Vector2( 220, 55 )
 size_flags_horizontal = 4
 texture_normal = ExtResource( 1 )
@@ -153,10 +153,10 @@ __meta__ = {
 }
 
 [node name="BackButton" type="TextureButton" parent="."]
-margin_left = 62.0
-margin_top = 381.0
-margin_right = 282.0
-margin_bottom = 436.0
+margin_left = 367.0
+margin_top = 229.0
+margin_right = 587.0
+margin_bottom = 284.0
 rect_min_size = Vector2( 220, 55 )
 size_flags_horizontal = 4
 texture_normal = ExtResource( 1 )

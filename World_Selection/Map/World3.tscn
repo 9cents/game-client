@@ -16,7 +16,7 @@
 extents = Vector2( 16, 16 )
 
 [node name="Main Page" type="Node2D"]
-scale = Vector2( 10, 10 )
+scale = Vector2( 5, 5 )
 
 [node name="BigYellowMap" type="Sprite" parent="."]
 position = Vector2( 280, 88 )
@@ -59,9 +59,9 @@ scale = Vector2( 6, 6 )
 transform = Transform2D( 6, 0, 0, 6, 0, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 133.0
-margin_top = 8.0
-margin_right = 207.0
+margin_left = 50.0
+margin_top = 1.0
+margin_right = 118.0
 margin_bottom = 22.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "World 3"
