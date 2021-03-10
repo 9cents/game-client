@@ -1,0 +1,151 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World_Selection/Map/Wall.png" type="Texture" id=4]
+[ext_resource path="res://World_Selection/Map/Crate.png" type="Texture" id=5]
+[ext_resource path="res://World_Selection/Interface/Settings.png" type="Texture" id=6]
+[ext_resource path="res://World_Selection/Interface/Settings.gd" type="Script" id=7]
+[ext_resource path="res://World_Selection/Map/ChallengeMode.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World_Selection/Interface/Settings Page.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World_Selection/Map/Story Mode.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World_Selection/Map/BigGreyMap.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[node name="Main Page" type="Node2D"]
+scale = Vector2( 10, 10 )
+
+[node name="BigOrangeMap" type="Sprite" parent="."]
+position = Vector2( 280, 87.6436 )
+scale = Vector2( 2.18311, 0.768539 )
+texture = ExtResource( 11 )
+
+[node name="Wall" type="Sprite" parent="."]
+position = Vector2( 280.498, 84.5302 )
+scale = Vector2( 2.18361, 0.777108 )
+texture = ExtResource( 4 )
+
+[node name="PlayerMage" parent="." instance=ExtResource( 2 )]
+position = Vector2( 184, 88 )
+
+[node name="Camera2D" type="Camera2D" parent="PlayerMage"]
+current = true
+smoothing_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, -8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -0.730885, 0.755104 )
+scale = Vector2( 0.547983, 0.325 )
+polygon = PoolVector2Array( 0, -8, 1024, -8, 992, 16, 29.5207, 24.6154, 29.5207, 566.154, 992, 568, 992, 16, 1024, -8, 1024, 592, 0, 584 )
+
+[node name="Crate" type="StaticBody2D" parent="."]
+position = Vector2( 184, 0 )
+
+[node name="Sprite" type="Sprite" parent="Crate"]
+position = Vector2( 96, 80 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+position = Vector2( 96, 80 )
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2( 6, 6 )
+transform = Transform2D( 6, 0, 0, 6, 0, 0 )
+follow_viewport_scale = 0.001
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 133.0
+margin_top = 8.0
+margin_right = 207.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Main Page"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Control" parent="CanvasLayer"]
+margin_left = 296.0
+margin_top = 1.0
+margin_right = 320.0
+margin_bottom = 25.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+setting_scene = ExtResource( 9 )
+
+[node name="Settings_Button" type="Button" parent="CanvasLayer/Settings"]
+margin_right = 24.0
+margin_bottom = 24.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Settings/Settings_Button"]
+position = Vector2( 12, 12 )
+scale = Vector2( 0.046875, 0.046875 )
+texture = ExtResource( 6 )
+
+[node name="Back_Button" type="Button" parent="CanvasLayer/Settings"]
+visible = false
+margin_left = -280.0
+margin_top = 5.0
+margin_right = -238.0
+margin_bottom = 24.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Story" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 160 )
+next_scene = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Story"]
+margin_left = -34.6908
+margin_top = 0.712723
+margin_right = 37.3092
+margin_bottom = 14.7127
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Story Mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Challenege" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 160 )
+next_scene = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Challenege"]
+margin_left = -30.4144
+margin_right = 35.5856
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Challenge "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leaderboard" parent="." instance=ExtResource( 1 )]
+position = Vector2( 280, 160 )
+next_scene = null
+
+[node name="Label" type="Label" parent="Leaderboard"]
+margin_left = -36.8289
+margin_top = 0.712723
+margin_right = 43.1711
+margin_bottom = 14.7127
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Leaderboard"
+__meta__ = {
+"_edit_use_anchors_": false
+}

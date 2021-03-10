@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://World_Selection/Interface/SettingsPage.gd" type="Script" id=1]
+
+[node name="SettingsScreen" type="Node2D"]
+scale = Vector2( 5, 5 )
+
+[node name="Settings" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio_Button" type="Button" parent="Settings"]
+margin_left = 99.2217
+margin_top = 92.3076
+margin_right = 291.222
+margin_bottom = 112.308
+text = "Audio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video_Button" type="Button" parent="Settings"]
+visible = false
+margin_left = 80.0
+margin_top = 88.0
+margin_right = 272.0
+margin_bottom = 108.0
+text = "Video"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back_Button" type="Button" parent="Settings"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 70.0
+margin_bottom = 33.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit_Button" type="Button" parent="Settings"]
+margin_left = 161.086
+margin_top = 147.222
+margin_right = 233.086
+margin_bottom = 167.222
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
