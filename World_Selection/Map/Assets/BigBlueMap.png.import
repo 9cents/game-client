@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BigPinkMap.png-ca624b70a2ac20b7a0c975a844cf9f2a.stex"
+path="res://.import/BigBlueMap.png-1c06a07915011c4496d3de178acd9547.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World_Selection/Map/BigPinkMap.png"
-dest_files=[ "res://.import/BigPinkMap.png-ca624b70a2ac20b7a0c975a844cf9f2a.stex" ]
+source_file="res://World_Selection/Map/Assets/BigBlueMap.png"
+dest_files=[ "res://.import/BigBlueMap.png-1c06a07915011c4496d3de178acd9547.stex" ]
 
 [params]
 

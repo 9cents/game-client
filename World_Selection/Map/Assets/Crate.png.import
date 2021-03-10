@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BluePortal.png-3ed013917ecceaed83bf3c37904b54ee.stex"
+path="res://.import/Crate.png-ca737d240bd1ad8ba263afcbeabb4ee6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World_Selection/Map/BluePortal.png"
-dest_files=[ "res://.import/BluePortal.png-3ed013917ecceaed83bf3c37904b54ee.stex" ]
+source_file="res://World_Selection/Map/Assets/Crate.png"
+dest_files=[ "res://.import/Crate.png-ca737d240bd1ad8ba263afcbeabb4ee6.stex" ]
 
 [params]
 

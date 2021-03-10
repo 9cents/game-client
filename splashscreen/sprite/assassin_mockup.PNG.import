@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/assassin_mockup.PNG-440b20f8873c41408cca69e379922466.stex"
+path="res://.import/assassin_mockup.PNG-cc9b5ae2fa51ec008e52821819125793.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/assassin_mockup.PNG"
-dest_files=[ "res://.import/assassin_mockup.PNG-440b20f8873c41408cca69e379922466.stex" ]
+source_file="res://splashscreen/sprite/assassin_mockup.PNG"
+dest_files=[ "res://.import/assassin_mockup.PNG-cc9b5ae2fa51ec008e52821819125793.stex" ]
 
 [params]
 

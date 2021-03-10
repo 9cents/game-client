@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jump.png-ac5200a437df88c99f935eae28caeccd.stex"
+path="res://.import/Jump.png-94f3cc20de5bc53eb650ede2f2d9ab85.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Fantasy Warrior/Sprites/Jump.png"
-dest_files=[ "res://.import/Jump.png-ac5200a437df88c99f935eae28caeccd.stex" ]
+source_file="res://splashscreen/sprite/Fantasy Warrior/Sprites/Jump.png"
+dest_files=[ "res://.import/Jump.png-94f3cc20de5bc53eb650ede2f2d9ab85.stex" ]
 
 [params]
 

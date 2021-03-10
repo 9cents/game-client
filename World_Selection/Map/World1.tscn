@@ -1,21 +1,22 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World_Selection/Map/BigLimeMap.png" type="Texture" id=3]
-[ext_resource path="res://World_Selection/Map/Wall.png" type="Texture" id=4]
-[ext_resource path="res://World_Selection/Map/Crate.png" type="Texture" id=5]
+[ext_resource path="res://World_Selection/Map/Assets/BigLimeMap.png" type="Texture" id=3]
+[ext_resource path="res://World_Selection/Map/Assets/Wall.png" type="Texture" id=4]
+[ext_resource path="res://World_Selection/Map/Assets/Crate.png" type="Texture" id=5]
 [ext_resource path="res://World_Selection/Interface/Settings.png" type="Texture" id=6]
 [ext_resource path="res://World_Selection/Interface/Settings.gd" type="Script" id=7]
-[ext_resource path="res://Gameplay/Top.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World_Selection/TowerPortal.gd" type="Script" id=8]
 [ext_resource path="res://World_Selection/Interface/Settings Page.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World_Selection/WorldBackPortal.gd" type="Script" id=10]
 [ext_resource path="res://World_Selection/MainBackPortal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://splashscreen/splashscreen.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[node name="Main Page" type="Node2D"]
+[node name="WorldPage" type="Node2D"]
 scale = Vector2( 5, 5 )
 
 [node name="BigLimeMap" type="Sprite" parent="."]
@@ -109,7 +110,8 @@ __meta__ = {
 
 [node name="Tower1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 80, 160 )
-next_scene = ExtResource( 8 )
+script = ExtResource( 8 )
+next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower1"]
 margin_left = -24.0
@@ -123,7 +125,8 @@ __meta__ = {
 
 [node name="Tower2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 176, 160 )
-next_scene = ExtResource( 8 )
+script = ExtResource( 8 )
+next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower2"]
 margin_left = -24.0
@@ -137,7 +140,8 @@ __meta__ = {
 
 [node name="Tower3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 280, 160 )
-next_scene = ExtResource( 8 )
+script = ExtResource( 8 )
+next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower3"]
 margin_left = -24.0
@@ -151,7 +155,8 @@ __meta__ = {
 
 [node name="Assignment" parent="." instance=ExtResource( 1 )]
 position = Vector2( 384, 160 )
-next_scene = ExtResource( 8 )
+script = ExtResource( 8 )
+next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Assignment"]
 margin_left = -34.8546
@@ -180,3 +185,8 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="body_entered" from="Tower1" to="Tower1" method="_on_Tower1_body_entered"]
+[connection signal="body_entered" from="Tower2" to="Tower2" method="_on_Tower2_body_entered"]
+[connection signal="body_entered" from="Tower3" to="Tower3" method="_on_Tower3_body_entered"]
+[connection signal="body_entered" from="Assignment" to="Assignment" method="_on_Assignment_body_entered"]
+[connection signal="body_entered" from="BackPortal" to="BackPortal" method="_on_BackPortal_body_entered"]

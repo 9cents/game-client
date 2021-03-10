@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Death.png-826f6faf0e152dae21806195e5480f84.stex"
+path="res://.import/Death.png-9bc1bd5738b3a91bf61cbde20a2ed443.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Fantasy Warrior/Sprites/Death.png"
-dest_files=[ "res://.import/Death.png-826f6faf0e152dae21806195e5480f84.stex" ]
+source_file="res://splashscreen/sprite/Fantasy Warrior/Sprites/Death.png"
+dest_files=[ "res://.import/Death.png-9bc1bd5738b3a91bf61cbde20a2ed443.stex" ]
 
 [params]
 

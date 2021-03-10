@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Take hit.png-9d986cebbfd79b47c83a4b6a1642464a.stex"
+path="res://.import/Take hit.png-e6041b37920d5f4ddd591a9e329be10f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Fantasy Warrior/Sprites/Take hit.png"
-dest_files=[ "res://.import/Take hit.png-9d986cebbfd79b47c83a4b6a1642464a.stex" ]
+source_file="res://splashscreen/sprite/Fantasy Warrior/Sprites/Take hit.png"
+dest_files=[ "res://.import/Take hit.png-e6041b37920d5f4ddd591a9e329be10f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Crate.png-89eda980799a4d836718423e323e5ea8.stex"
+path="res://.import/BigLimeMap.png-c22c8ad5bfe9bf91f011092d17ca81f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World_Selection/Map/Crate.png"
-dest_files=[ "res://.import/Crate.png-89eda980799a4d836718423e323e5ea8.stex" ]
+source_file="res://World_Selection/Map/Assets/BigLimeMap.png"
+dest_files=[ "res://.import/BigLimeMap.png-c22c8ad5bfe9bf91f011092d17ca81f0.stex" ]
 
 [params]
 

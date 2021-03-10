@@ -3,7 +3,7 @@
 [ext_resource path="res://World_Selection/Interface/SettingsPage.gd" type="Script" id=1]
 
 [node name="SettingsScreen" type="Node2D"]
-scale = Vector2( 5, 5 )
+scale = Vector2( 3, 3 )
 
 [node name="Settings" type="Control" parent="."]
 margin_right = 40.0

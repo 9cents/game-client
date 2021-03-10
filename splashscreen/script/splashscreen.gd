@@ -5,7 +5,7 @@ func _input(event):
 		go_title_screen()
 
 func go_title_screen():
-	get_tree().change_scene("res://splashscreen.tscn")
+	get_tree().change_scene("res://Gameplay/Top.tscn")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	go_title_screen()

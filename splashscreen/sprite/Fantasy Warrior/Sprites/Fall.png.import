@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fall.png-271816a61cc54956ef8f79aaf7446a96.stex"
+path="res://.import/Fall.png-66877a0e8d201b76989398ff6090e24b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Fantasy Warrior/Sprites/Fall.png"
-dest_files=[ "res://.import/Fall.png-271816a61cc54956ef8f79aaf7446a96.stex" ]
+source_file="res://splashscreen/sprite/Fantasy Warrior/Sprites/Fall.png"
+dest_files=[ "res://.import/Fall.png-66877a0e8d201b76989398ff6090e24b.stex" ]
 
 [params]
 

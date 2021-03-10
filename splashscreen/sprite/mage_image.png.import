@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mage_image.png-b330b47727f6c8ee373fb80d18292a62.stex"
+path="res://.import/mage_image.png-bdad652e81ce38520db2c54e0d28f019.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/mage_image.png"
-dest_files=[ "res://.import/mage_image.png-b330b47727f6c8ee373fb80d18292a62.stex" ]
+source_file="res://splashscreen/sprite/mage_image.png"
+dest_files=[ "res://.import/mage_image.png-bdad652e81ce38520db2c54e0d28f019.stex" ]
 
 [params]
 

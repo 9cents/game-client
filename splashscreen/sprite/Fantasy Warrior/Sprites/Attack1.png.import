@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Attack1.png-f45595e9c0e2fcb5868f0644e5148622.stex"
+path="res://.import/Attack1.png-5848c4752a6050d01a23f7a1878d5309.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Fantasy Warrior/Sprites/Attack1.png"
-dest_files=[ "res://.import/Attack1.png-f45595e9c0e2fcb5868f0644e5148622.stex" ]
+source_file="res://splashscreen/sprite/Fantasy Warrior/Sprites/Attack1.png"
+dest_files=[ "res://.import/Attack1.png-5848c4752a6050d01a23f7a1878d5309.stex" ]
 
 [params]
 

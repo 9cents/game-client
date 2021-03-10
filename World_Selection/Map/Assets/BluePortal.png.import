@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BigLimeMap.png-0b81724ef04a29805e3bf282cc09b2b8.stex"
+path="res://.import/BluePortal.png-e59b64cbafdafebe22b4e4b2f0f6cd9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World_Selection/Map/BigLimeMap.png"
-dest_files=[ "res://.import/BigLimeMap.png-0b81724ef04a29805e3bf282cc09b2b8.stex" ]
+source_file="res://World_Selection/Map/Assets/BluePortal.png"
+dest_files=[ "res://.import/BluePortal.png-e59b64cbafdafebe22b4e4b2f0f6cd9b.stex" ]
 
 [params]
 
