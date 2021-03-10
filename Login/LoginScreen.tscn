@@ -1,0 +1,357 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Login/Scenes/MainScenes/LoginScreen.gd" type="Script" id=1]
+[ext_resource path="res://Login/Resources/background.jpg" type="Texture" id=3]
+[ext_resource path="res://Login/Resources/Picture1.png" type="Texture" id=4]
+[ext_resource path="res://Login/Resources/username&passwordlabelfont.tres" type="DynamicFont" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Login/GamePlayed-vYL7.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 31
+outline_size = 2
+outline_color = Color( 0.109804, 0.0431373, 0.0431373, 1 )
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Login/GamePlayed-vYL7.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 2
+outline_color = Color( 0.0313726, 0.0196078, 0.0196078, 1 )
+use_filter = true
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Login/GamePlayed-vYL7.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 31
+outline_size = 2
+outline_color = Color( 0.109804, 0.0431373, 0.0431373, 1 )
+use_filter = true
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Login/GamePlayed-vYL7.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+outline_size = 2
+outline_color = Color( 0.0313726, 0.0196078, 0.0196078, 1 )
+use_filter = true
+font_data = SubResource( 7 )
+
+[node name="LoginScreen" type="Control"]
+anchor_left = -0.000921756
+anchor_right = 0.999078
+anchor_bottom = 1.0
+margin_left = 2.33879
+margin_top = 1.48927
+margin_right = 2.33856
+margin_bottom = 1.48926
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.679
+margin_top = -234.468
+margin_right = 189.321
+margin_bottom = 290.532
+texture = ExtResource( 3 )
+patch_margin_top = 28
+patch_margin_bottom = 28
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginScreen" type="VBoxContainer" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 60.0
+margin_right = -35.0
+margin_bottom = -45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Background/LoginScreen"]
+margin_right = 330.0
+margin_bottom = 2.0
+custom_fonts/font = SubResource( 2 )
+text = "Login Screen"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/LoginScreen"]
+margin_top = 6.0
+margin_right = 330.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 0, 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameTitle" type="Label" parent="Background/LoginScreen"]
+margin_top = 35.0
+margin_right = 330.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 6 )
+text = "Username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="LineEdit" parent="Background/LoginScreen"]
+margin_top = 70.0
+margin_right = 330.0
+margin_bottom = 94.0
+
+[node name="PasswordTitle" type="Label" parent="Background/LoginScreen"]
+margin_top = 98.0
+margin_right = 330.0
+margin_bottom = 129.0
+custom_fonts/font = ExtResource( 6 )
+text = "Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Password" type="LineEdit" parent="Background/LoginScreen"]
+margin_top = 133.0
+margin_right = 330.0
+margin_bottom = 157.0
+secret = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Background/LoginScreen"]
+margin_top = 161.0
+margin_right = 330.0
+margin_bottom = 181.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginButton" type="TextureButton" parent="Background/LoginScreen"]
+margin_left = 55.0
+margin_top = 185.0
+margin_right = 275.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 220, 55 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_disabled = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Login" type="Label" parent="Background/LoginScreen/LoginButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.594604
+margin_right = 0.594604
+custom_fonts/font = SubResource( 4 )
+text = "Login"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateAccountButton" type="TextureButton" parent="Background/LoginScreen"]
+margin_left = 55.0
+margin_top = 244.0
+margin_right = 275.0
+margin_bottom = 299.0
+rect_min_size = Vector2( 220, 55 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_disabled = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Create Account" type="Label" parent="Background/LoginScreen/CreateAccountButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "Create Account"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateAccount" type="VBoxContainer" parent="Background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 60.0
+margin_right = -45.0
+margin_bottom = -45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Background/CreateAccount"]
+margin_right = 320.0
+margin_bottom = 2.0
+custom_fonts/font = SubResource( 6 )
+text = "Create New Account"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/CreateAccount"]
+margin_top = 6.0
+margin_right = 320.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmailTitle" type="Label" parent="Background/CreateAccount"]
+margin_top = 20.0
+margin_right = 320.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 6 )
+text = "Email"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Email" type="LineEdit" parent="Background/CreateAccount"]
+margin_top = 55.0
+margin_right = 320.0
+margin_bottom = 79.0
+clear_button_enabled = true
+
+[node name="UsernameTitle" type="Label" parent="Background/CreateAccount"]
+margin_top = 83.0
+margin_right = 320.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 6 )
+text = "Username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="LineEdit" parent="Background/CreateAccount"]
+margin_top = 118.0
+margin_right = 320.0
+margin_bottom = 142.0
+clear_button_enabled = true
+
+[node name="PasswordTitle" type="Label" parent="Background/CreateAccount"]
+margin_top = 146.0
+margin_right = 320.0
+margin_bottom = 177.0
+custom_fonts/font = ExtResource( 6 )
+text = "Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Password" type="LineEdit" parent="Background/CreateAccount"]
+margin_top = 181.0
+margin_right = 320.0
+margin_bottom = 205.0
+secret = true
+clear_button_enabled = true
+
+[node name="ConfirmPasswordTitle" type="Label" parent="Background/CreateAccount"]
+margin_top = 209.0
+margin_right = 320.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 6 )
+text = "Repeat password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmPassword" type="LineEdit" parent="Background/CreateAccount"]
+margin_top = 244.0
+margin_right = 320.0
+margin_bottom = 268.0
+secret = true
+clear_button_enabled = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Background/CreateAccount"]
+margin_top = 272.0
+margin_right = 320.0
+margin_bottom = 282.0
+rect_min_size = Vector2( 0, 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmButton" type="TextureButton" parent="Background/CreateAccount"]
+margin_left = 50.0
+margin_top = 286.0
+margin_right = 270.0
+margin_bottom = 341.0
+rect_min_size = Vector2( 220, 55 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_disabled = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmTitle" type="Label" parent="Background/CreateAccount/ConfirmButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 8 )
+text = "Confirm"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="Background/CreateAccount"]
+margin_left = 50.0
+margin_top = 345.0
+margin_right = 270.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 220, 55 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_disabled = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackTitle" type="Label" parent="Background/CreateAccount/BackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 8 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Background/LoginScreen/LoginButton" to="." method="_on_LoginButton_pressed"]
+[connection signal="pressed" from="Background/LoginScreen/CreateAccountButton" to="." method="_on_CreateAccountButton_pressed"]
+[connection signal="pressed" from="Background/CreateAccount/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="Background/CreateAccount/BackButton" to="." method="_on_BackButton_pressed"]

@@ -1,7 +1,7 @@
 extends Node
 
 var questions
-var char_type = "ninja"
+var char_type = "mage"
 
 var q
 var health = 40
