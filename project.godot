@@ -10,14 +10,15 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
+
 }
 
 [application]
 
 config/name="gameplayScene"
 run/main_scene="res://World_Selection/Map/MainPage.tscn"
-run/flush_stdout_on_print.debug=false
 config/icon="res://icon.png"
+run/flush_stdout_on_print.debug=false
 
 [autoload]
 
