@@ -1,0 +1,191 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Select_Questions_Page/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Play_Dungeon/PlayerDungeon.gd" type="Script" id=2]
+[ext_resource path="res://Leaderboard/close button.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Select_Questions_Page/fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = SubResource( 3 )
+
+[node name="Leaderboard HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.85
+anchor_top = 0.1
+anchor_right = 0.85
+anchor_bottom = 0.85
+margin_left = -806.4
+margin_top = -12.0
+margin_right = 89.6
+margin_bottom = 42.0
+color = Color( 0.2, 0.196078, 0.196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="TextureButton" parent="ColorRect"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 240.0
+margin_bottom = 241.0
+rect_scale = Vector2( 0.3, 0.3 )
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -180.491
+margin_top = 7.1091
+margin_right = 191.509
+margin_bottom = 96.1091
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.247059, 0.556863, 0.572549, 1 )
+text = "PLAYER DUNGEON"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollBar" type="Panel" parent="ColorRect"]
+anchor_top = 0.206
+anchor_bottom = 0.206
+margin_top = 0.175995
+margin_right = 896.0
+margin_bottom = 430.176
+rect_scale = Vector2( 1, 0.742878 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnterUsernameContainer" type="VBoxContainer" parent="ColorRect/ScrollBar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -106.297
+margin_right = 330.0
+margin_bottom = 102.703
+rect_scale = Vector2( 1, 0.975379 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnterUsernameTitle" type="Label" parent="ColorRect/ScrollBar/EnterUsernameContainer"]
+margin_right = 660.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 2 )
+text = "ENTER PLAYER'S USERNAME"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/ScrollBar/EnterUsernameContainer"]
+margin_top = 53.0
+margin_right = 660.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="EnteredUsername" type="LineEdit" parent="ColorRect/ScrollBar/EnterUsernameContainer"]
+margin_top = 67.0
+margin_right = 660.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/ScrollBar/EnterUsernameContainer"]
+margin_top = 111.0
+margin_right = 660.0
+margin_bottom = 131.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="ConfirmButton" type="Button" parent="ColorRect/ScrollBar/EnterUsernameContainer"]
+margin_left = 205.0
+margin_top = 135.0
+margin_right = 455.0
+margin_bottom = 185.0
+rect_min_size = Vector2( 250, 50 )
+size_flags_horizontal = 4
+
+[node name="ConfirmTitle" type="Label" parent="ColorRect/ScrollBar/EnterUsernameContainer/ConfirmButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 11.8422
+margin_bottom = 1.84219
+custom_fonts/font = SubResource( 4 )
+text = "CONFIRM
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DungeonFoundContainer" type="VBoxContainer" parent="ColorRect/ScrollBar"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -104.5
+margin_right = 330.0
+margin_bottom = 104.5
+rect_scale = Vector2( 1, 0.975379 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FoundTitle" type="Label" parent="ColorRect/ScrollBar/DungeonFoundContainer"]
+margin_right = 660.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 2 )
+text = "User found!"
+align = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/ScrollBar/DungeonFoundContainer"]
+margin_top = 53.0
+margin_right = 660.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="EnterDungeonButton" type="Button" parent="ColorRect/ScrollBar/DungeonFoundContainer"]
+margin_left = 180.0
+margin_top = 77.0
+margin_right = 480.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 300, 60 )
+size_flags_horizontal = 4
+
+[node name="EnterDungeonTitle" type="Label" parent="ColorRect/ScrollBar/DungeonFoundContainer/EnterDungeonButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 14.3865
+margin_bottom = 19.3865
+custom_fonts/font = SubResource( 4 )
+text = "ENTER DUNGEON
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="ColorRect/CloseButton" to="." method="_on_CloseButton_toggled"]
+[connection signal="pressed" from="ColorRect/ScrollBar/EnterUsernameContainer/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="ColorRect/ScrollBar/DungeonFoundContainer/EnterDungeonButton" to="." method="_on_EnterDungeonButton_pressed"]
