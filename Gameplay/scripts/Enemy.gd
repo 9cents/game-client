@@ -51,12 +51,15 @@ func start_moving():
 	move()
 	$Label.text= char(65+id)
 	
-	var mob_types = $AnimatedSprite.frames.get_animation_names()
+	#var mob_types = $AnimatedSprite.frames.get_animation_names()
 	$CollisionShape2D.set_deferred("disabled", false)
-	$AnimatedSprite.animation = mob_types[randi() % (mob_types.size()-1)+1]
+	#$AnimatedSprite.animation = mob_types[randi() % (mob_types.size()-1)+1]
+	$AnimatedSprite.animation = "wormwalk"
 	$AnimatedSprite.play()
 
 func move():
+	$AnimatedSprite.animation = "wormwalk"
+	$AnimatedSprite.play()
 	velocity.x = randi() % 9 + 1
 	velocity.y = randi() % 9 + 1
 	if randi()%2:
@@ -65,5 +68,7 @@ func move():
 		velocity.y = -velocity.y
 
 func freeze():
+	$AnimatedSprite.animation = "respawn"
+	$AnimatedSprite.play()
 	velocity.x = 0
 	velocity.y = 0

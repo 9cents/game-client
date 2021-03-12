@@ -15,11 +15,11 @@ func _ready():
 
 func Settings():
 	#get_tree().change_scene("res://Interface/Settings Page.tscn")
-	get_tree().change_scene_to(setting_scene)
+	ScreenSwitcher.change_scene_to(setting_scene)
 	pass
 	
 
 func Back():
 	#get_tree().change_scene("res://Map/Main Page.tscn")
-	get_tree().change_scene("res://World_Selection/Map/MainPage.tscn")
+	ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 	pass

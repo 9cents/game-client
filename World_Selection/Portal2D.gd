@@ -15,5 +15,5 @@ func _get_configuration_warning() -> String:
 func teleport() -> void:
 	animation_player.play("fade_in")
 	yield(animation_player, "animation_finished")
-	get_tree().change_scene_to(next_scene)
+	ScreenSwitcher.change_scene_to(next_scene)
 	

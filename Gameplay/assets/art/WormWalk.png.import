@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemySwimming_2.png-99ee24dbef95c1c7bb840452ac0c7692.stex"
+path="res://.import/WormWalk.png-22930aaf83f6bd09d3e9720b7c89c246.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gameplay/assets/art/enemySwimming_2.png"
-dest_files=[ "res://.import/enemySwimming_2.png-99ee24dbef95c1c7bb840452ac0c7692.stex" ]
+source_file="res://Gameplay/assets/art/WormWalk.png"
+dest_files=[ "res://.import/WormWalk.png-22930aaf83f6bd09d3e9720b7c89c246.stex" ]
 
 [params]
 

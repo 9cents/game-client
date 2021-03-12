@@ -21,5 +21,5 @@ func _on_Assignment_body_entered(body):
 func teleport() -> void:
 	#animation_player.play("fade_in")
 	#yield(animation_player, "animation_finished")
-	get_tree().change_scene_to(next_scene)
+	ScreenSwitcher.change_scene_to(next_scene)
 

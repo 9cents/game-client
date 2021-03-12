@@ -10,6 +10,21 @@ var screen_size
 signal freeze
 signal defreeze
 
+var ulti_dict = {
+	'mage': {
+		'ulti_time' : 2,
+		'cd_time' : 6
+	},
+	'ninja': {
+		'ulti_time' : 4,
+		'cd_time' : 6
+	},
+	'knight': {
+		'ulti_time' : 3,
+		'cd_time' : 6
+	}
+}
+
 func start(pos, chtype):
 	position = pos
 	show()
@@ -18,8 +33,8 @@ func start(pos, chtype):
 	cooldown_time = 3
 	$AnimatedSprite.animation = char_type
 	$CollisionShape2D.disabled = true
-	$UltiTimer.wait_time = ulti_time
-	$CooldownTimer.wait_time = cooldown_time
+	$UltiTimer.wait_time = ulti_dict[char_type]['ulti_time']
+	$CooldownTimer.wait_time = ulti_dict[char_type]['cd_time']
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -64,9 +79,9 @@ func _process(delta):
 	if $UltiTimer.is_stopped() and $CooldownTimer.is_stopped():
 		$Label.text = 'Press Shift'
 	elif !$UltiTimer.is_stopped():
-		$Label.text = str(int($UltiTimer.time_left))
+		$Label.text = str(int($UltiTimer.time_left)+1)
 	elif !$CooldownTimer.is_stopped():
-		$Label.text = 'cooling down ' + str(int($CooldownTimer.time_left))
+		$Label.text = 'cooling down ' + str(int($CooldownTimer.time_left)+1)
 	
 	# HANDLE SLASHING ANIMATION
 	if char_type && $AnimatedSprite.animation == "attack_"+char_type && $AnimatedSprite.frame == $AnimatedSprite.frames.get_frame_count("attack_"+char_type)-1:

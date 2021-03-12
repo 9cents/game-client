@@ -22,11 +22,12 @@ func _ready():
 	$TextureRect.margin_right =  OS.window_size.x
 	$TextureRect.margin_left = 0
 	
-	$Label.margin_top = 0
-	$Label.margin_bottom = OS.window_size.y*0.4
-	$Label.margin_right =  OS.window_size.x
-	$Label.margin_left = 0
+	$Label.margin_top = 50
+	$Label.margin_bottom = OS.window_size.y*0.4 - 30
+	$Label.margin_right =  OS.window_size.x - 30
+	$Label.margin_left = 30
 	
+	$LevelLabel.text = "LV. 5 - WAVE " + str(curr_q)
 	
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 

@@ -45,4 +45,5 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="toggled" from="Label/CheckButton" to="." method="_on_CheckButton_toggled"]

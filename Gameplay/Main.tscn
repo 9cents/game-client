@@ -6,8 +6,8 @@
 [ext_resource path="res://Gameplay/Enemy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 9.18369e-39 )
-colors = PoolColorArray( 1, 1, 1, 1 )
+offsets = PoolRealArray( 9.18369e-39, 0.761146 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
@@ -16,9 +16,10 @@ gradient = SubResource( 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.54902, 1, 0.607843, 1 )
+bg_color = Color( 1, 0.0980392, 0.0980392, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -72,6 +73,18 @@ __meta__ = {
 }
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="LevelLabel" type="Label" parent="."]
+margin_left = 560.4
+margin_top = 12.4
+margin_right = 708.4
+margin_bottom = 32.4
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.0627451, 0.0431373, 0.0431373, 1 )
+custom_colors/font_outline_modulate = Color( 0.996078, 0.996078, 0.996078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="defreeze" from="Player" to="." method="_on_Player_defreeze"]

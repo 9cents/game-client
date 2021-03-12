@@ -112,4 +112,5 @@ __meta__ = {
 autoplay = "Start"
 anims/Start = SubResource( 4 )
 anims/fade_in = SubResource( 5 )
+
 [connection signal="body_entered" from="." to="." method="_on_Portal2D_body_entered"]

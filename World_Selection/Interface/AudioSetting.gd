@@ -15,7 +15,7 @@ func _on_CheckButton_toggled(on):
 	pass
 	
 func Back():
-	get_tree().change_scene("res://World_Selection/Interface/Settings Page.tscn")
+	ScreenSwitcher.change_scene("res://World_Selection/Interface/Settings Page.tscn")
 	pass
 	
 #

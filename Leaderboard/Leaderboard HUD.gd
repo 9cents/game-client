@@ -20,7 +20,7 @@ func _ready():
 	pass # Replace with function body.
 	
 func Close():
-	get_tree().change_scene("res://World_Selection/Map/MainPage.tscn")
+	ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 #TODO
 #Function for on button press going to leaderboard (Not this scene)
 

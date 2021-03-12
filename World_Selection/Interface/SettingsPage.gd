@@ -13,12 +13,12 @@ func _ready():
 	pass # Replace with function body.
 
 func Audio():
-	get_tree().change_scene("res://World_Selection/Interface/AudioSetting.tscn")
+	ScreenSwitcher.change_scene("res://World_Selection/Interface/AudioSetting.tscn")
 	pass
 	
 	
 func Back():
-	get_tree().change_scene("res://World_Selection/Map/MainPage.tscn")
+	ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 	
 	pass
 func Quit():

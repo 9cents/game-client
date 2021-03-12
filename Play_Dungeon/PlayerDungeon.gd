@@ -39,10 +39,10 @@ func _on_ConfirmButton_pressed():
 func _on_EnterDungeonButton_pressed():
 	print("Entering user created dungeon")
 	#Change scene to dungeon
-	get_tree().change_scene("res://Gameplay/Top.tscn")
+	ScreenSwitcher.change_scene("res://Gameplay/Top.tscn")
 	pass
 
 
 func _on_CloseButton_toggled(button_pressed):
-	get_tree().change_scene("res://World_Selection/Map/ChallengeMode.tscn")
+	ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn")
 	pass # Replace with function body.
