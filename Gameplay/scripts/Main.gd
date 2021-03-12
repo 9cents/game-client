@@ -1,5 +1,6 @@
 extends Node
 
+var params
 var questions
 var char_type = "ninja"
 
@@ -16,7 +17,7 @@ export (PackedScene) var Enemy
 
 func _ready():
 	randomize()
-	
+	params= ScreenSwitcher._params
 	$TextureRect.margin_top = 0
 	$TextureRect.margin_bottom = OS.window_size.y*0.25
 	$TextureRect.margin_right =  OS.window_size.x
@@ -29,16 +30,10 @@ func _ready():
 	
 	$LevelLabel.text = "LV. 5 - WAVE " + str(curr_q+1)
 	
-	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	start()
 
-func start(url):
+func start():
 	print('start')
-	$HTTPRequest.request(url)
-	
-func _on_request_completed(result, response_code, headers, body):
-	var json = JSON.parse(body.get_string_from_utf8())
-	print(json.result)
-	# MOCK DATA
 	questions = [
 		{"q":"what is this? \n nothing aehwh hfeuw fowierj jiewr jiojijijiw ejie aksjdnciw rjeiwo f s ssss e werer ajidf jiwoe f vjsidfe  fjiwoef baba\n uuuu", 
 		"ans":["asds","dfwef","werer","aaa"], 
@@ -96,8 +91,8 @@ func handle_respawn():
 func handle_health():
 	if health<= 0:
 		handle_despawn()
-		emit_signal('end', 'tower', false)
-		queue_free()
+		params['win'] = false
+		ScreenSwitcher.change_scene("res://World_Selection/Map/Story Mode.tscn", params)
 
 func change_label(question):
 	var str_q = question["q"] + "\n"
@@ -126,6 +121,5 @@ func _on_Player_defreeze():
 
 
 func _on_EndTimer_timeout():
-	emit_signal('end', 'tower', true)
-	queue_free()
-	pass # Replace with function body.
+	params['win'] = true
+	ScreenSwitcher.change_scene("res://World_Selection/Map/Story Mode.tscn", params)

@@ -3,83 +3,81 @@
 [ext_resource path="res://Gameplay/scripts/Enemy.gd" type="Script" id=3]
 [ext_resource path="res://Gameplay/assets/art/WormWalk.png" type="Texture" id=5]
 
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 90, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 180, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 270, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 360, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 450, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 540, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 630, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 720, 0, 90, 90 )
+
+[sub_resource type="StreamTexture" id=10]
+flags = 4
+
+[sub_resource type="StreamTexture" id=11]
+flags = 4
+
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 360, 0, 90, 90 )
 
-[sub_resource type="StreamTexture" id=13]
-flags = 4
-load_path = "res://.import/enemyWalking_1.png-49a46b06d1cc292caf3db58d51597a4d.stex"
-
-[sub_resource type="StreamTexture" id=14]
-flags = 4
-load_path = "res://.import/enemyWalking_2.png-3db95c1be47006ca433d213aecbaa12b.stex"
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 90, 90 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 90, 0, 90, 90 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 180, 0, 90, 90 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 270, 0, 90, 90 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 360, 0, 90, 90 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 450, 0, 90, 90 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 540, 0, 90, 90 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 630, 0, 90, 90 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 720, 0, 90, 90 )
-
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 12 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "respawn",
-"speed": 5.0
+"name": "wormwalk",
+"speed": 20.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "walk",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 12 ) ],
 "loop": true,
-"name": "wormwalk",
-"speed": 20.0
+"name": "respawn",
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=14]
 radius = 34.1007
 height = 27.2476
 
@@ -93,12 +91,12 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
-frames = SubResource( 1 )
+frames = SubResource( 13 )
 animation = "wormwalk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 14 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -33.0

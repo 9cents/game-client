@@ -72,8 +72,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
 [node name="LevelLabel" type="Label" parent="."]
 margin_left = 560.4
 margin_top = 12.4
