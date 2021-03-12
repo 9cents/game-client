@@ -1,7 +1,7 @@
 extends Node
 
 var questions
-var char_type = "mage"
+var char_type = "ninja"
 
 var q
 var health = 40
@@ -18,7 +18,7 @@ func _ready():
 	randomize()
 	
 	$TextureRect.margin_top = 0
-	$TextureRect.margin_bottom = OS.window_size.y*0.4
+	$TextureRect.margin_bottom = OS.window_size.y*0.25
 	$TextureRect.margin_right =  OS.window_size.x
 	$TextureRect.margin_left = 0
 	
@@ -27,7 +27,7 @@ func _ready():
 	$Label.margin_right =  OS.window_size.x - 30
 	$Label.margin_left = 30
 	
-	$LevelLabel.text = "LV. 5 - WAVE " + str(curr_q)
+	$LevelLabel.text = "LV. 5 - WAVE " + str(curr_q+1)
 	
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 
@@ -80,14 +80,15 @@ func handle_despawn():
 
 func handle_respawn():
 	if curr_q == len(questions):
-		emit_signal('end', 'tower', true)
-		queue_free()
+		handle_despawn()
+		$EndTimer.start()
 		return
 	q = questions[curr_q]
 	change_label(q)
 	curr_q += 1
 	$Player.make_collidable(false)
 	$StartTimer.start()
+	$LevelLabel.text = "LV. 5 - WAVE " + str(curr_q)
 	print('timer started')
 	for i in range(len(q["ans"])):
 		create_enemy(i)
@@ -122,3 +123,9 @@ func _on_Player_defreeze():
 	for e in range(len(enemies)):
 		var enemy = enemies[e]
 		enemy.move()
+
+
+func _on_EndTimer_timeout():
+	emit_signal('end', 'tower', true)
+	queue_free()
+	pass # Replace with function body.

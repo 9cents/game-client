@@ -6,6 +6,7 @@ export (PackedScene) var Main
 export (PackedScene) var Leaderboard
 
 func _ready():
+	print('aaaa', ScreenSwitcher.get_param('tower'), ScreenSwitcher.get_param('world'))
 	play_game('t', 'math', 'limit')
 
 func play_game(type, world, tower):

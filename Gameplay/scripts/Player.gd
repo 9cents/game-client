@@ -63,8 +63,11 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
+	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		$AnimatedSprite.play()
+	elif char_type && $AnimatedSprite.animation == "attack_"+char_type:
 		$AnimatedSprite.play()
 	else:
 		$AnimatedSprite.stop()
@@ -85,8 +88,8 @@ func _process(delta):
 	
 	# HANDLE SLASHING ANIMATION
 	if char_type && $AnimatedSprite.animation == "attack_"+char_type && $AnimatedSprite.frame == $AnimatedSprite.frames.get_frame_count("attack_"+char_type)-1:
-		$AnimatedSprite.animation = char_type
-		$AnimatedSprite.play()
+			$AnimatedSprite.animation = char_type
+			$AnimatedSprite.play()
 
 func make_collidable(is_collidable: bool):
 	$CollisionShape2D.set_deferred("disabled", !is_collidable)

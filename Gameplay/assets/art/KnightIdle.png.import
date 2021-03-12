@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/respawnMarker.png-3f3dc76338e86a01cc976cf7e460222b.stex"
+path="res://.import/KnightIdle.png-ca4ba10ec1c5c92a22ab39b2e4017888.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gameplay/assets/art/respawnMarker.png"
-dest_files=[ "res://.import/respawnMarker.png-3f3dc76338e86a01cc976cf7e460222b.stex" ]
+source_file="res://Gameplay/assets/art/KnightIdle.png"
+dest_files=[ "res://.import/KnightIdle.png-ca4ba10ec1c5c92a22ab39b2e4017888.stex" ]
 
 [params]
 

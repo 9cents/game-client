@@ -26,7 +26,7 @@ _bundled = {
 }
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 12.0
+radius = 8.52448
 height = 0.0
 
 [sub_resource type="Animation" id=4]
@@ -90,7 +90,8 @@ script = ExtResource( 2 )
 next_scene = SubResource( 2 )
 
 [node name="BluePortal" type="Sprite" parent="."]
-scale = Vector2( 3, 1.5 )
+position = Vector2( -3.8147e-06, 1.70957 )
+scale = Vector2( 2.14521, 1.08295 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -63,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -210.679
-margin_top = -234.468
-margin_right = 189.321
-margin_bottom = 290.532
+margin_left = -524.0
+margin_top = -304.0
+margin_right = 517.0
+margin_bottom = 304.0
 texture = ExtResource( 3 )
 patch_margin_top = 28
 patch_margin_bottom = 28
@@ -86,26 +86,26 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="Background/LoginScreen"]
-margin_right = 330.0
-margin_bottom = 2.0
+margin_right = 971.0
+margin_bottom = 38.0
 custom_fonts/font = SubResource( 2 )
 text = "Login Screen"
 align = 1
 valign = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Background/LoginScreen"]
-margin_top = 6.0
-margin_right = 330.0
-margin_bottom = 31.0
+margin_top = 42.0
+margin_right = 971.0
+margin_bottom = 67.0
 rect_min_size = Vector2( 0, 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UsernameTitle" type="Label" parent="Background/LoginScreen"]
-margin_top = 35.0
-margin_right = 330.0
-margin_bottom = 66.0
+margin_top = 71.0
+margin_right = 971.0
+margin_bottom = 102.0
 custom_fonts/font = ExtResource( 6 )
 text = "Username"
 __meta__ = {
@@ -113,14 +113,14 @@ __meta__ = {
 }
 
 [node name="Username" type="LineEdit" parent="Background/LoginScreen"]
-margin_top = 70.0
-margin_right = 330.0
-margin_bottom = 94.0
+margin_top = 106.0
+margin_right = 971.0
+margin_bottom = 130.0
 
 [node name="PasswordTitle" type="Label" parent="Background/LoginScreen"]
-margin_top = 98.0
-margin_right = 330.0
-margin_bottom = 129.0
+margin_top = 134.0
+margin_right = 971.0
+margin_bottom = 165.0
 custom_fonts/font = ExtResource( 6 )
 text = "Password"
 __meta__ = {
@@ -128,25 +128,25 @@ __meta__ = {
 }
 
 [node name="Password" type="LineEdit" parent="Background/LoginScreen"]
-margin_top = 133.0
-margin_right = 330.0
-margin_bottom = 157.0
+margin_top = 169.0
+margin_right = 971.0
+margin_bottom = 193.0
 secret = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="Background/LoginScreen"]
-margin_top = 161.0
-margin_right = 330.0
-margin_bottom = 181.0
+margin_top = 197.0
+margin_right = 971.0
+margin_bottom = 217.0
 rect_min_size = Vector2( 0, 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LoginButton" type="TextureButton" parent="Background/LoginScreen"]
-margin_left = 55.0
-margin_top = 185.0
-margin_right = 275.0
-margin_bottom = 240.0
+margin_left = 375.0
+margin_top = 221.0
+margin_right = 595.0
+margin_bottom = 276.0
 rect_min_size = Vector2( 220, 55 )
 size_flags_horizontal = 4
 texture_normal = ExtResource( 4 )
@@ -171,10 +171,10 @@ __meta__ = {
 }
 
 [node name="CreateAccountButton" type="TextureButton" parent="Background/LoginScreen"]
-margin_left = 55.0
-margin_top = 244.0
-margin_right = 275.0
-margin_bottom = 299.0
+margin_left = 375.0
+margin_top = 280.0
+margin_right = 595.0
+margin_bottom = 335.0
 rect_min_size = Vector2( 220, 55 )
 size_flags_horizontal = 4
 texture_normal = ExtResource( 4 )
@@ -351,6 +351,7 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Background/LoginScreen/LoginButton" to="." method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="Background/LoginScreen/CreateAccountButton" to="." method="_on_CreateAccountButton_pressed"]
 [connection signal="pressed" from="Background/CreateAccount/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]

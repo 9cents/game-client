@@ -5,12 +5,11 @@ const FRICTION = 700
 const MAX_SPEED = 400
 
 var velocity = Vector2.ZERO
-var animationPlayer = null
+var char_type = "mage"
 
 func _ready():
-		
-	animationPlayer = $AnimationPlayer
-
+	$AnimatedSprite.animation = char_type
+	$AnimatedSprite.play()
 
 func _physics_process(delta):
 	
@@ -22,11 +21,13 @@ func _physics_process(delta):
 	
 	if input_vec != Vector2.ZERO:
 		if input_vec.x > 0:
-			animationPlayer.play("Right")
-		else:
-			animationPlayer.play("Left")
+			$AnimatedSprite.flip_h = false
+		elif input_vec.x < 0:
+			$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play()
 		velocity = velocity.move_toward(input_vec * MAX_SPEED, ACCELERATION * delta)
 	else:
+		$AnimatedSprite.stop()
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
 	velocity = move_and_slide(velocity)

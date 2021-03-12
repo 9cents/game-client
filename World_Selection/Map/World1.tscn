@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
@@ -12,12 +12,14 @@
 [ext_resource path="res://World_Selection/WorldBackPortal.gd" type="Script" id=10]
 [ext_resource path="res://World_Selection/MainBackPortal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://splashscreen/splashscreen.tscn" type="PackedScene" id=12]
+[ext_resource path="res://World_Selection/Map/World.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
 [node name="WorldPage" type="Node2D"]
 scale = Vector2( 5, 5 )
+script = ExtResource( 13 )
 
 [node name="BigLimeMap" type="Sprite" parent="."]
 position = Vector2( 280, 88 )
@@ -31,6 +33,7 @@ texture = ExtResource( 4 )
 
 [node name="PlayerMage" parent="." instance=ExtResource( 2 )]
 position = Vector2( 184, 88 )
+z_index = 2
 
 [node name="Camera2D" type="Camera2D" parent="PlayerMage"]
 current = true
@@ -185,6 +188,7 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="body_entered" from="Tower1" to="Tower1" method="_on_Tower1_body_entered"]
 [connection signal="body_entered" from="Tower2" to="Tower2" method="_on_Tower2_body_entered"]
 [connection signal="body_entered" from="Tower3" to="Tower3" method="_on_Tower3_body_entered"]

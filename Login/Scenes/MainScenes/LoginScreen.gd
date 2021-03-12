@@ -25,6 +25,7 @@ func _ready():
 
 
 func _on_LoginButton_pressed():
+	ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 	if login_user.get_text() == "":
 		print("Please enter a valid username")
 		
@@ -42,7 +43,7 @@ func _on_LoginButton_pressed():
 		#HTTP request to verify the information to database
 		#Change the boolean variable login to true then switch to game scene
 		if login == true:
-			get_tree().change_scene("res://World_Selection/Map/MainPage.tscn")
+			ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 			pass #Switch to scene
 			
 		else:
@@ -81,8 +82,8 @@ func _on_ConfirmButton_pressed():
 	
 	else:
 		var created = false
-		confirm_button.disabled = true
-		back_button.disabled = true
+		# confirm_button.disabled = true
+		# back_button.disabled = true
 		var email = create_email_input.get_text()
 		var username = create_username_input.get_text()
 		var password = create_password_input.get_text()
@@ -91,7 +92,7 @@ func _on_ConfirmButton_pressed():
 		#HTTP update to database
 		if created == true:
 			print("Account successfully created")
-			
+			# ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 		else:
 			print("Unsuccessful account creation")
 

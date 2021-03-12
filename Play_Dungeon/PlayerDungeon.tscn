@@ -186,6 +186,7 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="toggled" from="ColorRect/CloseButton" to="." method="_on_CloseButton_toggled"]
 [connection signal="pressed" from="ColorRect/ScrollBar/EnterUsernameContainer/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
 [connection signal="pressed" from="ColorRect/ScrollBar/DungeonFoundContainer/EnterDungeonButton" to="." method="_on_EnterDungeonButton_pressed"]

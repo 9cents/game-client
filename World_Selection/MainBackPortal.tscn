@@ -67,7 +67,8 @@ collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="RedPortal" type="Sprite" parent="."]
-scale = Vector2( 3, 1.5 )
+position = Vector2( 0.47377, 0.85279 )
+scale = Vector2( 2.68613, 1.29273 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -89,4 +90,5 @@ __meta__ = {
 autoplay = "Start"
 anims/Start = SubResource( 2 )
 anims/fade_in = SubResource( 3 )
+
 [connection signal="body_entered" from="." to="." method="_on_Portal2D_body_entered"]

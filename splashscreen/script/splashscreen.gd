@@ -5,7 +5,7 @@ func _input(event):
 		go_title_screen()
 
 func go_title_screen():
-	ScreenSwitcher.change_scene("res://Gameplay/Top.tscn")
+	ScreenSwitcher.change_scene("res://Gameplay/Top.tscn", ScreenSwitcher._params)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	go_title_screen()

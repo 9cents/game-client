@@ -30,6 +30,7 @@ texture = ExtResource( 4 )
 
 [node name="PlayerMage" parent="." instance=ExtResource( 2 )]
 position = Vector2( 184, 88 )
+z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="PlayerMage"]
 current = true
