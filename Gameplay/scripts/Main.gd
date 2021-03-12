@@ -16,7 +16,18 @@ export (PackedScene) var Enemy
 
 func _ready():
 	randomize()
-	print("ready")
+	
+	$TextureRect.margin_top = 0
+	$TextureRect.margin_bottom = OS.window_size.y*0.4
+	$TextureRect.margin_right =  OS.window_size.x
+	$TextureRect.margin_left = 0
+	
+	$Label.margin_top = 0
+	$Label.margin_bottom = OS.window_size.y*0.4
+	$Label.margin_right =  OS.window_size.x
+	$Label.margin_left = 0
+	
+	
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 
 func start(url):
@@ -89,7 +100,7 @@ func handle_health():
 func change_label(question):
 	var str_q = question["q"] + "\n"
 	for i in range(len(question["ans"])):
-		str_q += ' \n '+str(i)+'. '+question['ans'][i]
+		str_q += ' \n '+char(65+i)+'. '+question['ans'][i]
 	$Label.text= str_q
 		
 func _on_StartTimer_timeout():

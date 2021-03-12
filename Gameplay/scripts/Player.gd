@@ -56,10 +56,22 @@ func _process(delta):
 		
 	position += velocity * delta
 	position.x = clamp(position.x, 30, screen_size.x-30)
-	position.y = clamp(position.y, screen_size.y*0.2+30, screen_size.y-30)
+	position.y = clamp(position.y, screen_size.y*0.4+30, screen_size.y-30)
 	
 	if velocity.x != 0:
 		$AnimatedSprite.flip_h = velocity.x < 0
+		
+	if $UltiTimer.is_stopped() and $CooldownTimer.is_stopped():
+		$Label.text = 'Press Shift'
+	elif !$UltiTimer.is_stopped():
+		$Label.text = str(int($UltiTimer.time_left))
+	elif !$CooldownTimer.is_stopped():
+		$Label.text = 'cooling down ' + str(int($CooldownTimer.time_left))
+	
+	# HANDLE SLASHING ANIMATION
+	if char_type && $AnimatedSprite.animation == "attack_"+char_type && $AnimatedSprite.frame == $AnimatedSprite.frames.get_frame_count("attack_"+char_type)-1:
+		$AnimatedSprite.animation = char_type
+		$AnimatedSprite.play()
 
 func make_collidable(is_collidable: bool):
 	$CollisionShape2D.set_deferred("disabled", !is_collidable)
@@ -80,3 +92,9 @@ func _on_UltiTimer_timeout():
 
 func _on_CooldownTimer_timeout():
 	$CooldownTimer.stop()
+
+
+func _on_Player_area_entered(area):
+	if $UltiTimer.is_stopped():
+		$AnimatedSprite.animation = "attack_"+char_type
+		$AnimatedSprite.play()
