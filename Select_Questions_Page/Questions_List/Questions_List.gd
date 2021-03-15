@@ -31,7 +31,7 @@ func query_done(result):
 		Api.get_world_qns({})
 		return
 #	print(typeof(result))
-	if typeof(result)==TYPE_DICTIONARY:
+	if typeof(result)==TYPE_DICTIONARY && 'qns' in result:
 		update_qns(result["value"])
 		
 func update_world_names(categories):

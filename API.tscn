@@ -195,11 +195,13 @@ func update_dungeon_done(result, response_code, headers, body):
 	var req = pending_req.get(\"udpate_dungeon\")
 	remove_child(req)
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		print(\"error\",\"errrr\")
-		print(body.get_string_from_utf8())
+		var json = {\"error\": true}
+		json['dungeon'] = 'update'
+		emit_signal(\"call_done\", json)
 		return
-	var json = parse_json(body.get_string_from_utf8())
-	print(\"success\", json)
+	var json = {\"value\": parse_json(body.get_string_from_utf8())}
+	json['dungeon'] = 'update'
+	emit_signal(\"call_done\", json)
 
 func get_world_qns(data):
 	var url = BASE_URL + '/game/worldquestions'

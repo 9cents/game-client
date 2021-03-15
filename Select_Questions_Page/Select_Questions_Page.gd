@@ -20,6 +20,15 @@ func _ready():
 func user_query_done(results):
 	if typeof(results)==TYPE_ARRAY && len(results) != 3:
 		update_user_qns(results)
+	if typeof(results)==TYPE_DICTIONARY && "dungeon" in results:
+		var params = {}
+		if "error" in results:
+			params["text"] = "Update Fails! \nplease try again"
+		else:
+			params["text"] = "Dungeon Updated!"
+		params["next_scene"] = "res://World_Selection/Map/ChallengeMode.tscn"
+		ScreenSwitcher.change_scene("res://TransitionScreen/TransitionScreen.tscn", params)
+
 
 func update_user_qns(results):
 	if results == []:
@@ -108,7 +117,7 @@ func _on_ProceedButton_pressed():
 		# Only possible when student_questions_num == QUESTIONS_ALLOWED, the number of questions (we use 5)
 		# FUNCTION FOR CHENG YUN, GO TO ANOTHER SCENE.
 		Api.update_dungeon(arr)
-		ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
+
 		# FUNCTION: HTTP Request. Update database with the current questions
 	# If condition not met, this button does nothing
 		pass
