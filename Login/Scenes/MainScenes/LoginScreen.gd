@@ -85,7 +85,9 @@ func request_finished(response):
 			create_button.disabled = false
 			$ErrorMessages.text = "Unsuccessful login"
 		else:
-			Main.char_name = null
+			Main.char_name = response["data"]["character"]
+			Main.user_id = response["data"]["player_id"]
+			
 			if Main.char_name == null:
 				ScreenSwitcher.change_scene("res://Character_Design/Character_Design.tscn")
 			else:

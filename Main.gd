@@ -3,6 +3,7 @@ extends Control
 # Declare member variables here. Examples:
 var username
 var char_name
+var user_id
 
 
 
