@@ -1,0 +1,399 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://script/btn_Warrior.gd" type="Script" id=1]
+[ext_resource path="res://assets/background_mountain.png" type="Texture" id=2]
+[ext_resource path="res://assets/Fantasy Warrior/Sprites/Idle.png" type="Texture" id=3]
+[ext_resource path="res://theme/selected_button_theme.tres" type="StyleBox" id=4]
+[ext_resource path="res://theme/not_selected_button_theme.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/Wizard Pack/Idle.png" type="Texture" id=6]
+[ext_resource path="res://script/btn_mage.gd" type="Script" id=7]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Idle.png" type="Texture" id=8]
+[ext_resource path="res://script/btn_assasin.gd" type="Script" id=9]
+[ext_resource path="res://Character_Design.gd" type="Script" id=10]
+[ext_resource path="res://theme/hovered_button_theme.tres" type="StyleBox" id=11]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://theme/confirm_selected.tres" type="StyleBox" id=13]
+[ext_resource path="res://theme/confirm_not_selected.tres" type="StyleBox" id=14]
+[ext_resource path="res://script/btn_Confirm.gd" type="Script" id=15]
+
+[sub_resource type="BitmapFont" id=1]
+height = 304.0
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 462, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 693, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 924, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1155, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 162, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 324, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 486, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 648, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 810, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 972, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1134, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1296, 0, 162, 162 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1458, 0, 162, 162 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "ninja",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "mage",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "knight",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=23]
+size = 59
+outline_size = 6
+outline_color = Color( 0.670588, 0.415686, 0.54902, 1 )
+extra_spacing_top = 1
+extra_spacing_char = 3
+extra_spacing_space = 1
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFontData" id=24]
+font_path = "res://fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=25]
+size = 36
+outline_size = 1
+extra_spacing_char = 12
+font_data = SubResource( 24 )
+
+[sub_resource type="DynamicFontData" id=26]
+font_path = "res://fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=27]
+size = 27
+outline_size = 2
+outline_color = Color( 0.133333, 0.0352941, 0.219608, 1 )
+font_data = SubResource( 26 )
+
+[sub_resource type="DynamicFontData" id=28]
+hinting = 1
+font_path = "res://fonts/Xolonium-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=29]
+size = 40
+outline_size = 4
+outline_color = Color( 0.133333, 0.0352941, 0.219608, 1 )
+use_filter = true
+extra_spacing_char = 2
+font_data = SubResource( 28 )
+
+[node name="Character_Design" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="btn_Warrior" type="Button" parent="."]
+anchor_left = 0.368464
+anchor_top = 0.182245
+anchor_right = 0.846003
+anchor_bottom = 0.332245
+margin_left = -0.306641
+margin_top = -0.347015
+margin_right = 99.6934
+margin_bottom = -0.347015
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+keep_pressed_outside = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+start_focused = true
+
+[node name="btn_mage" type="Button" parent="."]
+anchor_left = 0.369141
+anchor_top = 0.371667
+anchor_right = 0.944336
+anchor_bottom = 0.521667
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="btn_assasin" type="Button" parent="."]
+anchor_left = 0.369141
+anchor_top = 0.565
+anchor_right = 0.946289
+anchor_bottom = 0.715
+margin_top = 3.05176e-05
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Heading" type="RichTextLabel" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.811765 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -15.0
+margin_top = 50.0
+margin_right = 285.0
+margin_bottom = 155.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 200, 100 )
+rect_clip_content = false
+size_flags_horizontal = 3
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/font_color_selected = Color( 0.74902, 0.168627, 0.168627, 1 )
+visible_characters = 31
+meta_underlined = false
+tab_size = 24
+text = "Choose your character!"
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 141.607, 271.391 )
+scale = Vector2( 6, 6 )
+frames = SubResource( 22 )
+animation = "knight"
+
+[node name="Heading2" type="Label" parent="."]
+anchor_left = 0.132982
+anchor_top = 0.056212
+anchor_right = 0.932786
+anchor_bottom = 0.221212
+margin_right = -65.0
+custom_fonts/font = SubResource( 23 )
+text = "Choose your character!"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="btn_Confirm" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.533333 )
+anchor_left = 0.330331
+anchor_top = 0.793344
+anchor_right = 0.674081
+anchor_bottom = 0.903344
+custom_styles/hover = ExtResource( 13 )
+custom_styles/pressed = ExtResource( 13 )
+custom_styles/focus = ExtResource( 13 )
+custom_styles/normal = ExtResource( 14 )
+custom_fonts/font = SubResource( 25 )
+text = "CONFIRM"
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="s_Mage" type="Label" parent="."]
+anchor_left = 0.637506
+anchor_top = 0.382602
+anchor_right = 0.920709
+anchor_bottom = 0.500935
+custom_fonts/font = SubResource( 27 )
+text = "Freeze for 2 sec
+Cooldown 6 sec"
+align = 3
+valign = 3
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="s_Warrior" type="Label" parent="."]
+anchor_left = 0.636988
+anchor_top = 0.199456
+anchor_right = 0.909449
+anchor_bottom = 0.317789
+custom_fonts/font = SubResource( 27 )
+text = "Invincibility 3 sec 
+Cooldown 6 sec "
+align = 3
+valign = 3
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="s_Ninja" type="Label" parent="."]
+anchor_left = 0.639141
+anchor_top = 0.564286
+anchor_right = 0.922344
+anchor_bottom = 0.682619
+custom_fonts/font = SubResource( 27 )
+text = "Speed boost 4 sec
+Cooldown 6 sec"
+align = 3
+valign = 3
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="w_Warrior" type="Button" parent="."]
+light_mask = 1048575
+anchor_left = 0.405234
+anchor_top = 0.207959
+anchor_right = 0.603476
+anchor_bottom = 0.299626
+margin_right = -10.0
+custom_fonts/font = SubResource( 29 )
+text = "KNIGHT"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="w_Mage" type="Button" parent="."]
+anchor_left = 0.419633
+anchor_top = 0.396667
+anchor_right = 0.569047
+anchor_bottom = 0.488333
+custom_fonts/font = SubResource( 29 )
+text = "MAGE"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="w_Ninja" type="Button" parent="."]
+anchor_left = 0.416644
+anchor_top = 0.590631
+anchor_right = 0.585589
+anchor_bottom = 0.682298
+margin_right = -13.0
+custom_fonts/font = SubResource( 29 )
+text = "NINJA"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+[connection signal="pressed" from="btn_Warrior" to="." method="_on_btn_Warrior_pressed"]
+[connection signal="pressed" from="btn_mage" to="." method="_on_btn_mage_pressed"]
+[connection signal="pressed" from="btn_assasin" to="." method="_on_btn_assasin_pressed"]
