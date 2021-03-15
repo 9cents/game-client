@@ -8,7 +8,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Audio_Button.connect("pressed", self,"Audio")
-	$Back_Button.connect("pressed", self,"Back")
+	$Close_Button.connect("pressed", self,"Close")
 	$Quit_Button.connect("pressed", self,"Quit")
 	pass # Replace with function body.
 
@@ -17,7 +17,7 @@ func Audio():
 	pass
 	
 	
-func Back():
+func Close():
 	ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 	
 	pass

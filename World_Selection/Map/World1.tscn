@@ -1,14 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World_Selection/Map/Assets/BigLimeMap.png" type="Texture" id=3]
 [ext_resource path="res://World_Selection/Map/Assets/Wall.png" type="Texture" id=4]
 [ext_resource path="res://World_Selection/Map/Assets/Crate.png" type="Texture" id=5]
-[ext_resource path="res://World_Selection/Interface/Settings.png" type="Texture" id=6]
-[ext_resource path="res://World_Selection/Interface/Settings.gd" type="Script" id=7]
 [ext_resource path="res://World_Selection/TowerPortal.gd" type="Script" id=8]
-[ext_resource path="res://World_Selection/Interface/Settings Page.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World_Selection/WorldBackPortal.gd" type="Script" id=10]
 [ext_resource path="res://World_Selection/MainBackPortal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://splashscreen/splashscreen.tscn" type="PackedScene" id=12]
@@ -79,42 +76,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Settings" type="Control" parent="CanvasLayer"]
-visible = false
-margin_left = 296.0
-margin_top = 1.0
-margin_right = 320.0
-margin_bottom = 25.0
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-setting_scene = ExtResource( 9 )
-
-[node name="Settings_Button" type="Button" parent="CanvasLayer/Settings"]
-margin_right = 24.0
-margin_bottom = 24.0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Settings/Settings_Button"]
-position = Vector2( 12, 12 )
-scale = Vector2( 0.046875, 0.046875 )
-texture = ExtResource( 6 )
-
-[node name="Back_Button" type="Button" parent="CanvasLayer/Settings"]
-visible = false
-margin_left = -280.0
-margin_top = 5.0
-margin_right = -238.0
-margin_bottom = 24.0
-text = "Back"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Tower1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 80, 160 )
 script = ExtResource( 8 )
@@ -168,24 +129,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Assignment" parent="." instance=ExtResource( 1 )]
-position = Vector2( 384, 160 )
-script = ExtResource( 8 )
-next_scene = ExtResource( 12 )
-
-[node name="Label" type="Label" parent="Assignment"]
-margin_left = -36.0
-margin_top = -1.0
-margin_right = 99.0
-margin_bottom = 29.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Assignment"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="BackPortal" parent="." instance=ExtResource( 11 )]
 position = Vector2( 66.9255, 46.7472 )
 script = ExtResource( 10 )
@@ -203,9 +146,7 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="body_entered" from="Tower1" to="Tower1" method="_on_Tower1_body_entered"]
 [connection signal="body_entered" from="Tower2" to="Tower2" method="_on_Tower2_body_entered"]
 [connection signal="body_entered" from="Tower3" to="Tower3" method="_on_Tower3_body_entered"]
-[connection signal="body_entered" from="Assignment" to="Assignment" method="_on_Assignment_body_entered"]
 [connection signal="body_entered" from="BackPortal" to="BackPortal" method="_on_BackPortal_body_entered"]

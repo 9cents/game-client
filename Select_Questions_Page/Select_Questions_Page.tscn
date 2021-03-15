@@ -12,7 +12,7 @@ size = 44
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 20
+size = 15
 font_data = ExtResource( 6 )
 
 [node name="Select_Questions_Page" type="CanvasLayer"]
@@ -92,7 +92,7 @@ __meta__ = {
 margin_left = 256.0
 margin_top = 32.0
 margin_right = 768.0
-margin_bottom = 96.0
+margin_bottom = 122.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,11 +109,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question1/Panel/Q1button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -0.89296
+margin_right = -0.892944
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "<CLICK HERE>"
 align = 1
-valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -131,7 +132,7 @@ __meta__ = {
 margin_left = 256.0
 margin_top = 32.0
 margin_right = 768.0
-margin_bottom = 96.0
+margin_bottom = 122.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -152,7 +153,6 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "<CLICK HERE>"
 align = 1
-valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -170,7 +170,7 @@ __meta__ = {
 margin_left = 256.0
 margin_top = 32.0
 margin_right = 768.0
-margin_bottom = 96.0
+margin_bottom = 122.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -191,7 +191,6 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "<CLICK HERE>"
 align = 1
-valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -209,7 +208,7 @@ __meta__ = {
 margin_left = 256.0
 margin_top = 32.0
 margin_right = 768.0
-margin_bottom = 96.0
+margin_bottom = 122.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -230,7 +229,6 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "<CLICK HERE>"
 align = 1
-valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -248,7 +246,7 @@ __meta__ = {
 margin_left = 256.0
 margin_top = 32.0
 margin_right = 768.0
-margin_bottom = 96.0
+margin_bottom = 122.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -269,7 +267,6 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "<CLICK HERE>"
 align = 1
-valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -295,7 +292,6 @@ __meta__ = {
 }
 
 [node name="QuestionsListPage" parent="." instance=ExtResource( 5 )]
-
 [connection signal="pressed" from="BackgroundColor/ProceedButton" to="." method="_on_ProceedButton_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question1/Panel/Q1button" to="." method="_on_Q1button_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question2/Panel/Q2button" to="." method="_on_Q2button_pressed"]

@@ -16,7 +16,11 @@ func _on_Portal2D_body_entered(body):
 	
 func _get_configuration_warning() -> String:
 	return "The next scene property can't be empty" if not next_scene else " "
-
+	
+func _on_Assignment_body_entered(body):
+	teleport()
+	#teleport("assignment")
+	pass # Replace with function body.
 
 func teleport() -> void:
 	animation_player.play("fade_in")

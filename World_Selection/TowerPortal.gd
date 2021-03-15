@@ -22,10 +22,6 @@ func _on_Tower2_body_entered(body):
 func _on_Tower3_body_entered(body):
 	teleport(tower_names[world_id][2])
 
-func _on_Assignment_body_entered(body):
-	teleport('assignment')
-
-
 func teleport(tower) -> void:
 	#animation_player.play("fade_in")
 	#yield(animation_player, "animation_finished")

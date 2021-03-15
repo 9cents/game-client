@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	$Label/Button.connect("pressed", self,"Back")
+	$Label/TextureButton.connect("pressed", self,"Back")
 	pass
 
 

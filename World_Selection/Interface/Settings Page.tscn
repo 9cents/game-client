@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://World_Selection/Interface/SettingsPage.gd" type="Script" id=1]
+[ext_resource path="res://Leaderboard/close button.png" type="Texture" id=2]
+[ext_resource path="res://Login/Resources/background.jpg" type="Texture" id=3]
 
 [node name="SettingsScreen" type="Node2D"]
 scale = Vector2( 2.5, 2.5 )
@@ -13,11 +15,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="background" type="Sprite" parent="Settings"]
+position = Vector2( 203.398, 124.022 )
+scale = Vector2( 0.372131, 0.404022 )
+texture = ExtResource( 3 )
+
 [node name="Audio_Button" type="Button" parent="Settings"]
-margin_left = 99.2217
-margin_top = 92.3076
-margin_right = 291.222
-margin_bottom = 112.308
+margin_left = 111.589
+margin_top = 114.189
+margin_right = 303.59
+margin_bottom = 134.189
 text = "Audio"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,22 +41,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back_Button" type="Button" parent="Settings"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 70.0
-margin_bottom = 33.0
-text = "Back"
+[node name="Quit_Button" type="Button" parent="Settings"]
+margin_left = 165.843
+margin_top = 158.638
+margin_right = 237.843
+margin_bottom = 178.638
+text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quit_Button" type="Button" parent="Settings"]
-margin_left = 161.086
-margin_top = 147.222
-margin_right = 233.086
-margin_bottom = 167.222
-text = "Quit"
+[node name="Close_Button" type="TextureButton" parent="Settings"]
+margin_left = 13.5563
+margin_top = 6.11861
+margin_right = 50.5563
+margin_bottom = 43.1186
+texture_normal = ExtResource( 2 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
