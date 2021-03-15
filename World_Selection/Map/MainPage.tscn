@@ -1131,7 +1131,6 @@ scale = Vector2( 0.316527, 0.316527 )
 texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dice2"]
-visible = false
 polygon = PoolVector2Array( -0.684204, -19.3819, 18.0247, -9.43356, 18.4701, 13.2844, -0.535736, 23.0842, -19.2446, 13.2844, -18.9476, -9.28507 )
 
 [node name="Potion" type="StaticBody2D" parent="."]
