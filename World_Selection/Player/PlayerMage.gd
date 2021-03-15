@@ -5,7 +5,7 @@ const FRICTION = 700
 const MAX_SPEED = 400
 
 var velocity = Vector2.ZERO
-var char_type = "mage"
+var char_type = Main.char_name
 
 func _ready():
 	$AnimatedSprite.animation = char_type

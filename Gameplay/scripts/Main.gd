@@ -1,8 +1,7 @@
 extends Node
 
-var params
+var params = {}
 var questions
-var char_type = "ninja"
 
 var q
 var health = 40
@@ -34,20 +33,10 @@ func _ready():
 
 func start():
 	print('start')
-	questions = [
-		{"q":"what is this? \n nothing aehwh hfeuw fowierj jiewr jiojijijiw ejie aksjdnciw rjeiwo f s ssss e werer ajidf jiwoe f vjsidfe  fjiwoef baba\n uuuu", 
-		"ans":["asds","dfwef","werer","aaa"], 
-		"correct":2
-		},
-		{"q":"bbb", 
-		"ans":["awww","dfwwww","wewwwr", "one qn here"], 
-		"correct":2
-		},
-	]
-	
+	questions = params["qns"]
 	q = questions[0]
 	
-	$Player.start($StartPosition.position, char_type)
+	$Player.start($StartPosition.position)
 	$ProgressBar.max_value = health
 	$ProgressBar.value = health
 	handle_respawn()
@@ -83,21 +72,23 @@ func handle_respawn():
 	curr_q += 1
 	$Player.make_collidable(false)
 	$StartTimer.start()
-	$LevelLabel.text = "LV. 5 - WAVE " + str(curr_q)
+	$LevelLabel.text = "WAVE " + str(curr_q)
 	print('timer started')
-	for i in range(len(q["ans"])):
+	for i in range(len(q["answers"])):
 		create_enemy(i)
 	
 func handle_health():
 	if health<= 0:
 		handle_despawn()
 		params['win'] = false
+		if params["world"] == "challenge":
+			ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
 		ScreenSwitcher.change_scene("res://World_Selection/Map/Story Mode.tscn", params)
 
 func change_label(question):
-	var str_q = question["q"] + "\n"
-	for i in range(len(question["ans"])):
-		str_q += ' \n '+char(65+i)+'. '+question['ans'][i]
+	var str_q = question["question_body"] + "\n"
+	for i in range(len(question["answers"])):
+		str_q += ' \n '+char(65+i)+'. '+question['answers'][i]
 	$Label.text= str_q
 		
 func _on_StartTimer_timeout():
@@ -122,4 +113,6 @@ func _on_Player_defreeze():
 
 func _on_EndTimer_timeout():
 	params['win'] = true
-	ScreenSwitcher.change_scene("res://World_Selection/Map/Story Mode.tscn", params)
+	if params["world"] == "challenge":
+		params.erase("qns")
+		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)

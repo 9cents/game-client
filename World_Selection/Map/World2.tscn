@@ -22,7 +22,7 @@ scale = Vector2( 5, 5 )
 script = ExtResource( 13 )
 
 [node name="BigPinkMap" type="Sprite" parent="."]
-position = Vector2( 280, 88 )
+position = Vector2( 280, 88.4089 )
 scale = Vector2( 2.18311, 0.768539 )
 texture = ExtResource( 3 )
 
@@ -63,10 +63,13 @@ scale = Vector2( 6, 6 )
 transform = Transform2D( 6, 0, 0, 6, 0, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = -0.000665545
+anchor_right = -0.000665545
 margin_left = 50.0
 margin_top = 1.0
 margin_right = 118.0
 margin_bottom = 22.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "World 2"
 align = 1
@@ -119,10 +122,12 @@ next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower1"]
 margin_left = -24.0
-margin_right = 26.0
+margin_right = 65.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower1"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,10 +139,12 @@ next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower2"]
 margin_left = -24.0
-margin_right = 30.0
+margin_right = 66.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower2"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -149,10 +156,12 @@ next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower3"]
 margin_left = -24.0
-margin_right = 31.0
+margin_right = 72.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower3"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -163,12 +172,14 @@ script = ExtResource( 8 )
 next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Assignment"]
-margin_left = -34.8546
-margin_top = -0.943878
-margin_right = 41.1454
-margin_bottom = 13.0561
+margin_left = -35.0
+margin_top = -1.0
+margin_right = 102.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Assignment"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -178,10 +189,11 @@ position = Vector2( 69.7774, 44.1886 )
 script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="BackPortal"]
-margin_left = -33.8541
-margin_top = -1.42544
-margin_right = 38.1459
-margin_bottom = 29.5746
+margin_left = -34.0
+margin_top = -1.0
+margin_right = 94.0
+margin_bottom = 30.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Return to 
 World Page"

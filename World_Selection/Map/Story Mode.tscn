@@ -64,9 +64,10 @@ transform = Transform2D( 6, 0, 0, 6, 0, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_left = 40.0
-margin_top = 1.0
+margin_top = 1.57314
 margin_right = 124.0
-margin_bottom = 16.0
+margin_bottom = 16.5731
+rect_scale = Vector2( 0.6, 0.6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Story Mode"
 align = 1
@@ -116,11 +117,13 @@ position = Vector2( 80, 160 )
 next_scene = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="World1"]
-margin_left = -24.0
-margin_right = 26.0
+margin_left = -31.0
+margin_right = 88.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "World 1"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -130,11 +133,14 @@ position = Vector2( 176, 160 )
 next_scene = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="World2"]
-margin_left = -24.0
-margin_right = 30.0
+margin_left = -38.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "World 2"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -144,11 +150,13 @@ position = Vector2( 280, 160 )
 next_scene = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="World3"]
-margin_left = -24.0
-margin_right = 31.0
+margin_left = -29.0
+margin_right = 86.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "World 3"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -157,10 +165,11 @@ __meta__ = {
 position = Vector2( 67.742, 45.9185 )
 
 [node name="Label" type="Label" parent="BackPortal"]
-margin_left = -31.6632
-margin_top = -2.13858
-margin_right = 33.3368
-margin_bottom = 28.8614
+margin_left = -32.0
+margin_top = -2.0
+margin_right = 92.0
+margin_bottom = 29.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Return to 
 Main Page"

@@ -8,12 +8,12 @@ var _params = null
 func change_scene(next_scene, params=null):
 	_params = params
 	get_tree().change_scene(next_scene)
-	print(_params)
+#	print(_params)
 
 func change_scene_to(next_scene, params=null):
 	_params = params
 	get_tree().change_scene_to(next_scene)
-	print(_params)
+#	print(_params)
 
 # In the newly opened scene, you can get the parameters by name
 func get_param(name):

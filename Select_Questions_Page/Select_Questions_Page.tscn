@@ -51,17 +51,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GoBackButton" type="TextureButton" parent="BackgroundColor"]
-margin_left = 16.0
-margin_top = 520.0
-margin_right = 528.0
-margin_bottom = 1032.0
-rect_scale = Vector2( 0.142873, 0.136946 )
-texture_normal = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ProceedButton" type="TextureButton" parent="BackgroundColor"]
 margin_left = 936.0
 margin_top = 520.0
@@ -294,12 +283,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GoBackButton" type="TextureButton" parent="."]
+margin_left = 16.0
+margin_top = 520.0
+margin_right = 528.0
+margin_bottom = 1032.0
+rect_scale = Vector2( 0.142873, 0.136946 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="QuestionsListPage" parent="." instance=ExtResource( 5 )]
 
-[connection signal="pressed" from="BackgroundColor/GoBackButton" to="." method="_on_GoBackButton_pressed"]
 [connection signal="pressed" from="BackgroundColor/ProceedButton" to="." method="_on_ProceedButton_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question1/Panel/Q1button" to="." method="_on_Q1button_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question2/Panel/Q2button" to="." method="_on_Q2button_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question3/Panel/Q3button" to="." method="_on_Q3button_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question4/Panel/Q4button" to="." method="_on_Q4button_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question5/Panel/Q5button" to="." method="_on_Q5button_pressed"]
+[connection signal="pressed" from="GoBackButton" to="." method="_on_GoBackButton_pressed"]
+[connection signal="go_back_from_QuestionsList" from="QuestionsListPage" to="." method="_on_QuestionsListPage_go_back_from_QuestionsList"]
+[connection signal="question_was_selected" from="QuestionsListPage" to="." method="_on_QuestionsListPage_question_was_selected"]

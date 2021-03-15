@@ -5,25 +5,30 @@ export var next_scene: PackedScene
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var world_name
+var tower_names = []
+var world_id
 
-func start(worldname):
+func start(worldname, worldid, result):
 	world_name = worldname
+	tower_names = result
+	world_id = worldid
 
 func _on_Tower1_body_entered(body):
-	teleport('tower1')
+	teleport(tower_names[world_id][0])
 	
 func _on_Tower2_body_entered(body):
-	teleport('tower2')
+	teleport(tower_names[world_id][1])
 
 func _on_Tower3_body_entered(body):
-	teleport('tower3')
+	teleport(tower_names[world_id][2])
 
 func _on_Assignment_body_entered(body):
 	teleport('assignment')
 
 
-func teleport(tower_name) -> void:
+func teleport(tower) -> void:
 	#animation_player.play("fade_in")
 	#yield(animation_player, "animation_finished")
-	ScreenSwitcher.change_scene_to(next_scene, {'world': world_name, 'tower': tower_name})
+	print(tower)
+	ScreenSwitcher.change_scene_to(next_scene, {'world': world_name, 'tower': tower})
 

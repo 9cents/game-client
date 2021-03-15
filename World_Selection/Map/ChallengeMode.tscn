@@ -60,10 +60,14 @@ scale = Vector2( 6, 6 )
 transform = Transform2D( 6, 0, 0, 6, 0, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+anchor_top = -0.000567949
+anchor_right = 0.0273438
+anchor_bottom = -0.000567948
 margin_left = 30.0
 margin_top = 3.0
 margin_right = 121.0
-margin_bottom = 22.0
+margin_bottom = 17.0
+rect_scale = Vector2( 0.6, 0.6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Challenge Mode"
 align = 1
@@ -113,11 +117,13 @@ position = Vector2( 130, 160 )
 next_scene = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="Create"]
-margin_left = -20.0
-margin_right = 23.0
-margin_bottom = 14.0
+margin_left = -11.0
+margin_right = 49.0
+margin_bottom = 17.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Create"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -127,11 +133,13 @@ position = Vector2( 240.275, 160 )
 next_scene = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="Play"]
-margin_left = -12.0
-margin_right = 18.0
+margin_left = -4.0
+margin_right = 30.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -140,10 +148,11 @@ __meta__ = {
 position = Vector2( 74.8373, 46.5649 )
 
 [node name="Label" type="Label" parent="BackPortal"]
-margin_left = -30.9683
-margin_top = 0.533936
-margin_right = 34.0317
-margin_bottom = 31.5339
+margin_left = -31.0
+margin_top = 1.0
+margin_right = 85.0
+margin_bottom = 32.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Return to 
 Main Page"

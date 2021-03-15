@@ -1,27 +1,234 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://HTTPRequest.tscn" type="PackedScene" id=1]
+[gd_scene load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
 
+var BASE_URL = 'http://172.21.148.168:5000'
+var pending_req = {}
+signal call_done(json_response)
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-export (PackedScene) var HTTPReq
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
+# FOR LOGIN
+func login(data):
+	var url = BASE_URL + '/login'
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"login_done\")
+	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_POST, body)
+	pending_req[\"login_key\"] = req
 
+func login_done(result, response_code, headers, body):
+	var req = pending_req.get(\"login_key\")
+	remove_child(req)
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = parse_json(body.get_string_from_utf8())
+	emit_signal(\"call_done\", json)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func signin(data):
+	var url = BASE_URL + '/register'
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"signin_done\")
+	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_POST, body)
+	pending_req[\"signin_key\"] = req
+
+func signin_done(result, response_code, headers, body):
+	var req = pending_req.get(\"signin_key\")
+	remove_child(req)
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		print(body.get_string_from_utf8())
+		return
+	var json = parse_json(body.get_string_from_utf8())
+	emit_signal(\"call_done\", json)
+
+#  FOR LEADERBOARD
+func get_leaderboard_all(data):
+	var url = BASE_URL + '/game/leaderboard'
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"leaderboard_all_done\")
+	req.request(url)
+	pending_req[\"leaderboard_all\"] = req
+
+func leaderboard_all_done(result, response_code, headers, body):
+	var req = pending_req.get(\"leaderboard_all\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = {\"value\": parse_json(body.get_string_from_utf8())}
+	json['type'] = 'all'
+	emit_signal(\"call_done\", json)
+
+func get_leaderboard_user(data):
+	var url = BASE_URL + '/game/leaderboard?player_name=' + Main.username
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"leaderboard_user_done\")
+	req.request(url)
+	pending_req[\"leaderboard_user\"] = req
+
+func leaderboard_user_done(result, response_code, headers, body):
+	var req = pending_req.get(\"leaderboard_user\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = {\"value\": parse_json(body.get_string_from_utf8())}
+	json['type'] = 'single'
+	emit_signal(\"call_done\", json)
+	
+# FOR USER DUNGEON
+func get_challenge_data(data):
+	var url = BASE_URL + '/game/challengedata?player_name=' + data[\"player_name\"]
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"challenge_data_done\")
+	req.request(url)
+	pending_req[\"challenge_data\"] = req
+
+func challenge_data_done(result, response_code, headers, body):
+	var req = pending_req.get(\"challenge_data\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = parse_json(body.get_string_from_utf8())
+	emit_signal(\"call_done\", json)
+
+# FOR STORY MODE MAP
+func get_world_name(data):
+	var url = BASE_URL + '/game/worldnames'
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"world_name_done\")
+	req.request(url)
+	pending_req[\"world_name\"] = req
+
+func world_name_done(result, response_code, headers, body):
+	var req = pending_req.get(\"world_name\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = parse_json(body.get_string_from_utf8())
+	emit_signal(\"call_done\", json)
+	
+# FOR WORLD MODE MAP
+func get_tower_name(data):
+	var url = BASE_URL + '/game/towernames'
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"tower_name_done\")
+	req.request(url)
+	pending_req[\"tower_name\"] = req
+
+func tower_name_done(result, response_code, headers, body):
+	var req = pending_req.get(\"tower_name\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = parse_json(body.get_string_from_utf8())
+	emit_signal(\"call_done\", json)
+
+# FOR STORY MODE GAMEPLAY
+func get_qns_list(data):
+	var url = BASE_URL + '/game/storydata?player_name=Damien&tower_name=Introduction'
+#	var url = BASE_URL + '/game/storydata?player_name='+ Main.username +'&tower_name=' + data[\"tower\"]
+	print (\"tower name:\" + str(data[\"tower\"]))
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"get_qns_done\")
+	req.request(url)
+	pending_req[\"qns_list\"] = req
+
+func get_qns_done(result, response_code, headers, body):
+	var req = pending_req.get(\"qns_list\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = parse_json(body.get_string_from_utf8())
+	emit_signal(\"call_done\", json)
+
+# CREATE CHALLANGE
+func update_dungeon(data):
+	
+	var url = BASE_URL + '/dungeon?player_name=' + Main.username
+	data = [
+				\"What is the course name?\",
+				\"Who are the course coordinators?\",
+				\"When is the exam date for AY20/21 Semester 2?\",
+				\"Which of these statements is CORRECT?\",
+				\"\"
+			]
+	var body = to_json(data)
+	print(body)
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"update_dungeon_done\")
+	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
+	pending_req[\"update_dungeon\"] = req
+
+func update_dungeon_done(result, response_code, headers, body):
+	var req = pending_req.get(\"udpate_dungeon\")
+	remove_child(req)
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		print(\"error\",\"errrr\")
+		print(body.get_string_from_utf8())
+		return
+	var json = parse_json(body.get_string_from_utf8())
+	print(\"success\", json)
+
+func get_world_qns(data):
+	var url = BASE_URL + '/game/worldquestions'
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"world_qns_done\")
+	req.request(url)
+	pending_req[\"world_qns\"] = req
+
+func world_qns_done(result, response_code, headers, body):
+	var req = pending_req.get(\"world_qns\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = {\"value\": parse_json(body.get_string_from_utf8())}
+	json['qns'] = 'all'
+	emit_signal(\"call_done\", json)
 "
 
 [node name="Node" type="Node"]
 script = SubResource( 1 )
-HTTPReq = ExtResource( 1 )

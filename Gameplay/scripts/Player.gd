@@ -1,6 +1,6 @@
 extends Area2D
 
-var char_type
+var char_type = Main.char_name
 var ulti_time
 var cooldown_time
 
@@ -25,10 +25,9 @@ var ulti_dict = {
 	}
 }
 
-func start(pos, chtype):
+func start(pos):
 	position = pos
 	show()
-	char_type = chtype
 	ulti_time = 3
 	cooldown_time = 3
 	$AnimatedSprite.animation = char_type

@@ -1,12 +1,31 @@
 extends Control
 
-func _input(event):
-	if(event is InputEventKey):
-		go_title_screen()
+#func _input(event):
+#	if(event is InputEventKey):
+#		go_title_screen()
+var params = ScreenSwitcher._params
+
+func _ready():
+	$Timer.start()
+	if !("qns" in params):
+		Api.connect("call_done", self, "get_qns_done")
+		Api.get_qns_list({"tower":params["tower"]})
 
 func go_title_screen():
-	ScreenSwitcher.change_scene("res://Gameplay/Main.tscn", ScreenSwitcher._params)
+	if "qns" in params:
+		ScreenSwitcher.change_scene("res://Gameplay/Main.tscn", params)
+	$Timer.start()
+	
+
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	go_title_screen()
 	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	go_title_screen()
+	$Timer.stop()
+	
+func get_qns_done(result):
+	params["qns"] = result

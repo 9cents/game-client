@@ -4,33 +4,41 @@ var QUESTIONS_ALLOWED = 5
 var student_questions_num = 0
 var selected_question_box
 
+var arr = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	# note, every time this page is accessed from outside menu, query the database
 	# for the 5 questions
+	Api.connect("call_done", self, "user_query_done")
+	Api.get_challenge_data({"player_name": Main.username})
+#	Api.get_challenge_data({"player_name": 'Desmond'})
+	
 	# For the array, if they never do before, it will be [None, None....]
 	# If it is None, count = 0, text will display <CLICK HERE TO SELECT A QUESTION>
-	# FUNCTION REQUIRED: Retrieve data from HTTP request as array
-	var arr = ["TEST1", "", "", "", "TEST5"]
+	#get_tree().change_scene("res://Map/Main Page.tscn")
+
+func user_query_done(results):
+	if typeof(results)==TYPE_ARRAY && len(results) != 3:
+		update_user_qns(results)
+
+func update_user_qns(results):
+	if results == []:
+		arr = ['','','','','']
+	else:
+		for i in results:
+			arr.append(i["question_body"])
+		while len(arr)<5:
+			arr.append("")
+	
 	update_Question1_text(arr[0])
 	update_Question2_text(arr[1])
 	update_Question3_text(arr[2])
 	update_Question4_text(arr[3])
 	update_Question5_text(arr[4])
+	
 	for question in arr:
 		if question != "":
 			student_questions_num += 1
-			
-			
-			
-	pass
-
-	#get_tree().change_scene("res://Map/Main Page.tscn")
-	
-
-
-
 
 #Update text of various components
 func update_Question1_text(question):
@@ -99,6 +107,7 @@ func _on_ProceedButton_pressed():
 	if student_questions_num == QUESTIONS_ALLOWED:
 		# Only possible when student_questions_num == QUESTIONS_ALLOWED, the number of questions (we use 5)
 		# FUNCTION FOR CHENG YUN, GO TO ANOTHER SCENE.
+		Api.update_dungeon(arr)
 		ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 		# FUNCTION: HTTP Request. Update database with the current questions
 	# If condition not met, this button does nothing
@@ -113,7 +122,9 @@ func move_to_questions_list():
 func _on_QuestionsListPage_question_was_selected(question):
 	$BackgroundColor.show() # Change to question selection page scene
 	$QuestionsListPage/BackgroudColor.hide() # Hide instanced scene
-	student_questions_num += 1
+	if arr[selected_question_box-1] == '':
+		student_questions_num += 1
+	arr[selected_question_box-1] = question
 	match selected_question_box:
 		1:
 			update_Question1_text(question)

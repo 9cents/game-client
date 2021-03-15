@@ -65,6 +65,7 @@ margin_left = 40.0
 margin_top = 1.23423
 margin_right = 133.168
 margin_bottom = 17.8585
+rect_scale = Vector2( 0.6, 0.6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Main Page"
 align = 1
@@ -113,12 +114,14 @@ position = Vector2( 80, 160 )
 next_scene = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="Story"]
-margin_left = -34.6908
-margin_top = 0.712723
-margin_right = 37.3092
-margin_bottom = 14.7127
+margin_left = -35.0
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Story Mode"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -128,11 +131,13 @@ position = Vector2( 176, 160 )
 next_scene = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Challenege"]
-margin_left = -30.4144
-margin_right = 35.5856
+margin_left = -30.0
+margin_right = 86.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Challenge "
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -142,12 +147,13 @@ position = Vector2( 280, 160 )
 next_scene = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="Leaderboard"]
-margin_left = -36.8289
-margin_top = 0.712723
-margin_right = 43.1711
-margin_bottom = 14.7127
+margin_left = -37.0
+margin_right = 98.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Leaderboard"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

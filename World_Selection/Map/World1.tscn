@@ -63,10 +63,11 @@ scale = Vector2( 6, 6 )
 transform = Transform2D( 6, 0, 0, 6, 0, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 50.0
+margin_left = 49.6592
 margin_top = 1.99888
-margin_right = 118.984
+margin_right = 118.643
 margin_bottom = 22.9989
+rect_scale = Vector2( 0.6, 0.6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "World 1"
 align = 1
@@ -118,10 +119,12 @@ next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower1"]
 margin_left = -24.0
-margin_right = 26.0
+margin_right = 73.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower1"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -133,10 +136,12 @@ next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower2"]
 margin_left = -24.0
-margin_right = 30.0
+margin_right = 68.0
 margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower2"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -148,10 +153,12 @@ next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower3"]
 margin_left = -24.0
-margin_right = 31.0
-margin_bottom = 14.0
+margin_right = 75.0
+margin_bottom = 16.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower3"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -162,12 +169,14 @@ script = ExtResource( 8 )
 next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Assignment"]
-margin_left = -34.8546
-margin_top = -0.943878
-margin_right = 41.1454
-margin_bottom = 13.0561
+margin_left = -35.0
+margin_top = -1.0
+margin_right = 95.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Assignment"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -177,10 +186,11 @@ position = Vector2( 66.9255, 46.7472 )
 script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="BackPortal"]
-margin_left = -34.1614
-margin_top = -1.19863
-margin_right = 37.8386
-margin_bottom = 29.8014
+margin_left = -35.0
+margin_top = -1.0
+margin_right = 98.0
+margin_bottom = 30.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Return to 
 World Page"

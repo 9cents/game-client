@@ -16,6 +16,7 @@ onready var back_button = get_node("Background/CreateAccount/BackButton")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Api.connect("call_done", self, "request_finished")
 	pass # Replace with function body.
 
 
@@ -25,12 +26,11 @@ func _ready():
 
 
 func _on_LoginButton_pressed():
-	ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 	if login_user.get_text() == "":
-		print("Please enter a valid username")
+		$ErrorMessages.text = "Please enter a valid username"
 		
 	elif login_password.get_text() == "":
-		print("Please enter a valid password")	
+		$ErrorMessages.text = "Please enter a valid password"
 	
 	else:
 		var login = false
@@ -38,18 +38,10 @@ func _on_LoginButton_pressed():
 		create_button.disabled = true
 		var username = login_user.get_text()
 		var password = login_password.get_text()
-		print("Attemping to login")
-		#Send username and password to the databse
-		#HTTP request to verify the information to database
-		#Change the boolean variable login to true then switch to game scene
-		if login == true:
-			ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
-			pass #Switch to scene
-			
-		else:
-			print("Unsuccessful login")
-			pass
-
+		$ErrorMessages.text = "Attemping to login..."
+		Main.username = username
+		
+		Api.login({"name": username, "password": password})
 
 func _on_CreateAccountButton_pressed():
 	login_screen.hide()
@@ -58,27 +50,29 @@ func _on_CreateAccountButton_pressed():
 	create_username_input.clear()
 	create_password_input.clear()
 	create_passwordrep_input.clear()
+	$ErrorMessages.text = ''
 
 func _on_BackButton_pressed():
 	login_screen.show()
 	create_account_screen.hide()
 	login_user.clear()
 	login_password.clear()
+	$ErrorMessages.text = ''
 
 
 func _on_ConfirmButton_pressed():
 	
 	if create_username_input.get_text() == "":
-		print("Please enter a valid username")
+		$ErrorMessages.text = ("Please enter a valid username")
 		
 	elif create_password_input.get_text() == "":
-		print("Please enter a valid password")	
+		$ErrorMessages.text = ("Please enter a valid password")	
 		
 	elif create_password_input.get_text().length() <= 6:
-		print("Password must contain at least 7 characters")		
+		$ErrorMessages.text = ("Password must contain at least 7 characters")		
 		
 	elif create_passwordrep_input.get_text() != create_password_input.get_text():
-		print("Password do not match")
+		$ErrorMessages.text = ("Password do not match")
 	
 	else:
 		var created = false
@@ -87,15 +81,26 @@ func _on_ConfirmButton_pressed():
 		var email = create_email_input.get_text()
 		var username = create_username_input.get_text()
 		var password = create_password_input.get_text()
-		print("Attemping to create account")
-		#Send email, username and password to the databse
-		#HTTP update to database
-		if created == true:
-			print("Account successfully created")
-			# ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
-		else:
-			print("Unsuccessful account creation")
+		$ErrorMessages.text =("Attemping to create account")
+		Api.signin({"name": username, "password": password})
 
-		
+func request_finished(response):
+	if login_screen.is_visible_in_tree():
+		if "error" in response:
+			login_button.disabled = false
+			create_button.disabled = false
+			$ErrorMessages.text = "Unsuccessful login"
+		else:
+			Main.char_name = 'ninja'
+			ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
+	elif create_account_screen.is_visible_in_tree():
+		if "error" in response:
+			$ErrorMessages.text = "Unsuccessful account creation"
+		else:
+			$ErrorMessages.text = "Account successfully created"
+			login_screen.show()
+			create_account_screen.hide()
+			login_user.clear()
+			login_password.clear()
 
 		

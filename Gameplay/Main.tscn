@@ -44,6 +44,10 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 light_mask = 17
+anchor_left = 3.72529e-09
+anchor_top = 6.35783e-09
+anchor_right = 3.72529e-09
+anchor_bottom = 6.35783e-09
 margin_left = 50.0
 margin_top = 62.0
 margin_right = 974.0
