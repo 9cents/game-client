@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
@@ -11,9 +11,16 @@
 [ext_resource path="res://World_Selection/Interface/Settings Page.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World_Selection/MainBackPortal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Play_Dungeon/PlayerDungeon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Character_Design/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 17
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
 
 [node name="Main Page" type="Node2D"]
 scale = Vector2( 5, 5 )
@@ -60,15 +67,17 @@ scale = Vector2( 6, 6 )
 transform = Transform2D( 6, 0, 0, 6, 0, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = -0.000332773
 anchor_top = -0.000567949
-anchor_right = 0.0273438
+anchor_right = 0.027011
 anchor_bottom = -0.000567948
 margin_left = 30.0
 margin_top = 3.0
 margin_right = 121.0
 margin_bottom = 17.0
 rect_scale = Vector2( 0.6, 0.6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Challenge Mode"
 align = 1
 uppercase = true
