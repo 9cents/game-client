@@ -158,8 +158,8 @@ func tower_name_done(result, response_code, headers, body):
 
 # FOR STORY MODE GAMEPLAY
 func get_qns_list(data):
-	var url = BASE_URL + '/game/storydata?player_name=Desmond&tower_name=' + data[\"tower\"]
-#	var url = BASE_URL + '/game/storydata?player_name='+ Main.username +'&tower_name=' + data[\"tower\"]
+#	var url = BASE_URL + '/game/storydata?player_name=Desmond&tower_name=' + data[\"tower\"]
+	var url = BASE_URL + '/game/storydata?player_name='+ Main.username +'&tower_name=' + data[\"tower\"]
 	print (\"tower name:\" + str(data[\"tower\"]))
 	var body = to_json(data)
 	
