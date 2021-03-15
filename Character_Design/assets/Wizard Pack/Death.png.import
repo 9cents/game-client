@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Death.png-a886fab0a32b5976958251c2989c67ff.stex"
+path="res://.import/Death.png-2f86430e47cc70d7b3b0b75f01a28365.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wizard Pack/Death.png"
-dest_files=[ "res://.import/Death.png-a886fab0a32b5976958251c2989c67ff.stex" ]
+source_file="res://Character_Design/assets/Wizard Pack/Death.png"
+dest_files=[ "res://.import/Death.png-2f86430e47cc70d7b3b0b75f01a28365.stex" ]
 
 [params]
 

@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Character_Design/assets/background_mountain.png" type="Texture" id=1]
+[ext_resource path="res://Character_Design/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://TransitionScreen/TransitionScreen.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 5
+extra_spacing_space = 5
+font_data = ExtResource( 2 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_top = 0.69873
+margin_right = 1049.0
+margin_bottom = 624.699
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 123.301
+margin_top = 103.0
+margin_right = 900.301
+margin_bottom = 364.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 231.07
+margin_top = 432.699
+margin_right = 794.07
+margin_bottom = 510.699
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Label" parent="Button"]
+anchor_left = -0.00124108
+anchor_right = -0.00124108
+margin_left = -112.659
+margin_top = 10.1469
+margin_right = 664.341
+margin_bottom = 66.1469
+custom_fonts/font = SubResource( 1 )
+text = "Continue"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]

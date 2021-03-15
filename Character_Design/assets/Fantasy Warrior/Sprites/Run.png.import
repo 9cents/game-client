@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Run.png-08d666d16fbf6f4a453854db59730d75.stex"
+path="res://.import/Run.png-3648728e39355966a46c66b786300081.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Fantasy Warrior/Sprites/Run.png"
-dest_files=[ "res://.import/Run.png-08d666d16fbf6f4a453854db59730d75.stex" ]
+source_file="res://Character_Design/assets/Fantasy Warrior/Sprites/Run.png"
+dest_files=[ "res://.import/Run.png-3648728e39355966a46c66b786300081.stex" ]
 
 [params]
 

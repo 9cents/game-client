@@ -81,9 +81,15 @@ func handle_health():
 	if health<= 0:
 		handle_despawn()
 		params['win'] = false
+		params.erase("qns")
+		params["text"] = "You Lose :( Keep trying!\n" + params["world"] + "-" + params["tower"]
 		if params["world"] == "challenge":
-			ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
-		ScreenSwitcher.change_scene("res://World_Selection/Map/Story Mode.tscn", params)
+			params["next_scene"] = "res://World_Selection/Map/ChallengeMode.tscn"
+	#		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
+		else:
+			params["next_scene"] = "res://World_Selection/Map/Story Mode.tscn"
+	#		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
+		ScreenSwitcher.change_scene("res://TransitionScreen/TransitionScreen.tscn", params)
 
 func change_label(question):
 	var str_q = question["question_body"] + "\n"
@@ -113,6 +119,12 @@ func _on_Player_defreeze():
 
 func _on_EndTimer_timeout():
 	params['win'] = true
+	params.erase("qns")
+	params["text"] = "Congratulation! You win!\n" + params["world"] + "-" + params["tower"]
 	if params["world"] == "challenge":
-		params.erase("qns")
-		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
+		params["next_scene"] = "res://World_Selection/Map/ChallengeMode.tscn"
+#		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
+	else:
+		params["next_scene"] = "res://World_Selection/Map/Story Mode.tscn"
+#		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
+	ScreenSwitcher.change_scene("res://TransitionScreen/TransitionScreen.tscn", params)

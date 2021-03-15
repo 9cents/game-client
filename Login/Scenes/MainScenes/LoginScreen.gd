@@ -19,12 +19,6 @@ func _ready():
 	Api.connect("call_done", self, "request_finished")
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_LoginButton_pressed():
 	if login_user.get_text() == "":
 		$ErrorMessages.text = "Please enter a valid username"
@@ -91,8 +85,11 @@ func request_finished(response):
 			create_button.disabled = false
 			$ErrorMessages.text = "Unsuccessful login"
 		else:
-			Main.char_name = 'ninja'
-			ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
+			Main.char_name = null
+			if Main.char_name == null:
+				ScreenSwitcher.change_scene("res://Character_Design/Character_Design.tscn")
+			else:
+				ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
 	elif create_account_screen.is_visible_in_tree():
 		if "error" in response:
 			$ErrorMessages.text = "Unsuccessful account creation"

@@ -1,73 +1,69 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=38 format=2]
 
-[ext_resource path="res://script/btn_Warrior.gd" type="Script" id=1]
-[ext_resource path="res://assets/background_mountain.png" type="Texture" id=2]
-[ext_resource path="res://assets/Fantasy Warrior/Sprites/Idle.png" type="Texture" id=3]
-[ext_resource path="res://theme/selected_button_theme.tres" type="StyleBox" id=4]
-[ext_resource path="res://theme/not_selected_button_theme.tres" type="StyleBox" id=5]
-[ext_resource path="res://assets/Wizard Pack/Idle.png" type="Texture" id=6]
-[ext_resource path="res://script/btn_mage.gd" type="Script" id=7]
-[ext_resource path="res://assets/Martial Hero 2/Sprites/Idle.png" type="Texture" id=8]
-[ext_resource path="res://script/btn_assasin.gd" type="Script" id=9]
-[ext_resource path="res://Character_Design.gd" type="Script" id=10]
-[ext_resource path="res://theme/hovered_button_theme.tres" type="StyleBox" id=11]
-[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=12]
-[ext_resource path="res://theme/confirm_selected.tres" type="StyleBox" id=13]
-[ext_resource path="res://theme/confirm_not_selected.tres" type="StyleBox" id=14]
-[ext_resource path="res://script/btn_Confirm.gd" type="Script" id=15]
+[ext_resource path="res://Character_Design/assets/background_mountain.png" type="Texture" id=2]
+[ext_resource path="res://Character_Design/assets/Fantasy Warrior/Sprites/Idle.png" type="Texture" id=3]
+[ext_resource path="res://Character_Design/theme/selected_button_theme.tres" type="StyleBox" id=4]
+[ext_resource path="res://Character_Design/theme/not_selected_button_theme.tres" type="StyleBox" id=5]
+[ext_resource path="res://Character_Design/assets/Wizard Pack/Idle.png" type="Texture" id=6]
+[ext_resource path="res://Character_Design/assets/Martial Hero 2/Sprites/Idle.png" type="Texture" id=8]
+[ext_resource path="res://Character_Design/Character_Design.gd" type="Script" id=10]
+[ext_resource path="res://Character_Design/theme/hovered_button_theme.tres" type="StyleBox" id=11]
+[ext_resource path="res://Character_Design/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Character_Design/theme/confirm_selected.tres" type="StyleBox" id=13]
+[ext_resource path="res://Character_Design/theme/confirm_not_selected.tres" type="StyleBox" id=14]
 
 [sub_resource type="BitmapFont" id=1]
 height = 304.0
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 200, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 400, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 600, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 231, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 462, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 693, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 924, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 1155, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 0, 200, 200 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
@@ -121,14 +117,14 @@ region = Rect2( 1458, 0, 162, 162 )
 
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "ninja",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "mage",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "ninja",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
@@ -140,33 +136,23 @@ animations = [ {
 [sub_resource type="DynamicFont" id=23]
 size = 59
 outline_size = 6
-outline_color = Color( 0.670588, 0.415686, 0.54902, 1 )
+outline_color = Color( 0.333333, 0.2, 0.270588, 1 )
 extra_spacing_top = 1
 extra_spacing_char = 3
 extra_spacing_space = 1
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFontData" id=24]
-font_path = "res://fonts/Xolonium-Regular.ttf"
-
 [sub_resource type="DynamicFont" id=25]
 size = 36
 outline_size = 1
 extra_spacing_char = 12
-font_data = SubResource( 24 )
-
-[sub_resource type="DynamicFontData" id=26]
-font_path = "res://fonts/Xolonium-Regular.ttf"
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=27]
 size = 27
 outline_size = 2
 outline_color = Color( 0.133333, 0.0352941, 0.219608, 1 )
-font_data = SubResource( 26 )
-
-[sub_resource type="DynamicFontData" id=28]
-hinting = 1
-font_path = "res://fonts/Xolonium-Regular.ttf"
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=29]
 size = 40
@@ -174,7 +160,7 @@ outline_size = 4
 outline_color = Color( 0.133333, 0.0352941, 0.219608, 1 )
 use_filter = true
 extra_spacing_char = 2
-font_data = SubResource( 28 )
+font_data = ExtResource( 12 )
 
 [node name="Character_Design" type="Control"]
 anchor_right = 1.0
@@ -207,11 +193,9 @@ custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
 keep_pressed_outside = true
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
-start_focused = true
 
 [node name="btn_mage" type="Button" parent="."]
 anchor_left = 0.369141
@@ -222,7 +206,6 @@ custom_styles/hover = ExtResource( 11 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
-script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -237,7 +220,6 @@ custom_styles/hover = ExtResource( 11 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
-script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -288,6 +270,19 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="ErrorMessage" type="Label" parent="."]
+anchor_left = 0.0332031
+anchor_top = 0.92185
+anchor_right = 1.97949
+anchor_bottom = 1.05185
+margin_right = -65.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 23 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="btn_Confirm" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0.533333 )
 anchor_left = 0.330331
@@ -300,7 +295,6 @@ custom_styles/focus = ExtResource( 13 )
 custom_styles/normal = ExtResource( 14 )
 custom_fonts/font = SubResource( 25 )
 text = "CONFIRM"
-script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -394,6 +388,8 @@ align = 0
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
 [connection signal="pressed" from="btn_Warrior" to="." method="_on_btn_Warrior_pressed"]
 [connection signal="pressed" from="btn_mage" to="." method="_on_btn_mage_pressed"]
 [connection signal="pressed" from="btn_assasin" to="." method="_on_btn_assasin_pressed"]
+[connection signal="pressed" from="btn_Confirm" to="." method="_on_btn_Confirm_pressed"]

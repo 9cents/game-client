@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Hit.png-82fe320001741028b526fbcf063fe28e.stex"
+path="res://.import/Hit.png-2bb36f4ae18c94a3e2413d1655702023.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wizard Pack/Hit.png"
-dest_files=[ "res://.import/Hit.png-82fe320001741028b526fbcf063fe28e.stex" ]
+source_file="res://Character_Design/assets/Wizard Pack/Hit.png"
+dest_files=[ "res://.import/Hit.png-2bb36f4ae18c94a3e2413d1655702023.stex" ]
 
 [params]
 

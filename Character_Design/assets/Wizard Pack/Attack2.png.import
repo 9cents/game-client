@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Attack2.png-86423bbb83470b4b46ff66d0cc1f8126.stex"
+path="res://.import/Attack2.png-5ac42f3f1cca18bd44607ebd84234eaa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wizard Pack/Attack2.png"
-dest_files=[ "res://.import/Attack2.png-86423bbb83470b4b46ff66d0cc1f8126.stex" ]
+source_file="res://Character_Design/assets/Wizard Pack/Attack2.png"
+dest_files=[ "res://.import/Attack2.png-5ac42f3f1cca18bd44607ebd84234eaa.stex" ]
 
 [params]
 

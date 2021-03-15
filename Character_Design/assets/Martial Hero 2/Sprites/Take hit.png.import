@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Take hit.png-256a371cf968d298da347af51e0eea00.stex"
+path="res://.import/Take hit.png-720e97828e8555349224519929dae126.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Martial Hero 2/Sprites/Take hit.png"
-dest_files=[ "res://.import/Take hit.png-256a371cf968d298da347af51e0eea00.stex" ]
+source_file="res://Character_Design/assets/Martial Hero 2/Sprites/Take hit.png"
+dest_files=[ "res://.import/Take hit.png-720e97828e8555349224519929dae126.stex" ]
 
 [params]
 

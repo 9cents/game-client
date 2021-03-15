@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Run.png-22747035b1bbab3bb066002c5a82e037.stex"
+path="res://.import/Run.png-29756908bde6cb1b4a7be06a90aaff43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Martial Hero 2/Sprites/Run.png"
-dest_files=[ "res://.import/Run.png-22747035b1bbab3bb066002c5a82e037.stex" ]
+source_file="res://Character_Design/assets/Martial Hero 2/Sprites/Run.png"
+dest_files=[ "res://.import/Run.png-29756908bde6cb1b4a7be06a90aaff43.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Attack1.png-fda529d8713a797f8000037bb8ecb194.stex"
+path="res://.import/Attack1.png-a37b92a1d859de4da410d826f98b484a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Martial Hero 2/Sprites/Attack1.png"
-dest_files=[ "res://.import/Attack1.png-fda529d8713a797f8000037bb8ecb194.stex" ]
+source_file="res://Character_Design/assets/Martial Hero 2/Sprites/Attack1.png"
+dest_files=[ "res://.import/Attack1.png-a37b92a1d859de4da410d826f98b484a.stex" ]
 
 [params]
 
