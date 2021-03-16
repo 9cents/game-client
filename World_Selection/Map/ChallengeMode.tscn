@@ -1,17 +1,25 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World_Selection/Map/Assets/BigGreyMap.png" type="Texture" id=3]
-[ext_resource path="res://World_Selection/Map/Assets/Wall.png" type="Texture" id=4]
-[ext_resource path="res://World_Selection/Map/Assets/Crate.png" type="Texture" id=5]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/wall.png" type="Texture" id=3]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/Shield.png" type="Texture" id=4]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/Sign.png" type="Texture" id=5]
+[ext_resource path="res://Leaderboard/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/FloorTile.png" type="Texture" id=7]
 [ext_resource path="res://Select_Questions_Page/Select_Questions_Page.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/Chair.png" type="Texture" id=9]
 [ext_resource path="res://World_Selection/MainBackPortal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Play_Dungeon/PlayerDungeon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Character_Design/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/Sword.png" type="Texture" id=13]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/Crate.png" type="Texture" id=14]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/Barrel.png" type="Texture" id=15]
+[ext_resource path="res://World_Selection/Map/Assets/Challenge/SignBoard.png" type="Texture" id=16]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 17
@@ -19,18 +27,146 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 12 )
 
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
+
 [node name="Main Page" type="Node2D"]
 scale = Vector2( 5, 5 )
 
-[node name="BigGreyMap" type="Sprite" parent="."]
-position = Vector2( 280, 88 )
-scale = Vector2( 2.18311, 0.768539 )
-texture = ExtResource( 3 )
+[node name="FloorTile" type="Sprite" parent="."]
+position = Vector2( 24.0904, 0.506715 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, -5, 563, 180 )
 
-[node name="Wall" type="Sprite" parent="."]
-position = Vector2( 280.498, 84.5302 )
-scale = Vector2( 2.18361, 0.777108 )
+[node name="wall" type="Sprite" parent="."]
+position = Vector2( 23.5602, -57.7106 )
+scale = Vector2( 0.584073, 0.904619 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 966, 64 )
+
+[node name="Sign" type="Sprite" parent="."]
+position = Vector2( 331.257, -32.7926 )
+scale = Vector2( 1.8818, 1.40273 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Sign"]
+margin_left = -11.6127
+margin_top = -4.33525
+margin_right = 41.3873
+margin_bottom = 9.66475
+rect_scale = Vector2( 0.458194, 1.20304 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.741176, 0.105882, 0.105882, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Dodgeware"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shield" type="Sprite" parent="."]
+position = Vector2( 561.772, -34.8107 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
+
+[node name="Sword" type="Sprite" parent="."]
+position = Vector2( 51.6703, -36.553 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 13 )
+
+[node name="ChairBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 406.963, 111.184 )
+scale = Vector2( 1.504, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChairBody2D"]
+position = Vector2( 57.1777, 14.1833 )
+polygon = PoolVector2Array( -8.88391, -25.0316, 9.81793, -24.943, 9.52451, 23.7955, -8.65939, 23.9077 )
+
+[node name="Chair" type="Sprite" parent="ChairBody2D"]
+position = Vector2( 57.3061, 13.2691 )
+scale = Vector2( 0.584073, 0.904619 )
+texture = ExtResource( 9 )
+
+[node name="ChairBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 359.363, -18.0158 )
+scale = Vector2( 1.504, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChairBody2D2"]
+position = Vector2( 56.7038, 13.7669 )
+polygon = PoolVector2Array( -8.88391, -25.0316, 9.81793, -24.943, 9.52451, 23.7955, -8.65939, 23.9077 )
+
+[node name="Chair" type="Sprite" parent="ChairBody2D2"]
+position = Vector2( 57.3061, 13.2691 )
+scale = Vector2( 0.584073, 0.904619 )
+texture = ExtResource( 9 )
+
+[node name="SignBoard2D" type="StaticBody2D" parent="."]
+position = Vector2( 230.932, -21.1519 )
+scale = Vector2( 1.504, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SignBoard2D"]
+position = Vector2( -0.316284, -0.296094 )
+scale = Vector2( 2.82751, 2.86269 )
+polygon = PoolVector2Array( -11.0185, -10.3101, 10.781, -10.3101, 10.7063, 10.6505, -10.6453, 10.5396 )
+
+[node name="SignBoard" type="Sprite" parent="SignBoard2D"]
+position = Vector2( -0.414734, 0.669897 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 16 )
+
+[node name="CrateBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 304.702, 94.0803 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrateBody2D"]
+position = Vector2( -247.853, 22.0176 )
+polygon = PoolVector2Array( -13.4009, -15.6041, 14.2117, -15.6041, 14.4362, 14.9269, -13.8499, 15.3758 )
+
+[node name="Crate" type="Sprite" parent="CrateBody2D"]
+position = Vector2( -248.102, 22.1794 )
+texture = ExtResource( 14 )
+
+[node name="CrateBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 304.702, 94.0803 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrateBody2D2"]
+position = Vector2( 69.3073, 62.6426 )
+polygon = PoolVector2Array( -13.4009, -15.6041, 14.2117, -15.6041, 14.4362, 14.9269, -13.8499, 15.3758 )
+
+[node name="Crate" type="Sprite" parent="CrateBody2D2"]
+position = Vector2( 70.2986, 62.834 )
+texture = ExtResource( 14 )
+
+[node name="BarrelBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 315.546, 38.9524 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BarrelBody2D"]
+position = Vector2( 15.3376, -2.92301 )
+polygon = PoolVector2Array( -8.31912, -13.521, 0.481018, -16.1373, 8.3298, -14.4724, 12.8488, -7.09933, 14.2758, -1.62898, 13.3244, 8.5982, 4.04865, 15.2578, -4.27582, 15.2578, -12.1246, 9.31173, -13.3138, 4.31705, -13.7895, -3.76955 )
+
+[node name="Barrel" type="Sprite" parent="BarrelBody2D"]
+position = Vector2( 15.5569, -3.7486 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 15 )
+
+[node name="BarrelBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 315.546, 38.9524 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BarrelBody2D2"]
+position = Vector2( 252.673, 27.7239 )
+polygon = PoolVector2Array( -8.31912, -13.521, 0.481018, -16.1373, 8.3298, -14.4724, 12.8488, -7.09933, 14.2758, -1.62898, 13.3244, 8.5982, 4.04865, 15.2578, -4.27582, 15.2578, -12.1246, 9.31173, -13.3138, 4.31705, -13.7895, -3.76955 )
+
+[node name="Barrel" type="Sprite" parent="BarrelBody2D2"]
+position = Vector2( 251.957, 27.8514 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 15 )
 
 [node name="PlayerMage" parent="." instance=ExtResource( 2 )]
 position = Vector2( 184, 88 )
@@ -41,23 +177,13 @@ current = true
 smoothing_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 0, -8 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 8, 0 )
 scale = Vector2( 0.541992, 0.325 )
 polygon = PoolVector2Array( 0, -8, 1024, -8, 992, 16, 29.5207, 24.6154, 29.5207, 566.154, 992, 568, 992, 16, 1024, -8, 1024, 592, 0, 584 )
-
-[node name="Crate" type="StaticBody2D" parent="."]
-position = Vector2( -41.7488, 45.4701 )
-
-[node name="Sprite" type="Sprite" parent="Crate"]
-position = Vector2( 96, 80 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
-position = Vector2( 96, 80 )
-shape = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2( 6, 6 )
@@ -87,11 +213,14 @@ position = Vector2( 130, 160 )
 next_scene = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="Create"]
-margin_left = -11.0
-margin_right = 49.0
-margin_bottom = 17.0
+margin_left = -16.6632
+margin_top = 4.90811
+margin_right = 43.3368
+margin_bottom = 24.9081
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.34902, 0, 1 )
 text = "Create"
 align = 1
 __meta__ = {
@@ -103,11 +232,14 @@ position = Vector2( 240.275, 160 )
 next_scene = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="Play"]
-margin_left = -4.0
-margin_right = 30.0
-margin_bottom = 14.0
+margin_left = -9.66324
+margin_top = 4.90811
+margin_right = 26.3368
+margin_bottom = 24.9081
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.34902, 0, 1 )
 text = "Play"
 align = 1
 __meta__ = {

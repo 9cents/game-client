@@ -1,33 +1,100 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World_Selection/Map/Assets/BigLimeMap.png" type="Texture" id=3]
-[ext_resource path="res://World_Selection/Map/Assets/Wall.png" type="Texture" id=4]
-[ext_resource path="res://World_Selection/Map/Assets/Crate.png" type="Texture" id=5]
+[ext_resource path="res://World_Selection/Map/Assets/World1/Sunflower.png" type="Texture" id=3]
+[ext_resource path="res://World_Selection/Map/Assets/World1/Bush.png" type="Texture" id=4]
+[ext_resource path="res://World_Selection/Map/Assets/World1/Scarecrow.png" type="Texture" id=5]
+[ext_resource path="res://Leaderboard/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://World_Selection/Map/Assets/World1/[A]Grass1-Grass2_pipo.png" type="Texture" id=7]
 [ext_resource path="res://World_Selection/TowerPortal.gd" type="Script" id=8]
+[ext_resource path="res://World_Selection/Map/Assets/World1/[A]Grass3_pipo.png" type="Texture" id=9]
 [ext_resource path="res://World_Selection/WorldBackPortal.gd" type="Script" id=10]
 [ext_resource path="res://World_Selection/MainBackPortal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://splashscreen/splashscreen.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World_Selection/Map/World.gd" type="Script" id=13]
 [ext_resource path="res://World_Selection/Map/Title.tres" type="DynamicFont" id=14]
+[ext_resource path="res://World_Selection/Map/Assets/World1/logfence.png" type="Texture" id=15]
+[ext_resource path="res://World_Selection/Map/Assets/World1/Tree.png" type="Texture" id=16]
+[ext_resource path="res://World_Selection/Map/Assets/World1/Sidelogfence.png" type="Texture" id=17]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="TileSet" id=4]
+0/name = "[A]Grass1-Grass2_pipo.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 192 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 1 ), 176, Vector2( 0, 2 ), 50, Vector2( 0, 3 ), 182, Vector2( 0, 4 ), 434, Vector2( 0, 5 ), 506, Vector2( 1, 0 ), 48, Vector2( 1, 1 ), 152, Vector2( 1, 2 ), 26, Vector2( 1, 3 ), 155, Vector2( 1, 4 ), 218, Vector2( 1, 5 ), 191, Vector2( 2, 0 ), 56, Vector2( 2, 1 ), 150, Vector2( 2, 2 ), 57, Vector2( 2, 3 ), 120, Vector2( 2, 4 ), 57, Vector2( 2, 5 ), 251, Vector2( 3, 0 ), 24, Vector2( 3, 1 ), 312, Vector2( 3, 2 ), 210, Vector2( 3, 3 ), 312, Vector2( 3, 4 ), 60, Vector2( 3, 5 ), 446, Vector2( 4, 0 ), 144, Vector2( 4, 1 ), 146, Vector2( 4, 2 ), 18, Vector2( 4, 3 ), 79, Vector2( 4, 4 ), 457, Vector2( 4, 5 ), 443, Vector2( 5, 0 ), 432, Vector2( 5, 1 ), 438, Vector2( 5, 2 ), 54, Vector2( 5, 3 ), 295, Vector2( 5, 4 ), 484, Vector2( 5, 5 ), 254, Vector2( 6, 0 ), 504, Vector2( 6, 1 ), 511, Vector2( 6, 2 ), 63, Vector2( 6, 3 ), 187, Vector2( 6, 4 ), 250, Vector2( 6, 5 ), 16, Vector2( 7, 0 ), 216, Vector2( 7, 1 ), 219, Vector2( 7, 2 ), 27, Vector2( 7, 3 ), 190, Vector2( 7, 4 ), 442 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "[A]Grass3_pipo.png 1"
+1/texture = ExtResource( 9 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 256, 192 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 1 ), 176, Vector2( 0, 2 ), 50, Vector2( 1, 1 ), 152, Vector2( 1, 2 ), 26, Vector2( 6, 1 ), 16 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 32, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "[A]Grass3_pipo.png 2"
+2/texture = ExtResource( 9 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 192, 32, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
 
 [node name="WorldPage" type="Node2D"]
 scale = Vector2( 5, 5 )
 script = ExtResource( 13 )
 
-[node name="BigLimeMap" type="Sprite" parent="."]
-position = Vector2( 280, 88 )
-scale = Vector2( 2.18311, 0.768539 )
-texture = ExtResource( 3 )
-
-[node name="Wall" type="Sprite" parent="."]
-position = Vector2( 280.498, 84.5302 )
-scale = Vector2( 2.18361, 0.777108 )
-texture = ExtResource( 4 )
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 65536, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 2, 7, 0, 2, 8, 0, 2, 9, 0, 2, 10, 0, 2, 11, 0, 2, 12, 0, 3, 13, 2, 0, 14, 0, 1, 15, 0, 65537, 16, 2, 0, 65536, 0, 131076, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 0, 4, 65550, 2, 0, 65551, 0, 131072, 65552, 0, 65537, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 0, 1, 131083, 0, 65537, 131084, 2, 0, 131085, 0, 131072, 131086, 0, 3, 131087, 2, 0, 131088, 0, 65540, 196608, 0, 65536, 196609, 0, 2, 196610, 0, 65537, 196611, 1, 65542, 196612, 0, 5, 196613, 0, 7, 196614, 2, 0, 196615, 0, 5, 196616, 0, 7, 196617, 2, 0, 196618, 2, 0, 196619, 0, 65540, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 0, 65540, 262144, 0, 65540, 262145, 2, 0, 262146, 0, 65540, 262147, 2, 0, 262148, 0, 65541, 262149, 0, 65543, 262150, 1, 65542, 262151, 0, 65541, 262152, 0, 65543, 262153, 2, 0, 262154, 2, 0, 262155, 0, 131076, 262156, 2, 0, 262157, 0, 5, 262158, 0, 6, 262159, 0, 6, 262160, 0, 262145, 327680, 0, 131072, 327681, 0, 2, 327682, 0, 131073, 327683, 2, 0, 327684, 0, 131077, 327685, 0, 131079, 327686, 2, 0, 327687, 0, 131077, 327688, 0, 131079, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 0, 131077, 327694, 0, 131078, 327695, 0, 131078, 327696, 0, 131079 )
 
 [node name="PlayerMage" parent="." instance=ExtResource( 2 )]
 position = Vector2( 184, 88 )
@@ -41,20 +108,124 @@ smoothing_enabled = true
 position = Vector2( 0, -8 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2( 8, 0 )
+position = Vector2( -0.706103, 10.9489 )
 scale = Vector2( 0.541992, 0.325 )
-polygon = PoolVector2Array( 0, -8, 1024, -8, 992, 16, 29.5207, 24.6154, 29.5207, 566.154, 992, 568, 992, 16, 1024, -8, 1024, 592, 0, 584 )
+polygon = PoolVector2Array( 0, -8, 1004.82, -6.28158, 988.119, 11.9944, 15.2313, 9.38356, 13.6658, 565.496, 990.206, 559.404, 988.119, 11.9944, 1004.3, -5.41129, 1003.25, 584.642, 0, 584 )
 
-[node name="Crate" type="StaticBody2D" parent="."]
-position = Vector2( 184, 0 )
+[node name="BushBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 450, 131.748 )
 
-[node name="Sprite" type="Sprite" parent="Crate"]
-position = Vector2( 96, 80 )
+[node name="Bush" type="Sprite" parent="BushBody2D"]
+position = Vector2( 0.940674, 2.23157 )
+scale = Vector2( 0.690641, 0.690641 )
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BushBody2D"]
+visible = false
+position = Vector2( 0, -1.52588e-05 )
+polygon = PoolVector2Array( 0.830627, -8.40938, 7.38217, -5.38557, 10.91, 0.410065, 10.658, 8.22159, 5.61832, 12.0013, -3.70514, 12.2533, -8.9968, 7.71761, -9.24878, -0.345886, -5.97296, -5.13358 )
+
+[node name="BushBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 457.4, 76.5852 )
+
+[node name="Bush" type="Sprite" parent="BushBody2D2"]
+position = Vector2( 0.940674, 2.23157 )
+scale = Vector2( 0.690641, 0.690641 )
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BushBody2D2"]
+visible = false
+position = Vector2( 0, -1.52588e-05 )
+polygon = PoolVector2Array( 0.830627, -8.40938, 7.38217, -5.38557, 10.91, 0.410065, 10.658, 8.22159, 5.61832, 12.0013, -3.70514, 12.2533, -8.9968, 7.71761, -9.24878, -0.345886, -5.97296, -5.13358 )
+
+[node name="TreeBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 365.622, 63.9081 )
+
+[node name="Tree" type="Sprite" parent="TreeBody2D"]
+position = Vector2( 3.25769, 2.58392 )
+scale = Vector2( 0.690641, 0.690641 )
+texture = ExtResource( 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TreeBody2D"]
+visible = false
+polygon = PoolVector2Array( 4.49802, -19.6213, 16.3901, -13.9131, 22.0983, -5.35079, 24.001, 7.96832, 13.0603, 17.9577, 5.92505, 18.4333, 8.30347, 22.7145, -0.734497, 23.1902, 1.64392, 17.9577, -10.7238, 15.5793, -17.3834, 6.54128, -17.3834, -1.54534, -13.1022, -9.15626, -6.91837, -17.2429 )
+
+[node name="TreeBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 157.079, 102.253 )
+
+[node name="Tree" type="Sprite" parent="TreeBody2D2"]
+position = Vector2( 3.25769, 2.58392 )
+scale = Vector2( 0.690641, 0.690641 )
+texture = ExtResource( 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TreeBody2D2"]
+visible = false
+polygon = PoolVector2Array( 4.49802, -19.6213, 16.3901, -13.9131, 22.0983, -5.35079, 24.001, 7.96832, 13.0603, 17.9577, 5.92505, 18.4333, 8.30347, 22.7145, -0.734497, 23.1902, 1.64392, 17.9577, -10.7238, 15.5793, -17.3834, 6.54128, -17.3834, -1.54534, -13.1022, -9.15626, -6.91837, -17.2429 )
+
+[node name="TreeBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 38.6813, 127.144 )
+
+[node name="Tree" type="Sprite" parent="TreeBody2D3"]
+position = Vector2( 3.25769, 2.58392 )
+scale = Vector2( 0.690641, 0.690641 )
+texture = ExtResource( 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TreeBody2D3"]
+visible = false
+polygon = PoolVector2Array( 4.49802, -19.6213, 16.3901, -13.9131, 22.0983, -5.35079, 24.001, 7.96832, 13.0603, 17.9577, 5.92505, 18.4333, 8.30347, 22.7145, -0.734497, 23.1902, 1.64392, 17.9577, -10.7238, 15.5793, -17.3834, 6.54128, -17.3834, -1.54534, -13.1022, -9.15626, -6.91837, -17.2429 )
+
+[node name="ScareBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 263.032, 107.298 )
+
+[node name="Scarecrow" type="Sprite" parent="ScareBody2D4"]
+position = Vector2( 1.55548, -2.95448 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
-position = Vector2( 96, 80 )
-shape = SubResource( 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScareBody2D4"]
+visible = false
+position = Vector2( 0, -7.62939e-06 )
+polygon = PoolVector2Array( -9.56253, -19.7242, -6.94629, -20.9135, -2.90298, -25.1946, 3.75659, -25.1946, 8.98911, -20.4378, 13.7459, -17.5837, 14.2216, -14.9674, 8.75125, -10.6863, 5.6593, -5.21591, 15.4108, -4.97807, 16.1244, -1.17262, 0.902496, 20.7088, -15.9843, -1.17262, -15.2707, -4.74023, -5.04355, -4.50239, -9.32468, -11.3998, -13.8437, -16.1566 )
+
+[node name="Sunflower" type="Sprite" parent="."]
+position = Vector2( 364.083, 138.285 )
+scale = Vector2( 0.690641, 0.690641 )
+texture = ExtResource( 3 )
+
+[node name="Sunflower2" type="Sprite" parent="."]
+position = Vector2( 516.117, 157.794 )
+scale = Vector2( 0.690641, 0.690641 )
+texture = ExtResource( 3 )
+
+[node name="Sunflower3" type="Sprite" parent="."]
+position = Vector2( 158.904, 140.303 )
+scale = Vector2( 0.690641, 0.690641 )
+texture = ExtResource( 3 )
+
+[node name="logfenceT" type="Sprite" parent="."]
+position = Vector2( 272.737, -5.44062 )
+scale = Vector2( 1, 0.879 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 545, 25 )
+
+[node name="logfenceB" type="Sprite" parent="."]
+position = Vector2( 272.737, 182 )
+scale = Vector2( 1, 0.879 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 545, 25 )
+
+[node name="SidelogfenceL" type="Sprite" parent="."]
+position = Vector2( 2.95044, 92.3577 )
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 192 )
+
+[node name="SidelogfenceR" type="Sprite" parent="."]
+position = Vector2( 541.603, 93.629 )
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 192 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2( 6, 6 )
@@ -77,15 +248,17 @@ __meta__ = {
 }
 
 [node name="Tower1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 80, 160 )
+position = Vector2( 110.357, 151.586 )
 script = ExtResource( 8 )
 next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower1"]
-margin_left = -29.0
-margin_right = 87.0
-margin_bottom = 32.0
+margin_left = -29.898
+margin_top = 4.93884
+margin_right = 86.102
+margin_bottom = 36.9388
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower1"
 align = 1
@@ -95,15 +268,17 @@ __meta__ = {
 }
 
 [node name="Tower2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 160 )
+position = Vector2( 206.357, 151.586 )
 script = ExtResource( 8 )
 next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower2"]
-margin_left = -34.0
-margin_right = 101.0
-margin_bottom = 27.0
+margin_left = -34.898
+margin_top = 4.93884
+margin_right = 100.102
+margin_bottom = 31.9388
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower2"
 align = 1
@@ -113,15 +288,17 @@ __meta__ = {
 }
 
 [node name="Tower3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 280, 160 )
+position = Vector2( 310.357, 151.586 )
 script = ExtResource( 8 )
 next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower3"]
-margin_left = -31.0
-margin_right = 96.0
-margin_bottom = 28.0
+margin_left = -31.898
+margin_top = 4.93884
+margin_right = 95.102
+margin_bottom = 32.9388
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tower3"
 align = 1
@@ -134,11 +311,12 @@ position = Vector2( 66.9255, 46.7472 )
 script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="BackPortal"]
-margin_left = -35.0
-margin_top = -1.0
-margin_right = 98.0
-margin_bottom = 30.0
+margin_left = -33.0951
+margin_top = 3.44472
+margin_right = 99.9049
+margin_bottom = 46.4447
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Return to 
 World Page"
