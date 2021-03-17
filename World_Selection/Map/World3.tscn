@@ -1,60 +1,182 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World_Selection/Map/Assets/BigYellowMap.png" type="Texture" id=3]
-[ext_resource path="res://World_Selection/Map/Assets/Wall.png" type="Texture" id=4]
-[ext_resource path="res://World_Selection/Map/Assets/Crate.png" type="Texture" id=5]
+[ext_resource path="res://Leaderboard/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://World_Selection/Map/Assets/World3/waterlily.png" type="Texture" id=4]
+[ext_resource path="res://World_Selection/Map/Assets/World3/Log.png" type="Texture" id=5]
+[ext_resource path="res://World_Selection/Map/Assets/World3/[A]Water2_pipo.png" type="Texture" id=6]
+[ext_resource path="res://World_Selection/Map/Assets/World3/[A]Dirt2_pipo.png" type="Texture" id=7]
 [ext_resource path="res://World_Selection/TowerPortal.gd" type="Script" id=8]
+[ext_resource path="res://World_Selection/Map/Assets/World3/Bridge.png" type="Texture" id=9]
 [ext_resource path="res://World_Selection/WorldBackPortal.gd" type="Script" id=10]
 [ext_resource path="res://World_Selection/MainBackPortal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://splashscreen/splashscreen.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World_Selection/Map/World.gd" type="Script" id=13]
 [ext_resource path="res://World_Selection/Map/Title.tres" type="DynamicFont" id=14]
+[ext_resource path="res://World_Selection/Map/Assets/World3/pole.png" type="Texture" id=15]
+[ext_resource path="res://World_Selection/Map/Assets/World3/Flower.png" type="Texture" id=16]
+[ext_resource path="res://World_Selection/Map/Assets/World3/Rock.png" type="Texture" id=17]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="TileSet" id=1]
+0/name = "[A]Dirt2_pipo.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 192, 32, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=2]
+0/name = "[A]Water2_pipo.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 192 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 16, Vector2( 0, 1 ), 176, Vector2( 0, 2 ), 50, Vector2( 0, 3 ), 182, Vector2( 0, 4 ), 434, Vector2( 0, 5 ), 506, Vector2( 1, 0 ), 48, Vector2( 1, 1 ), 152, Vector2( 1, 2 ), 26, Vector2( 1, 3 ), 155, Vector2( 1, 4 ), 218, Vector2( 1, 5 ), 191, Vector2( 2, 0 ), 56, Vector2( 2, 1 ), 178, Vector2( 2, 2 ), 58, Vector2( 2, 3 ), 248, Vector2( 2, 4 ), 59, Vector2( 2, 5 ), 251, Vector2( 3, 0 ), 24, Vector2( 3, 1 ), 184, Vector2( 3, 2 ), 154, Vector2( 3, 3 ), 440, Vector2( 3, 4 ), 62, Vector2( 3, 5 ), 446, Vector2( 4, 0 ), 144, Vector2( 4, 1 ), 146, Vector2( 4, 2 ), 18, Vector2( 4, 3 ), 255, Vector2( 4, 4 ), 507, Vector2( 4, 5 ), 443, Vector2( 5, 0 ), 432, Vector2( 5, 1 ), 438, Vector2( 5, 2 ), 54, Vector2( 5, 3 ), 447, Vector2( 5, 4 ), 510, Vector2( 5, 5 ), 254, Vector2( 6, 0 ), 504, Vector2( 6, 1 ), 511, Vector2( 6, 2 ), 63, Vector2( 6, 3 ), 187, Vector2( 6, 4 ), 250, Vector2( 6, 5 ), 186, Vector2( 7, 0 ), 216, Vector2( 7, 1 ), 219, Vector2( 7, 2 ), 27, Vector2( 7, 3 ), 190, Vector2( 7, 4 ), 442 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
 
 [node name="WorldPage" type="Node2D"]
 scale = Vector2( 5, 5 )
 script = ExtResource( 13 )
 
-[node name="BigYellowMap" type="Sprite" parent="."]
-position = Vector2( 280, 88 )
-scale = Vector2( 2.18311, 0.768539 )
-texture = ExtResource( 3 )
-
-[node name="Wall" type="Sprite" parent="."]
-position = Vector2( 280.498, 84.5302 )
-scale = Vector2( 2.18361, 0.777108 )
-texture = ExtResource( 4 )
-
 [node name="PlayerMage" parent="." instance=ExtResource( 2 )]
-position = Vector2( 184, 88 )
+position = Vector2( 180.796, 70.9141 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="PlayerMage"]
 current = true
 smoothing_enabled = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 0, -8 )
+[node name="Background" type="TileMap" parent="."]
+scale = Vector2( 1, 1 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2( 8, 0 )
-scale = Vector2( 0.541992, 0.325 )
-polygon = PoolVector2Array( 0, -8, 1024, -8, 992, 16, 29.5207, 24.6154, 29.5207, 566.154, 992, 568, 992, 16, 1024, -8, 1024, 592, 0, 584 )
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 45, 166 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -655363, 0, 5, -655362, 0, 6, -655361, 0, 6, -720896, 0, 6, -720895, 0, 6, -720894, 0, 6, -720893, 0, 6, -720892, 0, 6, -720891, 0, 6, -720890, 0, 6, -720889, 0, 6, -720888, 0, 6, -720887, 0, 6, -720886, 0, 6, -720885, 0, 6, -720884, 0, 6, -720883, 0, 6, -720882, 0, 6, -720881, 0, 6, -720880, 0, 6, -720879, 0, 6, -720878, 0, 6, -720877, 0, 6, -720876, 0, 6, -720875, 0, 6, -720874, 0, 6, -720873, 0, 196610, -720872, 0, 2, -720871, 0, 2, -720870, 0, 196611, -720869, 0, 6, -720868, 0, 6, -720867, 0, 6, -720866, 0, 196610, -720865, 0, 2, -720864, 0, 2, -720863, 0, 65537, -589827, 0, 65541, -589826, 0, 65542, -589825, 0, 65542, -655360, 0, 65542, -655359, 0, 65542, -655358, 0, 65542, -655357, 0, 65542, -655356, 0, 65542, -655355, 0, 65542, -655354, 0, 65542, -655353, 0, 65542, -655352, 0, 65542, -655351, 0, 65542, -655350, 0, 65542, -655349, 0, 65542, -655348, 0, 65542, -655347, 0, 65542, -655346, 0, 65542, -655345, 0, 65542, -655344, 0, 65542, -655343, 0, 65542, -655342, 0, 65542, -655341, 0, 65542, -655340, 0, 65542, -655339, 0, 65542, -655338, 0, 65542, -655337, 0, 65543, -655334, 0, 65541, -655333, 0, 196612, -655332, 0, 131078, -655331, 0, 327681, -655330, 0, 131079, -655327, 0, 65540, -524291, 0, 65541, -524290, 0, 65542, -524289, 0, 65542, -589824, 0, 65542, -589823, 0, 65542, -589822, 0, 65542, -589821, 0, 65542, -589820, 0, 65542, -589819, 0, 65542, -589818, 0, 65542, -589817, 0, 65542, -589816, 0, 65542, -589815, 0, 65542, -589814, 0, 65542, -589813, 0, 65542, -589812, 0, 65542, -589811, 0, 65542, -589810, 0, 65542, -589809, 0, 65542, -589808, 0, 65542, -589807, 0, 65542, -589806, 0, 65542, -589805, 0, 65542, -589804, 0, 65542, -589803, 0, 65542, -589802, 0, 65542, -589801, 0, 262148, -589800, 0, 7, -589798, 0, 131077, -589797, 0, 131079, -589795, 0, 131076, -589792, 0, 5, -589791, 0, 262145, -458755, 0, 65541, -458754, 0, 65542, -458753, 0, 65542, -524288, 0, 65542, -524287, 0, 65542, -524286, 0, 65542, -524285, 0, 65542, -524284, 0, 65542, -524283, 0, 65542, -524282, 0, 65542, -524281, 0, 65542, -524280, 0, 65542, -524279, 0, 65542, -524278, 0, 65542, -524277, 0, 196612, -524276, 0, 131078, -524275, 0, 196613, -524274, 0, 65542, -524273, 0, 65542, -524272, 0, 65542, -524271, 0, 65542, -524270, 0, 65542, -524269, 0, 65542, -524268, 0, 65542, -524267, 0, 65542, -524266, 0, 65542, -524265, 0, 65542, -524264, 0, 262148, -524263, 0, 7, -524260, 0, 4, -524257, 0, 5, -524256, 0, 262149, -524255, 0, 65543, -393219, 0, 196608, -393218, 0, 131078, -393217, 0, 131078, -458752, 0, 196613, -458751, 0, 65542, -458750, 0, 65542, -458749, 0, 196612, -458748, 0, 131078, -458747, 0, 131078, -458746, 0, 131078, -458745, 0, 196613, -458744, 0, 65542, -458743, 0, 65542, -458742, 0, 65542, -458741, 0, 65543, -458739, 0, 65541, -458738, 0, 65542, -458737, 0, 65542, -458736, 0, 65542, -458735, 0, 65542, -458734, 0, 65542, -458733, 0, 65542, -458732, 0, 65542, -458731, 0, 65542, -458730, 0, 65542, -458729, 0, 65542, -458728, 0, 65542, -458727, 0, 262148, -458726, 0, 7, -458724, 0, 65540, -458722, 0, 5, -458721, 0, 262149, -458720, 0, 65542, -458719, 0, 65543, -327683, 0, 65540, -393216, 0, 131077, -393215, 0, 196613, -393214, 0, 65542, -393213, 0, 65543, -393209, 0, 65541, -393208, 0, 65542, -393207, 0, 65542, -393206, 0, 65542, -393205, 0, 65543, -393203, 0, 65541, -393202, 0, 65542, -393201, 0, 65542, -393200, 0, 196612, -393199, 0, 131078, -393198, 0, 131078, -393197, 0, 131078, -393196, 0, 196613, -393195, 0, 65542, -393194, 0, 196612, -393193, 0, 131078, -393192, 0, 131078, -393191, 0, 196613, -393190, 0, 262148, -393189, 0, 6, -393188, 0, 327680, -393187, 0, 6, -393186, 0, 262149, -393185, 0, 65542, -393184, 0, 65542, -393183, 0, 65543, -262147, 0, 65540, -262145, 0, 4, -327679, 0, 65541, -327678, 0, 65542, -327677, 0, 65543, -327675, 0, 4, -327673, 0, 65541, -327672, 0, 65542, -327671, 0, 196612, -327670, 0, 131078, -327669, 0, 131079, -327667, 0, 65541, -327666, 0, 65542, -327665, 0, 65542, -327664, 0, 65543, -327660, 0, 65541, -327659, 0, 196612, -327658, 0, 131079, -327655, 0, 131077, -327654, 0, 196613, -327653, 0, 65542, -327652, 0, 65542, -327651, 0, 65542, -327650, 0, 65542, -327649, 0, 65542, -327648, 0, 65542, -327647, 0, 65543, -196611, 0, 65540, -196609, 0, 65540, -262143, 0, 65541, -262142, 0, 65542, -262141, 0, 65543, -262139, 0, 65540, -262137, 0, 65541, -262136, 0, 65542, -262135, 0, 65543, -262131, 0, 65541, -262130, 0, 65542, -262129, 0, 65542, -262128, 0, 65543, -262126, 0, 0, -262124, 0, 65541, -262123, 0, 65543, -262121, 0, 1, -262120, 0, 3, -262118, 0, 65541, -262117, 0, 65542, -262116, 0, 65542, -262115, 0, 65542, -262114, 0, 65542, -262113, 0, 65542, -262112, 0, 65542, -262111, 0, 65543, -131075, 0, 65540, -131073, 0, 131076, -196607, 0, 65541, -196606, 0, 65542, -196605, 0, 65543, -196603, 0, 131076, -196601, 0, 65541, -196600, 0, 65542, -196599, 0, 65543, -196597, 0, 0, -196595, 0, 65541, -196594, 0, 65542, -196593, 0, 65542, -196592, 0, 65543, -196588, 0, 65541, -196587, 0, 65543, -196583, 0, 5, -196582, 0, 262149, -196581, 0, 65542, -196580, 0, 65542, -196579, 0, 65542, -196578, 0, 65542, -196577, 0, 65542, -196576, 0, 65542, -196575, 0, 65543, -65539, 0, 65540, -131072, 0, 5, -131071, 0, 262149, -131070, 0, 65542, -131069, 0, 65543, -131065, 0, 65541, -131064, 0, 65542, -131063, 0, 65543, -131059, 0, 65541, -131058, 0, 65542, -131057, 0, 65542, -131056, 0, 327682, -131055, 0, 2, -131054, 0, 65537, -131052, 0, 65541, -131051, 0, 65543, -131049, 0, 1, -131048, 0, 2, -131047, 0, 262147, -131046, 0, 196613, -131045, 0, 65542, -131044, 0, 65542, -131043, 0, 65542, -131042, 0, 65542, -131041, 0, 65542, -131040, 0, 65542, -131039, 0, 65543, -3, 0, 262144, -2, 0, 6, -1, 0, 6, -65536, 0, 262149, -65535, 0, 65542, -65534, 0, 65542, -65533, 0, 262148, -65532, 0, 6, -65531, 0, 6, -65530, 0, 6, -65529, 0, 262149, -65528, 0, 65542, -65527, 0, 262148, -65526, 0, 6, -65525, 0, 6, -65524, 0, 6, -65523, 0, 262149, -65522, 0, 65542, -65521, 0, 65542, -65520, 0, 65543, -65518, 0, 131076, -65516, 0, 65541, -65515, 0, 262148, -65514, 0, 7, -65510, 0, 65541, -65509, 0, 65542, -65508, 0, 65542, -65507, 0, 65542, -65506, 0, 65542, -65505, 0, 65542, -65504, 0, 65542, -65503, 0, 65543, 65533, 0, 65541, 65534, 0, 65542, 65535, 0, 65542, 0, 0, 65542, 1, 0, 65542, 2, 0, 65542, 3, 0, 65542, 4, 0, 65542, 5, 0, 65542, 6, 0, 65542, 7, 0, 65542, 8, 0, 65542, 9, 0, 65542, 10, 0, 65542, 11, 0, 65542, 12, 0, 65542, 13, 0, 65542, 14, 0, 65542, 15, 0, 65542, 16, 0, 65543, 20, 0, 65541, 21, 0, 65542, 22, 0, 262148, 23, 0, 6, 24, 0, 6, 25, 0, 6, 26, 0, 262149, 27, 0, 65542, 28, 0, 65542, 29, 0, 65542, 30, 0, 65542, 31, 0, 65542, 32, 0, 65542, 33, 0, 65543, 131069, 0, 131077, 131070, 0, 131078, 131071, 0, 131078, 65536, 0, 131078, 65537, 0, 131078, 65538, 0, 131078, 65539, 0, 131078, 65540, 0, 131078, 65541, 0, 131078, 65542, 0, 131078, 65543, 0, 131078, 65544, 0, 131078, 65545, 0, 131078, 65546, 0, 131078, 65547, 0, 131078, 65548, 0, 131078, 65549, 0, 131078, 65550, 0, 131078, 65551, 0, 131078, 65552, 0, 262146, 65553, 0, 2, 65554, 0, 2, 65555, 0, 2, 65556, 0, 262147, 65557, 0, 131078, 65558, 0, 131078, 65559, 0, 131078, 65560, 0, 131078, 65561, 0, 131078, 65562, 0, 131078, 65563, 0, 131078, 65564, 0, 131078, 65565, 0, 131078, 65566, 0, 131078, 65567, 0, 131078, 65568, 0, 131078, 65569, 0, 131079 )
 
-[node name="Crate" type="StaticBody2D" parent="."]
-position = Vector2( 184, 0 )
+[node name="Flower" type="Sprite" parent="."]
+position = Vector2( 20.8855, 171.052 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 16 )
 
-[node name="Sprite" type="Sprite" parent="Crate"]
-position = Vector2( 96, 80 )
+[node name="Flower2" type="Sprite" parent="."]
+position = Vector2( 389.686, 179.452 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 16 )
+
+[node name="waterlily" type="Sprite" parent="."]
+position = Vector2( 504.644, 145.448 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )
+
+[node name="pole" type="Sprite" parent="."]
+position = Vector2( 293.601, -18.3131 )
+scale = Vector2( 0.553244, 0.548148 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1053.93, 54.0767 )
+
+[node name="BridgeBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 180.8, 123.47 )
+scale = Vector2( 1, 0.864 )
+
+[node name="Bridge" type="Sprite" parent="BridgeBody2D"]
+position = Vector2( 0.715317, 0.365952 )
+scale = Vector2( 0.605286, 0.79854 )
+texture = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BridgeBody2D"]
+polygon = PoolVector2Array( -18, -34.8, -16.2, -33, -16, 35, -21.2, 35.4, -22, 29.2, -21.8, -34.6 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BridgeBody2D"]
+polygon = PoolVector2Array( 21.2, -35, 22.8, -31.8, 22.8, 34.6, 18.8, 35.6, 17.2, 30.2, 18.2, -34 )
+
+[node name="LogBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 340.651, 122.805 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LogBody2D"]
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( -28.0265, -7.02153, -0.261841, -12.3609, 11.4848, -8.0894, 25.9011, -4.88579, 28.5707, 5.79295, 21.6296, 11.1323, -25.3568, 13.268, -30.1622, 0.987503 )
+
+[node name="Log" type="Sprite" parent="LogBody2D"]
+position = Vector2( -0.26178, 0.987472 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
-position = Vector2( 96, 80 )
-shape = SubResource( 1 )
+[node name="RockBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 391.909, 66.208 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RockBody2D"]
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( -2.98322, -9.69124, -14.1959, -0.0803909, -13.128, 7.92864, -0.313538, 14.8698, 13.5688, 8.46259, 13.0349, -1.14826 )
+
+[node name="Rock" type="Sprite" parent="RockBody2D"]
+position = Vector2( -0.31356, 2.58926 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 17 )
+
+[node name="RockBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 221.105, 137.959 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RockBody2D2"]
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( -2.98322, -9.69124, -14.1959, -0.0803909, -13.128, 7.92864, -0.313538, 14.8698, 13.5688, 8.46259, 13.0349, -1.14826 )
+
+[node name="Rock" type="Sprite" parent="RockBody2D2"]
+position = Vector2( -0.31356, 2.58926 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 17 )
+
+[node name="LogBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 437.294, 155.375 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LogBody2D2"]
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( -28.0265, -7.02153, -0.261841, -12.3609, 11.4848, -8.0894, 25.9011, -4.88579, 28.5707, 5.79295, 21.6296, 11.1323, -25.3568, 13.268, -30.1622, 0.987503 )
+
+[node name="Log" type="Sprite" parent="LogBody2D2"]
+position = Vector2( -0.26178, 0.987472 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2( 6, 6 )
@@ -68,7 +190,7 @@ anchor_bottom = -0.000245492
 margin_left = 25.1473
 margin_top = 3.1473
 margin_right = 238.147
-margin_bottom = 65.1473
+margin_bottom = 24.1473
 rect_scale = Vector2( 0.6, 0.6 )
 custom_fonts/font = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 0.984314, 0.984314, 1 )
@@ -80,18 +202,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, -8 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 24.051, -2.69573 )
+scale = Vector2( 0.54896, 0.345811 )
+polygon = PoolVector2Array( -45.8378, 7.21857, 1022.65, 2.35524, 1012.71, 20.7511, -28.4192, 25.3832, -28.6817, 578.173, 1012.71, 567.331, 1010.77, 22.2951, 1023.26, 2.35524, 1024, 592, -44.6124, 599.572 )
+
 [node name="Tower1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 80, 160 )
+position = Vector2( 80, 167.736 )
 script = ExtResource( 8 )
 next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower1"]
 margin_left = -35.0
-margin_top = 1.0
+margin_top = 6.0
 margin_right = 94.0
 margin_bottom = 25.0
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.584314, 0, 1 )
 text = "Tower1"
 align = 1
 __meta__ = {
@@ -99,16 +232,19 @@ __meta__ = {
 }
 
 [node name="Tower2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 160 )
+position = Vector2( 184.009, 167.736 )
 script = ExtResource( 8 )
 next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower2"]
 margin_left = -40.0
+margin_top = 6.0
 margin_right = 114.0
 margin_bottom = 28.0
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.584314, 0, 1 )
 text = "Tower2"
 align = 1
 __meta__ = {
@@ -116,16 +252,19 @@ __meta__ = {
 }
 
 [node name="Tower3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 280, 160 )
+position = Vector2( 280, 167.736 )
 script = ExtResource( 8 )
 next_scene = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="Tower3"]
 margin_left = -38.0
+margin_top = 6.0
 margin_right = 102.0
 margin_bottom = 31.0
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.584314, 0, 1 )
 text = "Tower3"
 align = 1
 __meta__ = {
@@ -133,16 +272,18 @@ __meta__ = {
 }
 
 [node name="BackPortal" parent="." instance=ExtResource( 11 )]
-position = Vector2( 70.5927, 44.0005 )
+position = Vector2( 39.3114, 31.8916 )
 script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="BackPortal"]
 margin_left = -39.0
-margin_top = -1.0
+margin_top = 6.0
 margin_right = 110.0
 margin_bottom = 30.0
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.584314, 0, 1 )
 text = "Return to 
 World Page"
 align = 1
