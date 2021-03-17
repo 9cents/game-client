@@ -1,8 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Leaderboard/close button.png" type="Texture" id=1]
 [ext_resource path="res://World_Selection/Interface/Help.gd" type="Script" id=2]
 [ext_resource path="res://Leaderboard/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://World_Selection/Interface/TutorialAssets/Main Page.PNG" type="Texture" id=4]
+[ext_resource path="res://World_Selection/Interface/TutorialAssets/Box.png" type="Texture" id=5]
+[ext_resource path="res://World_Selection/Interface/TutorialAssets/LevelLeaderBoard.PNG" type="Texture" id=6]
+[ext_resource path="res://World_Selection/Interface/TutorialAssets/Story Mode.PNG" type="Texture" id=7]
+[ext_resource path="res://World_Selection/Interface/TutorialAssets/World1.PNG" type="Texture" id=8]
+[ext_resource path="res://World_Selection/Interface/TutorialAssets/CreateDungeon.PNG" type="Texture" id=9]
+[ext_resource path="res://World_Selection/Interface/TutorialAssets/Play Dungeon.PNG" type="Texture" id=10]
+[ext_resource path="res://World_Selection/Interface/TutorialAssets/Challenge Mode.PNG" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -16,6 +24,27 @@ font_data = ExtResource( 3 )
 size = 45
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 18
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+outline_color = Color( 1, 0.0196078, 0.0196078, 0 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 18
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 18
+font_data = ExtResource( 3 )
+
 [node name="Help_Page" type="CanvasLayer"]
 script = ExtResource( 2 )
 
@@ -24,9 +53,9 @@ anchor_left = 0.937
 anchor_top = 0.234
 anchor_right = 0.937
 anchor_bottom = 0.919
-margin_left = -895.933
+margin_left = -896.6
 margin_top = -93.2659
-margin_right = 0.0665283
+margin_right = -0.600891
 margin_bottom = -0.265869
 color = Color( 0.2, 0.196078, 0.196078, 1 )
 __meta__ = {
@@ -49,13 +78,13 @@ __meta__ = {
 [node name="Title" type="Label" parent="ColorRect"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -121.0
-margin_top = 3.0
-margin_right = 198.0
-margin_bottom = 92.0
+margin_left = -247.076
+margin_top = 5.11893
+margin_right = 369.924
+margin_bottom = 94.1189
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Help"
+text = "Help Tutorial"
 align = 1
 valign = 1
 __meta__ = {
@@ -96,24 +125,60 @@ __meta__ = {
 anchor_right = 0.997
 anchor_bottom = 1.0
 margin_left = -2.0
-margin_top = -3.0
-margin_right = 0.375977
-margin_bottom = 13.0
+margin_top = -5.0
+margin_right = 0.376038
+margin_bottom = 16.0
 rect_scale = Vector2( 1, 0.975379 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer"]
-margin_bottom = 800.0
-custom_constants/separation = 200
+margin_bottom = 1400.0
+custom_constants/separation = 700
 
 [node name="Control" type="Control" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer"]
 
+[node name="Main Page" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 384.062, 231.103 )
+scale = Vector2( 0.249007, 0.343654 )
+texture = ExtResource( 4 )
+
+[node name="LevelLeaderBox" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 454.035, 150.927 )
+scale = Vector2( 0.580594, 0.554898 )
+texture = ExtResource( 5 )
+
+[node name="LevelLeaderBox2" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 568.327, 150.927 )
+scale = Vector2( 0.580594, 0.554898 )
+texture = ExtResource( 5 )
+
+[node name="StoryModeBox" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 198.704, 380.556 )
+scale = Vector2( 0.700885, 0.508613 )
+texture = ExtResource( 5 )
+
+[node name="ChallengeBox" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 324.696, 381.425 )
+scale = Vector2( 0.700885, 0.508613 )
+texture = ExtResource( 5 )
+
+[node name="AsssignmentBox" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 462.54, 381.425 )
+scale = Vector2( 0.700885, 0.508613 )
+texture = ExtResource( 5 )
+
+[node name="AsssignmentBox2" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 590.436, 88.1437 )
+scale = Vector2( 0.304123, 0.418714 )
+texture = ExtResource( 5 )
+
 [node name="Label" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
 margin_left = 322.0
+margin_top = -2.45906
 margin_right = 438.0
-margin_bottom = 113.0
+margin_bottom = 110.541
 custom_fonts/font = SubResource( 3 )
 text = "Main
 "
@@ -123,16 +188,97 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Desc" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 46.0905
+margin_top = 417.082
+margin_right = 814.09
+margin_bottom = 664.082
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "The player will be spawn into the main page after character selection. 
+1)The player can view the leaderboard according to their level completion and 
+percentage of correct answer. (Scroll Down for more information)
+2)The Story Mode has several World which signify different subject and each 
+Section signify a topics (Click on the Story Tab for further information)
+3)The Challenge allows player to create and play each other dungeon 
+(Click on the Challenge Tab for further information)
+4)The Assignment will be accessed by the player when the instuctor set 
+questions and unlock the assignment
+Settings allows player to on or off the background music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 613.502
+margin_top = 45.1695
+margin_right = 745.502
+margin_bottom = 78.1695
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.898039, 0.360784, 0.0392157, 1 )
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1)" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 379.816
+margin_top = 113.643
+margin_right = 419.816
+margin_bottom = 150.643
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.898039, 0.360784, 0.0392157, 1 )
+text = "1)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2)" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 122.417
+margin_top = 360.955
+margin_right = 162.417
+margin_bottom = 397.955
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.956863, 0.415686, 0.0235294, 1 )
+text = "2)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3)" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 248.602
+margin_top = 359.681
+margin_right = 288.602
+margin_bottom = 396.681
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.92549, 0.396078, 0.0784314, 1 )
+text = "3)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4)" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 511.894
+margin_top = 360.026
+margin_right = 551.893
+margin_bottom = 397.026
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.898039, 0.372549, 0.054902, 1 )
+text = "4)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Control2" type="Control" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer"]
-margin_top = 200.0
-margin_bottom = 200.0
+margin_top = 700.0
+margin_bottom = 700.0
 
 [node name="Label" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
-margin_left = 322.0
-margin_right = 438.0
+margin_left = 251.0
+margin_right = 555.0
 margin_bottom = 113.0
 custom_fonts/font = SubResource( 3 )
-text = "Image
+text = "Leaderboard
 "
 align = 1
 valign = 1
@@ -140,9 +286,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Desc2" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+margin_left = 78.1719
+margin_top = 421.932
+margin_right = 727.172
+margin_bottom = 536.932
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "The level leaderboard will show the top 10 player with the most
+levels cleared.  It will also display your rank and levels cleared. 
+The correctness leaderboard will show the top 10 player 
+with the highest correct percentage.It will also display your rank 
+and correct percentage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelLeaderBoard" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+position = Vector2( 407.433, 244.039 )
+scale = Vector2( 0.30418, 0.379684 )
+texture = ExtResource( 6 )
+
+[node name="Box" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+position = Vector2( 239.026, 392.437 )
+scale = Vector2( 1.23714, 0.392203 )
+texture = ExtResource( 5 )
+
+[node name="Box3" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+position = Vector2( 290.252, 255.345 )
+scale = Vector2( 1.20577, 1.69965 )
+texture = ExtResource( 5 )
+
+[node name="Box2" type="Sprite" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+position = Vector2( 477.786, 391.207 )
+scale = Vector2( 1.51319, 0.392203 )
+texture = ExtResource( 5 )
+
+[node name="Label2" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+margin_left = 140.674
+margin_top = 149.642
+margin_right = 254.674
+margin_bottom = 226.642
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.941176, 0.427451, 0.0352941, 1 )
+text = "Top 
+10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Control3" type="Control" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer"]
-margin_top = 400.0
-margin_bottom = 400.0
+margin_top = 1400.0
+margin_bottom = 1400.0
 
 [node name="Label" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control3"]
 margin_left = 322.0
@@ -157,16 +352,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control4" type="Control" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer"]
-margin_top = 600.0
-margin_bottom = 600.0
+[node name="StoryButton" type="Button" parent="ColorRect"]
+margin_left = 10.0
+margin_top = 133.0
+margin_right = 104.0
+margin_bottom = 174.0
+custom_fonts/font = SubResource( 2 )
+text = "Story"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control4"]
-margin_left = 322.0
-margin_right = 438.0
-margin_bottom = 113.0
+[node name="Story_Help" type="Control" parent="ColorRect/StoryButton"]
+visible = false
+margin_left = -1.0
+margin_right = 95.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollBar" type="Panel" parent="ColorRect/StoryButton/Story_Help"]
+anchor_top = 0.206
+anchor_bottom = 0.206
+margin_left = 95.0
+margin_top = -49.652
+margin_right = 887.0
+margin_bottom = 507.348
+rect_scale = Vector2( 1, 0.742878 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/StoryButton/Story_Help/ScrollBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3.0
+margin_top = -3.0
+margin_right = -3.0
+margin_bottom = 11.0
+rect_scale = Vector2( 1, 0.975379 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer"]
+margin_bottom = 1000.0
+custom_constants/separation = 500
+
+[node name="Control" type="Control" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer"]
+
+[node name="Label" type="Label" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 272.0
+margin_top = -0.323
+margin_right = 505.0
+margin_bottom = 112.677
 custom_fonts/font = SubResource( 3 )
-text = "Image
+text = "Story
 "
 align = 1
 valign = 1
@@ -174,28 +416,95 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control5" type="Control" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer"]
-margin_top = 800.0
-margin_bottom = 800.0
+[node name="Story Mode" type="Sprite" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 385.748, 238.764 )
+scale = Vector2( 0.367864, 0.367864 )
+texture = ExtResource( 7 )
 
-[node name="Label" type="Label" parent="ColorRect/MainButton/Main_Help/ScrollBar/ScrollContainer/VBoxContainer/Control5"]
-margin_left = 322.0
-margin_right = 438.0
-margin_bottom = 113.0
+[node name="Box" type="Sprite" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 209.595, 369.909 )
+scale = Vector2( 0.805302, 0.495458 )
+texture = ExtResource( 5 )
+
+[node name="Label2" type="Label" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 124.699
+margin_top = 425.763
+margin_right = 697.699
+margin_bottom = 472.763
+custom_fonts/font = SubResource( 7 )
+text = "Select one of the three subject shown to proceed in
+choosing the topics "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer"]
+margin_top = 500.0
+margin_bottom = 500.0
+
+[node name="Label" type="Label" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+margin_left = 272.0
+margin_top = -0.323
+margin_right = 505.0
+margin_bottom = 112.677
 custom_fonts/font = SubResource( 3 )
-text = "Image
+text = "Topics
 "
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+margin_left = 147.613
+margin_top = 432.16
+margin_right = 645.613
+margin_bottom = 504.16
+custom_fonts/font = SubResource( 7 )
+text = "Select one of the three topics shown to 
+start the first level of the gameplay
+(Click on the Gameplay Tab for further information)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="World1" type="Sprite" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+position = Vector2( 384.993, 250.352 )
+scale = Vector2( 0.323282, 0.409158 )
+texture = ExtResource( 8 )
+
+[node name="Control3" type="Control" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer"]
+margin_top = 1000.0
+margin_bottom = 1000.0
+
+[node name="Label" type="Label" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control3"]
+margin_left = 272.0
+margin_top = -0.323
+margin_right = 505.0
+margin_bottom = 112.677
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="ColorRect/StoryButton/Story_Help/ScrollBar/ScrollContainer/VBoxContainer/Control3"]
+margin_left = 147.613
+margin_top = 432.16
+margin_right = 645.613
+margin_bottom = 504.16
+custom_fonts/font = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ChallengeButton" type="Button" parent="ColorRect"]
 margin_left = 10.0
-margin_top = 133.0
+margin_top = 174.0
 margin_right = 104.0
-margin_bottom = 174.0
+margin_bottom = 215.0
 custom_fonts/font = SubResource( 2 )
 text = "Challenge"
 __meta__ = {
@@ -215,9 +524,9 @@ __meta__ = {
 anchor_top = 0.206
 anchor_bottom = 0.206
 margin_left = 95.0
-margin_top = -49.652
+margin_top = -90.652
 margin_right = 887.0
-margin_bottom = 504.348
+margin_bottom = 463.348
 rect_scale = Vector2( 1, 0.742878 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -226,39 +535,159 @@ __meta__ = {
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.0
+margin_left = -3.0
 margin_top = -3.0
-margin_right = -2.0
-margin_bottom = 11.0
+margin_right = -3.0
+margin_bottom = 14.0
 rect_scale = Vector2( 1, 0.975379 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer"]
-custom_constants/separation = 200
+margin_bottom = 1500.0
+custom_constants/separation = 500
 
 [node name="Control" type="Control" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer"]
 
 [node name="Label" type="Label" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
 margin_left = 272.0
-margin_top = -0.323
-margin_right = 505.0
-margin_bottom = 112.677
+margin_top = -27.0
+margin_right = 508.0
+margin_bottom = 86.0
 custom_fonts/font = SubResource( 3 )
-text = "Challenge
-"
+text = "Challenge"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Challenge Mode" type="Sprite" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 392.257, 229.824 )
+scale = Vector2( 0.282117, 0.282117 )
+texture = ExtResource( 11 )
+
+[node name="Desc" type="Label" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+margin_left = 157.601
+margin_top = 387.52
+margin_right = 643.601
+margin_bottom = 459.52
+custom_fonts/font = SubResource( 8 )
+text = "Create allow the player to create a dungeon 
+Play allow the player to play the dungeon created
+by other player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="Sprite" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 307.107, 350.587 )
+scale = Vector2( 0.482979, 0.338839 )
+texture = ExtResource( 5 )
+
+[node name="Box2" type="Sprite" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control"]
+position = Vector2( 444.203, 349.553 )
+scale = Vector2( 0.482979, 0.338839 )
+texture = ExtResource( 5 )
+
+[node name="Control2" type="Control" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer"]
+margin_top = 500.0
+margin_bottom = 500.0
+
+[node name="Desc2" type="Label" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+margin_left = 239.081
+margin_top = 379.502
+margin_right = 577.081
+margin_bottom = 451.502
+custom_fonts/font = SubResource( 8 )
+text = "Select 5 questions from the list of 
+questions to create the dungeon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateDungeon" type="Sprite" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+position = Vector2( 402.728, 225.501 )
+scale = Vector2( 0.226161, 0.283136 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+margin_left = 272.0
+margin_top = -27.0
+margin_right = 508.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 3 )
+text = "Create"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="Sprite" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control2"]
+position = Vector2( 399.24, 174.375 )
+scale = Vector2( 1.14295, 0.493785 )
+texture = ExtResource( 5 )
+
+[node name="Control3" type="Control" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer"]
+margin_top = 1000.0
+margin_bottom = 1000.0
+
+[node name="Desc3" type="Label" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control3"]
+margin_left = 211.104
+margin_top = 312.769
+margin_right = 618.104
+margin_bottom = 384.769
+custom_fonts/font = SubResource( 8 )
+text = "Enter the player's username to challenge 
+the dungeon created by the player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play Dungeon" type="Sprite" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control3"]
+position = Vector2( 394.941, 182.57 )
+scale = Vector2( 0.205476, 0.268682 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control3"]
+margin_left = 272.0
+margin_top = -27.0
+margin_right = 508.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 3 )
+text = "Challenge"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="Sprite" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control3"]
+position = Vector2( 393.782, 168.097 )
+scale = Vector2( 2.02287, 0.406025 )
+texture = ExtResource( 5 )
+
+[node name="Control4" type="Control" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer"]
+margin_top = 1500.0
+margin_bottom = 1500.0
+
+[node name="Desc3" type="Label" parent="ColorRect/ChallengeButton/Challenge_Help/ScrollBar/ScrollContainer/VBoxContainer/Control4"]
+margin_left = 211.104
+margin_top = 312.769
+margin_right = 618.104
+margin_bottom = 384.769
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GameplayButton" type="Button" parent="ColorRect"]
-margin_left = 10.0
-margin_top = 174.0
-margin_right = 104.0
-margin_bottom = 215.0
+margin_left = 9.66742
+margin_top = 215.045
+margin_right = 103.667
+margin_bottom = 256.045
 custom_fonts/font = SubResource( 2 )
 text = "Gameplay"
 __meta__ = {
@@ -267,9 +696,10 @@ __meta__ = {
 
 [node name="Gameplay_Help" type="Control" parent="ColorRect/GameplayButton"]
 visible = false
-margin_left = -1.0
-margin_right = 95.0
-margin_bottom = 42.0
+margin_left = -2.00226
+margin_top = -1.66742
+margin_right = 93.9977
+margin_bottom = 40.3326
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -277,10 +707,10 @@ __meta__ = {
 [node name="ScrollBar" type="Panel" parent="ColorRect/GameplayButton/Gameplay_Help"]
 anchor_top = 0.206
 anchor_bottom = 0.206
-margin_left = 95.0
-margin_top = -90.652
-margin_right = 887.0
-margin_bottom = 463.348
+margin_left = 96.3348
+margin_top = -130.03
+margin_right = 888.335
+margin_bottom = 423.97
 rect_scale = Vector2( 1, 0.742878 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -317,5 +747,6 @@ __meta__ = {
 }
 [connection signal="pressed" from="ColorRect/CloseButton" to="." method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="ColorRect/MainButton" to="." method="_on_MainButton_pressed"]
+[connection signal="pressed" from="ColorRect/StoryButton" to="." method="_on_StoryButton_pressed"]
 [connection signal="pressed" from="ColorRect/ChallengeButton" to="." method="_on_ChallengeButton_pressed"]
 [connection signal="pressed" from="ColorRect/GameplayButton" to="." method="_on_GameplayButton_pressed"]
