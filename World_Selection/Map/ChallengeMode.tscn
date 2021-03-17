@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
@@ -16,8 +16,9 @@
 [ext_resource path="res://World_Selection/Map/Assets/Challenge/Crate.png" type="Texture" id=14]
 [ext_resource path="res://World_Selection/Map/Assets/Challenge/Barrel.png" type="Texture" id=15]
 [ext_resource path="res://World_Selection/Map/Assets/Challenge/SignBoard.png" type="Texture" id=16]
+[ext_resource path="res://World_Selection/Map/Camera2D.gd" type="Script" id=17]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 8
 font_data = ExtResource( 6 )
 
@@ -35,7 +36,6 @@ scale = Vector2( 5, 5 )
 
 [node name="FloorTile" type="Sprite" parent="."]
 position = Vector2( 24.0904, 0.506715 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 centered = false
 region_enabled = true
@@ -60,7 +60,7 @@ margin_top = -4.33525
 margin_right = 41.3873
 margin_bottom = 9.66475
 rect_scale = Vector2( 0.458194, 1.20304 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.741176, 0.105882, 0.105882, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Dodgeware"
@@ -70,12 +70,10 @@ __meta__ = {
 
 [node name="Shield" type="Sprite" parent="."]
 position = Vector2( 561.772, -34.8107 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="Sword" type="Sprite" parent="."]
 position = Vector2( 51.6703, -36.553 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 
 [node name="ChairBody2D" type="StaticBody2D" parent="."]
@@ -115,12 +113,10 @@ polygon = PoolVector2Array( -11.0185, -10.3101, 10.781, -10.3101, 10.7063, 10.65
 
 [node name="SignBoard" type="Sprite" parent="SignBoard2D"]
 position = Vector2( -0.414734, 0.669897 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 16 )
 
 [node name="CrateBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 304.702, 94.0803 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrateBody2D"]
 position = Vector2( -247.853, 22.0176 )
@@ -132,7 +128,6 @@ texture = ExtResource( 14 )
 
 [node name="CrateBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 304.702, 94.0803 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrateBody2D2"]
 position = Vector2( 69.3073, 62.6426 )
@@ -144,7 +139,6 @@ texture = ExtResource( 14 )
 
 [node name="BarrelBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 315.546, 38.9524 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BarrelBody2D"]
 position = Vector2( 15.3376, -2.92301 )
@@ -152,12 +146,10 @@ polygon = PoolVector2Array( -8.31912, -13.521, 0.481018, -16.1373, 8.3298, -14.4
 
 [node name="Barrel" type="Sprite" parent="BarrelBody2D"]
 position = Vector2( 15.5569, -3.7486 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 15 )
 
 [node name="BarrelBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 315.546, 38.9524 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BarrelBody2D2"]
 position = Vector2( 252.673, 27.7239 )
@@ -165,7 +157,6 @@ polygon = PoolVector2Array( -8.31912, -13.521, 0.481018, -16.1373, 8.3298, -14.4
 
 [node name="Barrel" type="Sprite" parent="BarrelBody2D2"]
 position = Vector2( 251.957, 27.8514 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 15 )
 
 [node name="PlayerMage" parent="." instance=ExtResource( 2 )]
@@ -175,6 +166,9 @@ z_index = 1
 [node name="Camera2D" type="Camera2D" parent="PlayerMage"]
 current = true
 smoothing_enabled = true
+script = ExtResource( 17 )
+
+[node name="Tween" type="Tween" parent="PlayerMage/Camera2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -251,11 +245,12 @@ position = Vector2( 74.8373, 46.5649 )
 
 [node name="Label" type="Label" parent="BackPortal"]
 margin_left = -31.0
-margin_top = 1.0
+margin_top = 4.0
 margin_right = 85.0
 margin_bottom = 32.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.368627, 0, 1 )
 text = "Return to 
 Main Page"
 align = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://World_Selection/Portal2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World_Selection/Player/PlayerMage.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://World_Selection/Map/Assets/World2/SnowSign.png" type="Texture" id=15]
 [ext_resource path="res://World_Selection/Map/Assets/World2/SnowTree.png" type="Texture" id=16]
 [ext_resource path="res://World_Selection/Map/Assets/World2/Snowman.png" type="Texture" id=17]
+[ext_resource path="res://World_Selection/Map/Camera2D.gd" type="Script" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "[A]Wall-Up_Snow_pipo.png 0"
@@ -81,12 +82,15 @@ scale = Vector2( 5, 5 )
 script = ExtResource( 13 )
 
 [node name="PlayerMage" parent="." instance=ExtResource( 2 )]
-position = Vector2( 184, 88 )
+position = Vector2( 202.076, 80.8648 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="PlayerMage"]
 current = true
 smoothing_enabled = true
+script = ExtResource( 18 )
+
+[node name="Tween" type="Tween" parent="PlayerMage/Camera2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 0, -8 )
@@ -97,7 +101,6 @@ scale = Vector2( 0.541992, 0.325 )
 polygon = PoolVector2Array( -25.8822, -116.426, 1048.12, -115.33, 1025.76, -74.7595, -4.18476, -75.3077, -3.93832, 575.172, 1026.47, 574.853, 1026.09, -74.2112, 1048.12, -114.233, 1049.15, 618.235, -26.2933, 618.484 )
 
 [node name="Background" type="TileMap" parent="."]
-scale = Vector2( 1, 1 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
