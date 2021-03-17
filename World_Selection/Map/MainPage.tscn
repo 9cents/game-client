@@ -545,7 +545,7 @@ scale = Vector2( 0.547983, 0.325 )
 polygon = PoolVector2Array( 0, -8, 1024.17, -8.54666, 994.815, 42.3073, 33.2254, 42.1215, 33.6298, 556.122, 995.47, 556.445, 994.815, 42.3073, 1024.68, -8.54666, 1025.66, 613.8, 1.96234, 609.449 )
 
 [node name="Dice" type="StaticBody2D" parent="."]
-position = Vector2( 331.993, 99.5669 )
+position = Vector2( 486.389, 104.906 )
 
 [node name="Dice_Sprite" type="Sprite" parent="Dice"]
 position = Vector2( -0.399963, 2.06048 )
@@ -711,7 +711,7 @@ __meta__ = {
 }
 
 [node name="Leaderboard" parent="." instance=ExtResource( 1 )]
-position = Vector2( 280, 150 )
+position = Vector2( 379.668, 137.986 )
 next_scene = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="Leaderboard"]
@@ -723,14 +723,35 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Leaderboard"
+text = "Level 
+Leaderboard"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leaderboard2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 450.415, 61.9006 )
+next_scene = null
+
+[node name="Label" type="Label" parent="Leaderboard2"]
+margin_left = -34.5
+margin_top = 4.0
+margin_right = 100.5
+margin_bottom = 25.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Correctness
+Leaderboard"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Assignment" parent="." instance=ExtResource( 1 )]
-position = Vector2( 380, 150 )
+position = Vector2( 280.332, 150.89 )
 next_scene = ExtResource( 15 )
 
 [node name="Label" type="Label" parent="Assignment"]
