@@ -72,7 +72,7 @@ func leaderboard_all_done(result, response_code, headers, body):
 	emit_signal(\"call_done\", json)
 
 func get_leaderboard_user(data):
-	var url = BASE_URL + '/game/leaderboardlevel?player_name=' + Main.username
+	var url = BASE_URL + '/game/leaderboardlevel?player_name=' + Main.username.percent_encode()
 	var body = to_json(data)
 	
 	var req = HTTPRequest.new()
@@ -115,7 +115,7 @@ func leaderboard2_all_done(result, response_code, headers, body):
 	emit_signal(\"call_done\", json)
 
 func get_leaderboard2_user(data):
-	var url = BASE_URL + '/game/leaderboardaccuracy?player_name=' + Main.username
+	var url = BASE_URL + '/game/leaderboardaccuracy?player_name=' + Main.username.percent_encode()
 	var body = to_json(data)
 	
 	var req = HTTPRequest.new()
@@ -137,7 +137,7 @@ func leaderboard2_user_done(result, response_code, headers, body):
 	
 # USER DUNGEON
 func get_challenge_data(data):
-	var url = BASE_URL + '/game/challengedata?player_name=' + data[\"player_name\"]
+	var url = BASE_URL + '/game/challengedata?player_name=' + data[\"player_name\"].percent_encode()
 	var body = to_json(data)
 	
 	var req = HTTPRequest.new()
@@ -200,7 +200,7 @@ func tower_name_done(result, response_code, headers, body):
 
 # FOR STORY MODE GAMEPLAY
 func get_qns_list(data):
-	var url = BASE_URL + '/game/storydata?player_name='+ Main.username +'&tower_name=' + data[\"tower\"].percent_encode()
+	var url = BASE_URL + '/game/storydata?player_name='+ Main.username.percent_encode() +'&tower_name=' + data[\"tower\"].percent_encode()
 	
 	var req = HTTPRequest.new()
 	add_child(req)
@@ -221,7 +221,7 @@ func get_qns_done(result, response_code, headers, body):
 # CREATE CHALLANGE
 func update_dungeon(data):
 	
-	var url = BASE_URL + '/game/dungeon?player_name=' + Main.username
+	var url = BASE_URL + '/game/dungeon?player_name=' + Main.username.percent_encode()
 	var body = to_json(data)
 	
 	var req = HTTPRequest.new()
@@ -286,7 +286,7 @@ func update_char_done(result, response_code, headers, body):
 # GAMEPLAY RESPONSE
 func send_response(data):
 	
-	var url = BASE_URL + '/game/response?player_name=' + Main.username
+	var url = BASE_URL + '/game/response?player_name=' + Main.username.percent_encode()
 	var body = to_json(data)
 	
 	var req = HTTPRequest.new()
@@ -303,7 +303,7 @@ func send_response_done(result, response_code, headers, body):
 # GAMEPLAY WIN
 func win_response(data):
 	
-	var url = BASE_URL + '/game/increment?player_name=' + Main.username +'&tower_name=' + data[\"tower\"].percent_encode()
+	var url = BASE_URL + '/game/increment?player_name=' + Main.username.percent_encode() +'&tower_name=' + data[\"tower\"].percent_encode()
 	var body = to_json(data[\"body\"])
 	
 	var req = HTTPRequest.new()
@@ -319,7 +319,7 @@ func win_response_done(result, response_code, headers, body):
 # GAMEPLAY LOSE
 func lose_response(data):
 	
-	var url = BASE_URL + '/game/decrement?player_name=' + Main.username +'&tower_name=' + data[\"tower\"].percent_encode()
+	var url = BASE_URL + '/game/decrement?player_name=' + Main.username.percent_encode() +'&tower_name=' + data[\"tower\"].percent_encode()
 	var body = to_json(data[\"body\"])
 	
 	var req = HTTPRequest.new()
