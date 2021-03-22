@@ -13,7 +13,7 @@ signal end(value, other_value)
 
 # SCENES
 export (PackedScene) var Enemy
-
+var label_text = "WAVE "
 func _ready():
 	randomize()
 	params= ScreenSwitcher._params
@@ -26,13 +26,13 @@ func _ready():
 	$Label.margin_bottom = OS.window_size.y*0.4 - 30
 	$Label.margin_right =  OS.window_size.x - 30
 	$Label.margin_left = 30
-	
-	$LevelLabel.text = "LV. 5 - WAVE " + str(curr_q+1)
+	if "level" in params:
+		label_text = params["level"]+" - WAVE "
+	$LevelLabel.text = label_text + str(curr_q+1)
 	
 	start()
 
 func start():
-	print('start')
 	questions = params["qns"]
 	q = questions[0]
 	
@@ -49,6 +49,8 @@ func create_enemy(id):
 	enemies.append(enemy)
 	
 func get_hit(id):
+	var data = {"question_body": q["question_body"], "answer_body": q["answers"][id]}
+	Api.send_response(data)
 	if id == q["correct"]:
 		handle_despawn()
 		handle_respawn()
@@ -72,8 +74,7 @@ func handle_respawn():
 	curr_q += 1
 	$Player.make_collidable(false)
 	$StartTimer.start()
-	$LevelLabel.text = "WAVE " + str(curr_q)
-	print('timer started')
+	$LevelLabel.text = label_text + str(curr_q)
 	for i in range(len(q["answers"])):
 		create_enemy(i)
 	
@@ -85,10 +86,13 @@ func handle_health():
 		params["text"] = "You Lose :( Keep trying!\n" + params["world"] + "-" + params["tower"]
 		if params["world"] == "challenge":
 			params["next_scene"] = "res://World_Selection/Map/ChallengeMode.tscn"
-	#		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
+		elif params["world"] == "assignment":
+			params["text"] = "You Lose :( Keep trying!\n" + params["world"] + " dungeon"
+			params["next_scene"] = "res://World_Selection/Map/MainPage.tscn"
 		else:
-			params["next_scene"] = "res://World_Selection/Map/Story Mode.tscn"
-	#		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
+			var body = {"tower": params["tower"], "body":{}}
+			Api.lose_response(body)
+			params["next_scene"] = "res://World_Selection/Map/Story Mode.tscn"	
 		ScreenSwitcher.change_scene("res://TransitionScreen/TransitionScreen.tscn", params)
 
 func change_label(question):
@@ -123,8 +127,11 @@ func _on_EndTimer_timeout():
 	params["text"] = "Congratulation! You win!\n" + params["world"] + "-" + params["tower"]
 	if params["world"] == "challenge":
 		params["next_scene"] = "res://World_Selection/Map/ChallengeMode.tscn"
-#		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
+	elif params["world"] == "assignment":
+		params["text"] = "Congratulation! You win!\n" + params["world"] + " dungeon"
+		params["next_scene"] = "res://World_Selection/Map/MainPage.tscn"
 	else:
+		var body = {"tower": params["tower"], "body":{}}
+		Api.win_response(body)
 		params["next_scene"] = "res://World_Selection/Map/Story Mode.tscn"
-#		ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn", params)
 	ScreenSwitcher.change_scene("res://TransitionScreen/TransitionScreen.tscn", params)

@@ -23,8 +23,5 @@ func _on_Tower3_body_entered(body):
 	teleport(tower_names[world_id][2])
 
 func teleport(tower) -> void:
-	#animation_player.play("fade_in")
-	#yield(animation_player, "animation_finished")
-	print(tower)
 	ScreenSwitcher.change_scene_to(next_scene, {'world': world_name, 'tower': tower})
 

@@ -1,8 +1,5 @@
 extends Control
 
-#func _input(event):
-#	if(event is InputEventKey):
-#		go_title_screen()
 var params = ScreenSwitcher._params
 
 func _ready():
@@ -15,8 +12,6 @@ func go_title_screen():
 	if "qns" in params:
 		ScreenSwitcher.change_scene("res://Gameplay/Main.tscn", params)
 	$Timer.start()
-	
-
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	go_title_screen()
@@ -28,4 +23,5 @@ func _on_Timer_timeout():
 	$Timer.stop()
 	
 func get_qns_done(result):
-	params["qns"] = result
+	params["qns"] = result["data"]
+	params["level"] = result["level_name"]

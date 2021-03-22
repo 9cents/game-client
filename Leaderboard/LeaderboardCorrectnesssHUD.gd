@@ -16,8 +16,8 @@ func _ready():
 	update_student_info(student_info)
 	"""
 	Api.connect("call_done", self, "get_leaderboard_all_done")
-	Api.get_leaderboard_all({})
-	Api.get_leaderboard_user({})
+	Api.get_leaderboard2_all({})
+	Api.get_leaderboard2_user({})
 	$ColorRect/TextureButton.connect("pressed", self , "Close")
 	pass # Replace with function body.
 	

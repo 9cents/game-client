@@ -10,7 +10,7 @@ signal call_done(json_response)
 func _ready():
 	pass # Replace with function body.
 
-# FOR LOGIN
+# LOGIN
 func login(data):
 	var url = BASE_URL + '/login'
 	var body = to_json(data)
@@ -45,14 +45,13 @@ func signin_done(result, response_code, headers, body):
 	remove_child(req)
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
 		emit_signal(\"call_done\", {\"error\": true})
-		print(body.get_string_from_utf8())
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
 
-#  FOR LEADERBOARD
+#  LEADERBOARD LEVEL
 func get_leaderboard_all(data):
-	var url = BASE_URL + '/game/leaderboard'
+	var url = BASE_URL + '/game/leaderboardlevel'
 	var body = to_json(data)
 	
 	var req = HTTPRequest.new()
@@ -73,7 +72,7 @@ func leaderboard_all_done(result, response_code, headers, body):
 	emit_signal(\"call_done\", json)
 
 func get_leaderboard_user(data):
-	var url = BASE_URL + '/game/leaderboard?player_name=' + Main.username
+	var url = BASE_URL + '/game/leaderboardlevel?player_name=' + Main.username
 	var body = to_json(data)
 	
 	var req = HTTPRequest.new()
@@ -92,8 +91,51 @@ func leaderboard_user_done(result, response_code, headers, body):
 	var json = {\"value\": parse_json(body.get_string_from_utf8())}
 	json['type'] = 'single'
 	emit_signal(\"call_done\", json)
+
+# LEADERBOARD ACCURACY
+func get_leaderboard2_all(data):
+	var url = BASE_URL + '/game/leaderboardaccuracy'
+	var body = to_json(data)
 	
-# FOR USER DUNGEON
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"leaderboard2_all_done\")
+	req.request(url)
+	pending_req[\"leaderboard2_all\"] = req
+
+func leaderboard2_all_done(result, response_code, headers, body):
+	var req = pending_req.get(\"leaderboard2_all\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = {\"value\": parse_json(body.get_string_from_utf8())}
+	json['type'] = 'all'
+	emit_signal(\"call_done\", json)
+
+func get_leaderboard2_user(data):
+	var url = BASE_URL + '/game/leaderboardaccuracy?player_name=' + Main.username
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"leaderboard2_user_done\")
+	req.request(url)
+	pending_req[\"leaderboard2_user\"] = req
+
+func leaderboard2_user_done(result, response_code, headers, body):
+	var req = pending_req.get(\"leaderboard2_user\")
+	remove_child(req)
+	
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = {\"value\": parse_json(body.get_string_from_utf8())}
+	json['type'] = 'single'
+	emit_signal(\"call_done\", json)
+	
+# USER DUNGEON
 func get_challenge_data(data):
 	var url = BASE_URL + '/game/challengedata?player_name=' + data[\"player_name\"]
 	var body = to_json(data)
@@ -114,7 +156,7 @@ func challenge_data_done(result, response_code, headers, body):
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
 
-# FOR STORY MODE MAP
+# STORY MODE MAP
 func get_world_name(data):
 	var url = BASE_URL + '/game/worldnames'
 	var body = to_json(data)
@@ -158,10 +200,7 @@ func tower_name_done(result, response_code, headers, body):
 
 # FOR STORY MODE GAMEPLAY
 func get_qns_list(data):
-#	var url = BASE_URL + '/game/storydata?player_name=Desmond&tower_name=' + data[\"tower\"]
-	var url = BASE_URL + '/game/storydata?player_name='+ Main.username +'&tower_name=' + data[\"tower\"]
-	print (\"tower name:\" + str(data[\"tower\"]))
-	var body = to_json(data)
+	var url = BASE_URL + '/game/storydata?player_name='+ Main.username +'&tower_name=' + data[\"tower\"].percent_encode()
 	
 	var req = HTTPRequest.new()
 	add_child(req)
@@ -238,6 +277,75 @@ func update_char(data):
 func update_char_done(result, response_code, headers, body):
 	var req = pending_req.get(\"udpate_char\")
 	remove_child(req)
+	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
+		emit_signal(\"call_done\", {\"error\": true})
+		return
+	var json = parse_json(body.get_string_from_utf8())
+	emit_signal(\"call_done\", json)
+
+# GAMEPLAY RESPONSE
+func send_response(data):
+	
+	var url = BASE_URL + '/game/response?player_name=' + Main.username
+	var body = to_json(data)
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"send_response_done\")
+	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
+	pending_req[\"update_dungeon\"] = req
+
+func send_response_done(result, response_code, headers, body):
+	if \"udpate_dungeon\" in pending_req:
+		var req = pending_req.get(\"udpate_dungeon\")
+		remove_child(req)
+
+# GAMEPLAY WIN
+func win_response(data):
+	
+	var url = BASE_URL + '/game/increment?player_name=' + Main.username +'&tower_name=' + data[\"tower\"].percent_encode()
+	var body = to_json(data[\"body\"])
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"win_response_done\")
+	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
+	pending_req[\"win_dungeon\"] = req
+
+func win_response_done(result, response_code, headers, body):
+	var req = pending_req.get(\"win_dungeon\")
+	remove_child(req)
+
+# GAMEPLAY LOSE
+func lose_response(data):
+	
+	var url = BASE_URL + '/game/decrement?player_name=' + Main.username +'&tower_name=' + data[\"tower\"].percent_encode()
+	var body = to_json(data[\"body\"])
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"lose_response_done\")
+	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
+	pending_req[\"lose_dungeon\"] = req
+
+func lose_response_done(result, response_code, headers, body):
+	var req = pending_req.get(\"lose_dungeon\")
+	remove_child(req)
+
+# GET ASSIGNMENT
+func get_assignment_qns(data):
+	var url = BASE_URL + '/game/instructordungeon'
+	
+	var req = HTTPRequest.new()
+	add_child(req)
+	req.connect(\"request_completed\", self, \"assignment_qns_done\")
+	req.request(url)
+	pending_req[\"assignment_qns\"] = req
+
+func assignment_qns_done(result, response_code, headers, body):
+	var req = pending_req.get(\"assignment_qns\")
+	remove_child(req)
+	
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
 		emit_signal(\"call_done\", {\"error\": true})
 		return

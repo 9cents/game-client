@@ -39,18 +39,17 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	hide()
 
-func _input(event):
-	if event.shift:
-		if $UltiTimer.is_stopped() and $CooldownTimer.is_stopped():
-			if char_type == 'mage':
-				emit_signal("freeze")
-			if char_type == 'ninja':
-				speed = 700
-			if char_type == 'knight':
-				make_collidable(false)
-			$AnimatedSprite.animation = char_type
-			$AnimatedSprite.play()
-			$UltiTimer.start()
+func input():
+	if $UltiTimer.is_stopped() and $CooldownTimer.is_stopped():
+		if char_type == 'mage':
+			emit_signal("freeze")
+		if char_type == 'ninja':
+			speed = 700
+		if char_type == 'knight':
+			make_collidable(false)
+		$AnimatedSprite.animation = char_type
+		$AnimatedSprite.play()
+		$UltiTimer.start()
 
 func _process(delta):
 	var velocity = Vector2()
@@ -62,6 +61,8 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
+	if Input.is_key_pressed(KEY_SHIFT):
+		input()
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed

@@ -1,10 +1,5 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var world_id
 var current_world = ''
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +19,3 @@ func get_tower_name_done(result):
 	$Tower1/Label.text = result[world_id][0]
 	$Tower2/Label.text = result[world_id][1]
 	$Tower3/Label.text = result[world_id][2]
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
