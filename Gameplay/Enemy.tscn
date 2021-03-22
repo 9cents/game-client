@@ -8,56 +8,56 @@ flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 360, 0, 90, 90 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="StreamTexture" id=2]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 90, 90 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="StreamTexture" id=3]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 90, 0, 90, 90 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 180, 0, 90, 90 )
+region = Rect2( 0, 0, 90, 90 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 270, 0, 90, 90 )
+region = Rect2( 90, 0, 90, 90 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 360, 0, 90, 90 )
+region = Rect2( 180, 0, 90, 90 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 450, 0, 90, 90 )
+region = Rect2( 270, 0, 90, 90 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 540, 0, 90, 90 )
+region = Rect2( 360, 0, 90, 90 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 630, 0, 90, 90 )
+region = Rect2( 450, 0, 90, 90 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 5 )
+region = Rect2( 540, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 630, 0, 90, 90 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 5 )
 region = Rect2( 720, 0, 90, 90 )
-
-[sub_resource type="StreamTexture" id=11]
-flags = 4
-
-[sub_resource type="StreamTexture" id=12]
-flags = 4
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -66,15 +66,15 @@ animations = [ {
 "name": "respawn",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "wormwalk",
-"speed": 20.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 3.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "wormwalk",
+"speed": 20.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=14]
@@ -82,6 +82,7 @@ radius = 34.1007
 height = 27.2476
 
 [node name="Enemy" type="Area2D"]
+position = Vector2( 0.178047, 0 )
 scale = Vector2( 0.5, 0.5 )
 collision_mask = 2
 script = ExtResource( 3 )
@@ -104,6 +105,9 @@ margin_top = -76.0
 margin_right = -11.0
 margin_bottom = -62.0
 rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_constants/shadow_as_outline = 1
 align = 1
 valign = 1
 __meta__ = {
