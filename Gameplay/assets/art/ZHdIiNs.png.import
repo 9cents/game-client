@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MageRight.png-c18915d6a1230b25f8e98a49ba529ce0.stex"
+path="res://.import/ZHdIiNs.png-6a6b8d9d0299077d6c46da68a6014ab1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gameplay/assets/art/MageRight.png"
-dest_files=[ "res://.import/MageRight.png-c18915d6a1230b25f8e98a49ba529ce0.stex" ]
+source_file="res://Gameplay/assets/art/ZHdIiNs.png"
+dest_files=[ "res://.import/ZHdIiNs.png-6a6b8d9d0299077d6c46da68a6014ab1.stex" ]
 
 [params]
 

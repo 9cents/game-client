@@ -1,32 +1,30 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Gameplay/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Gameplay/scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://Gameplay/assets/font/Arial Unicode.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Gameplay/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gameplay/assets/art/ZHdIiNs.png" type="Texture" id=5]
+[ext_resource path="res://Login/GamePlayed-vYL7.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 9.18369e-39, 0.761146 )
-colors = PoolColorArray( 0.682353, 1, 0.956863, 1, 0.686275, 1, 0.984314, 1 )
+offsets = PoolRealArray( 0.0229885, 0.522988, 1 )
+colors = PoolColorArray( 0.818773, 0.824219, 0.754517, 1, 1, 1, 1, 1, 0.827799, 0.832031, 0.754633, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.258065 )
-colors = PoolColorArray( 0.384314, 0.384314, 0.384314, 1, 0.392157, 0.392157, 0.392157, 1 )
-
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
-
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 0.0980392, 0.0980392, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 6 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -38,12 +36,16 @@ wait_time = 2.0
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 250, 450 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="."]
 show_behind_parent = true
 light_mask = 0
-margin_right = 1024.0
-margin_bottom = 220.0
-texture = SubResource( 2 )
+anchor_left = -0.00143182
+anchor_right = -0.00143182
+margin_left = 332.279
+margin_top = 228.55
+margin_right = 695.279
+margin_bottom = 589.55
+texture = ExtResource( 5 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -52,10 +54,43 @@ __meta__ = {
 [node name="TextureRect2" type="TextureRect" parent="."]
 show_behind_parent = true
 light_mask = 0
-margin_top = 219.0
-margin_right = 1024.0
-margin_bottom = 599.0
-texture = SubResource( 4 )
+anchor_left = -0.00143182
+anchor_right = -0.00143182
+margin_left = 14.4662
+margin_top = 230.0
+margin_right = 377.466
+margin_bottom = 591.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+show_behind_parent = true
+light_mask = 0
+anchor_left = -0.00143182
+anchor_top = 0.00177389
+anchor_right = -0.00143182
+anchor_bottom = 0.00177389
+margin_left = 650.558
+margin_top = 227.485
+margin_right = 1013.56
+margin_bottom = 588.485
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+light_mask = 0
+margin_left = 14.0
+margin_top = 7.0
+margin_right = 1012.0
+margin_bottom = 220.0
+texture = SubResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,7 +107,7 @@ margin_top = 62.0
 margin_right = 974.0
 margin_bottom = 200.0
 rect_scale = Vector2( 0.8, 0.8 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.156863, 0.152941, 0.152941, 1 )
 autowrap = true
 __meta__ = {
@@ -83,11 +118,11 @@ __meta__ = {
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 margin_left = 11.0
-margin_top = 7.81079
+margin_top = 8.0
 margin_right = 550.0
-margin_bottom = 46.8108
-custom_styles/fg = SubResource( 6 )
-custom_styles/bg = SubResource( 7 )
+margin_bottom = 38.0
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 percent_visible = false
@@ -96,18 +131,19 @@ __meta__ = {
 }
 
 [node name="LevelLabel" type="Label" parent="."]
-margin_left = 560.4
-margin_top = 12.4
-margin_right = 708.4
-margin_bottom = 32.4
-rect_scale = Vector2( 2, 2 )
+margin_left = 560.0
+margin_top = 6.0
+margin_right = 708.0
+margin_bottom = 31.0
+rect_scale = Vector2( 2, 1.47877 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.0627451, 0.0431373, 0.0431373, 1 )
-custom_colors/font_outline_modulate = Color( 0.996078, 0.996078, 0.996078, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="EndTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="defreeze" from="Player" to="." method="_on_Player_defreeze"]
 [connection signal="freeze" from="Player" to="." method="_on_Player_freeze"]
