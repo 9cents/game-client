@@ -10,6 +10,7 @@ var screen_size
 signal freeze
 signal defreeze
 
+#Set special skill time and cooldown time 
 var ulti_dict = {
 	'mage': {
 		'ulti_time' : 2,
@@ -39,6 +40,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	hide()
 
+#Perform special skill base on chosen character
 func input():
 	if $UltiTimer.is_stopped() and $CooldownTimer.is_stopped():
 		if char_type == 'mage':
@@ -94,7 +96,7 @@ func _process(delta):
 func make_collidable(is_collidable: bool):
 	$CollisionShape2D.set_deferred("disabled", !is_collidable)
 
-
+#Character Special skill timer and cooldown timer 
 func _on_UltiTimer_timeout():
 	$UltiTimer.stop()
 	$CooldownTimer.start()
@@ -111,7 +113,7 @@ func _on_UltiTimer_timeout():
 func _on_CooldownTimer_timeout():
 	$CooldownTimer.stop()
 
-
+#Player collision 
 func _on_Player_area_entered(area):
 	if $UltiTimer.is_stopped():
 		$AnimatedSprite.animation = "attack_"+char_type

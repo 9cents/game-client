@@ -48,5 +48,5 @@ func _on_GameplayButton_pressed():
 	
 	
 func _on_CloseButton_pressed():
-	ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
+	ScreenSwitcher.change_scene("res://World_Selection/Interface/Settings Page.tscn")
 	pass # Replace with function body.

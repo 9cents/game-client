@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/warrior_mockup.PNG-b9ee706665548638528d6564a4a216cd.stex"
+path="res://.import/knight_skill.PNG-ad824b85428721684417bceabb7ba7af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://splashscreen/sprite/warrior_mockup.PNG"
-dest_files=[ "res://.import/warrior_mockup.PNG-b9ee706665548638528d6564a4a216cd.stex" ]
+source_file="res://World_Selection/Interface/TutorialAssets/knight_skill.PNG"
+dest_files=[ "res://.import/knight_skill.PNG-ad824b85428721684417bceabb7ba7af.stex" ]
 
 [params]
 

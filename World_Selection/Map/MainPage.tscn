@@ -652,6 +652,7 @@ scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 6 )
 
 [node name="Help_Button" type="Button" parent="CanvasLayer/Settings"]
+visible = false
 margin_left = -12.0
 margin_right = 5.33334
 margin_bottom = 20.0
@@ -772,5 +773,4 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="body_entered" from="Assignment" to="Assignment" method="_on_Assignment_body_entered"]

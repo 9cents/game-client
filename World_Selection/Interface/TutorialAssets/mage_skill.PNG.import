@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/assassin_mockup.PNG-cc9b5ae2fa51ec008e52821819125793.stex"
+path="res://.import/mage_skill.PNG-f9703b94f924e2153c22820af1dd729d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://splashscreen/sprite/assassin_mockup.PNG"
-dest_files=[ "res://.import/assassin_mockup.PNG-cc9b5ae2fa51ec008e52821819125793.stex" ]
+source_file="res://World_Selection/Interface/TutorialAssets/mage_skill.PNG"
+dest_files=[ "res://.import/mage_skill.PNG-f9703b94f924e2153c22820af1dd729d.stex" ]
 
 [params]
 

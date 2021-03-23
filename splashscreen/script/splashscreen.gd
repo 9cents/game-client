@@ -8,15 +8,16 @@ func _ready():
 		Api.connect("call_done", self, "get_qns_done")
 		Api.get_qns_list({"tower":params["tower"]})
 
+#Switch to the game scene
 func go_title_screen():
 	if "qns" in params:
 		ScreenSwitcher.change_scene("res://Gameplay/Main.tscn", params)
 	$Timer.start()
 
+#Play the Splash screen Animation
 func _on_AnimationPlayer_animation_finished(anim_name):
 	go_title_screen()
 	pass # Replace with function body.
-
 
 func _on_Timer_timeout():
 	go_title_screen()

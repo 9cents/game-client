@@ -11,6 +11,7 @@ func _ready():
 	$AnimatedSprite.animation = char_type
 	$AnimatedSprite.play()
 
+#enable movement and animation
 func _physics_process(delta):
 	
 	var input_vec = Vector2.ZERO

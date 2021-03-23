@@ -328,7 +328,6 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="body_entered" from="Tower1" to="Tower1" method="_on_Tower1_body_entered"]
 [connection signal="body_entered" from="Tower2" to="Tower2" method="_on_Tower2_body_entered"]
 [connection signal="body_entered" from="Tower3" to="Tower3" method="_on_Tower3_body_entered"]
