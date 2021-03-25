@@ -2,12 +2,14 @@ extends Area2D
 
 var id
 
+#movement speed
 export var speed = 300
 var screen_size
 var velocity = Vector2()
 
 signal hit(value, other_value)
 
+#set the screen dimensions on game start 
 func start(i):
 	position.x = randi() % (int(screen_size.x)-80) +  40
 	position.y = randi() % (int(screen_size.y*0.6)-60) + int(screen_size.y*0.4) + 30
@@ -42,6 +44,7 @@ func end():
 	hide()
 	queue_free()
 
+#Enable collision 
 func _on_Enemy_area_entered(area):
 	emit_signal("hit", id)
 	hide()
@@ -57,6 +60,7 @@ func start_moving():
 	$AnimatedSprite.animation = "wormwalk"
 	$AnimatedSprite.play()
 
+#Enable the movement of the enermy
 func move():
 	$AnimatedSprite.animation = "wormwalk"
 	$AnimatedSprite.play()
@@ -66,7 +70,8 @@ func move():
 		velocity.x = -velocity.x
 	if randi()%2:
 		velocity.y = -velocity.y
-
+		
+#Stop the movement of the enermy
 func freeze():
 	$AnimatedSprite.animation = "respawn"
 	$AnimatedSprite.play()

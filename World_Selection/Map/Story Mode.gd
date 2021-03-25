@@ -9,9 +9,11 @@ extends Node2D
 func _ready():
 	Api.connect("call_done", self, "get_world_name_done")
 	Api.get_world_name({})
+	#HTTP request to get world name
 	
 	pass # Replace with function body.
 
+#Display World name
 func get_world_name_done(result):
 	$World1.start(result[0], 0)
 	$World2.start(result[1], 1)

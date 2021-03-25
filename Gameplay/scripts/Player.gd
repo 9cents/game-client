@@ -36,6 +36,7 @@ func start(pos):
 	$UltiTimer.wait_time = ulti_dict[char_type]['ulti_time']
 	$CooldownTimer.wait_time = ulti_dict[char_type]['cd_time']
 
+#Set screen size
 func _ready():
 	screen_size = get_viewport_rect().size
 	hide()

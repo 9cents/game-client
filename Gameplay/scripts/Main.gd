@@ -32,6 +32,7 @@ func _ready():
 	
 	start()
 
+#Show the Health bar and questions
 func start():
 	questions = params["qns"]
 	q = questions[0]
@@ -41,6 +42,7 @@ func start():
 	$ProgressBar.value = health
 	handle_respawn()
 
+#Spawn the enermy
 func create_enemy(id):
 	var enemy = Enemy.instance()
 	add_child(enemy)
@@ -48,6 +50,7 @@ func create_enemy(id):
 	enemy.connect('hit', self, "get_hit")
 	enemies.append(enemy)
 	
+#Get the correct answer from the server and compare with the chosen answer
 func get_hit(id):
 	var data = {"question_body": q["question_body"], "answer_body": q["answers"][id]}
 	Api.send_response(data)
@@ -59,11 +62,13 @@ func get_hit(id):
 		$ProgressBar.value=health
 		handle_health()
 
+#Despawn the enermy upon collision
 func handle_despawn():
 	for e in range(len(enemies)):
 		var enemy = enemies.pop_back()
 		enemy.end()
 
+#Spawn new enermy upon correct answer
 func handle_respawn():
 	if curr_q == len(questions):
 		handle_despawn()
@@ -77,7 +82,8 @@ func handle_respawn():
 	$LevelLabel.text = label_text + str(curr_q)
 	for i in range(len(q["answers"])):
 		create_enemy(i)
-	
+
+#When the health bar reaches 0, display lose text screen
 func handle_health():
 	if health<= 0:
 		handle_despawn()
@@ -95,12 +101,14 @@ func handle_health():
 			params["next_scene"] = "res://World_Selection/Map/Story Mode.tscn"	
 		ScreenSwitcher.change_scene("res://TransitionScreen/TransitionScreen.tscn", params)
 
+#Change questions after each wave
 func change_label(question):
 	var str_q = question["question_body"] + "\n"
 	for i in range(len(question["answers"])):
 		str_q += ' \n '+char(65+i)+'. '+question['answers'][i]
 	$Label.text= str_q
 		
+
 func _on_StartTimer_timeout():
 	$Player.make_collidable(true)
 	for e in range(len(enemies)):
@@ -120,7 +128,7 @@ func _on_Player_defreeze():
 		var enemy = enemies[e]
 		enemy.move()
 
-
+#Complete all the question,display win text screen
 func _on_EndTimer_timeout():
 	params['win'] = true
 	params.erase("qns")

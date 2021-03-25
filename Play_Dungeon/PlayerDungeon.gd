@@ -14,6 +14,7 @@ var player_name = ''
 func _ready():
 	pass # Replace with function body.
 
+#Authentication to check for available dungeon
 func _on_ConfirmButton_pressed():
 	print("Searching for player")
 	
@@ -37,11 +38,12 @@ func _on_EnterDungeonButton_pressed():
 	ScreenSwitcher.change_scene("res://splashscreen/splashscreen.tscn", {"world": "challenge", "tower": username.get_text(), "qns": qns})
 	pass
 
-
+#Change scene back to challenge page 
 func _on_CloseButton_toggled(button_pressed):
 	ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn")
 	pass # Replace with function body.
 
+#Display text if user's dungeon is not found 
 func challenge_data_done(result):
 	if result == []:
 		confirm_button.disabled = false

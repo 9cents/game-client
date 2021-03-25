@@ -19,10 +19,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	go_title_screen()
 	pass # Replace with function body.
 
+#Set the timer for the splash screen
 func _on_Timer_timeout():
 	go_title_screen()
 	$Timer.stop()
-	
+
+#Get the question and level 
 func get_qns_done(result):
 	params["qns"] = result["data"]
 	params["level"] = result["level_name"]

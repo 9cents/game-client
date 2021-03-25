@@ -8,6 +8,7 @@ var world_name
 var world_id
 var q
 
+#On start, get the world name and id 
 func start(worldname, id, qns=null):
 	world_name = worldname
 	world_id = id
@@ -20,6 +21,8 @@ func _on_Portal2D_body_entered(body):
 func _on_Assignment_body_entered(body):
 	teleport()
 
+
+#Entered Portal,Play Animation,Change Scene
 func teleport() -> void:
 	if world_name != "assignment":
 		animation_player.play("fade_in")

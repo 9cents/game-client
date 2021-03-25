@@ -30,6 +30,7 @@ func user_query_done(results):
 		ScreenSwitcher.change_scene("res://TransitionScreen/TransitionScreen.tscn", params)
 
 
+#
 func update_user_qns(results):
 	if results == []:
 		arr = ['','','','','']
@@ -105,20 +106,19 @@ func _on_Q5button_pressed():
 	move_to_questions_list()
 	pass
 
-
+#Change Scene back to the ChallengeMode
 func _on_GoBackButton_pressed():
-	# FUNCTION FOR CHENG YUN, GO TO ANOTHER SCENE. Since this node is destroyed and recreated no need to do anything else
 	ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn")
 	pass
 
 
 func _on_ProceedButton_pressed():
+	# Only possible when student_questions_num == QUESTIONS_ALLOWED, the number of questions (we use 5)
 	if student_questions_num == QUESTIONS_ALLOWED:
-		# Only possible when student_questions_num == QUESTIONS_ALLOWED, the number of questions (we use 5)
-		# FUNCTION FOR CHENG YUN, GO TO ANOTHER SCENE.
-		Api.update_dungeon(arr)
-
+		
 		# FUNCTION: HTTP Request. Update database with the current questions
+		Api.update_dungeon(arr)
+		
 	# If condition not met, this button does nothing
 		pass
 
