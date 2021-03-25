@@ -22,6 +22,7 @@ func _on_Tower2_body_entered(body):
 func _on_Tower3_body_entered(body):
 	teleport(tower_names[world_id][2])
 
+#Entered Portal Change Scene
 func teleport(tower) -> void:
 	ScreenSwitcher.change_scene_to(next_scene, {'world': world_name, 'tower': tower})
 

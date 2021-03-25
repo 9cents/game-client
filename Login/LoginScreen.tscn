@@ -364,7 +364,6 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="Background/LoginScreen/LoginButton" to="." method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="Background/LoginScreen/CreateAccountButton" to="." method="_on_CreateAccountButton_pressed"]
 [connection signal="pressed" from="Background/CreateAccount/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]

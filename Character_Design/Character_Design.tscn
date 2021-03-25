@@ -17,53 +17,53 @@ height = 304.0
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 231, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 462, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 693, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 924, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 1155, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 200, 0, 200, 200 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 200, 200 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 400, 0, 200, 200 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 600, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 462, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 693, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 924, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1155, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
@@ -117,14 +117,14 @@ region = Rect2( 1458, 0, 162, 162 )
 
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "mage",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "ninja",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "mage",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
@@ -142,19 +142,19 @@ extra_spacing_char = 3
 extra_spacing_space = 1
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=24]
 size = 36
 outline_size = 1
 extra_spacing_char = 12
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=27]
+[sub_resource type="DynamicFont" id=25]
 size = 27
 outline_size = 2
 outline_color = Color( 0.133333, 0.0352941, 0.219608, 1 )
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=26]
 size = 40
 outline_size = 4
 outline_color = Color( 0.133333, 0.0352941, 0.219608, 1 )
@@ -293,7 +293,7 @@ custom_styles/hover = ExtResource( 13 )
 custom_styles/pressed = ExtResource( 13 )
 custom_styles/focus = ExtResource( 13 )
 custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 24 )
 text = "CONFIRM"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -304,7 +304,7 @@ anchor_left = 0.637506
 anchor_top = 0.382602
 anchor_right = 0.920709
 anchor_bottom = 0.500935
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 25 )
 text = "Freeze for 2 sec
 Cooldown 6 sec"
 align = 3
@@ -320,7 +320,7 @@ anchor_left = 0.636988
 anchor_top = 0.199456
 anchor_right = 0.909449
 anchor_bottom = 0.317789
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 25 )
 text = "Invincibility 3 sec 
 Cooldown 6 sec "
 align = 3
@@ -336,7 +336,7 @@ anchor_left = 0.639141
 anchor_top = 0.564286
 anchor_right = 0.922344
 anchor_bottom = 0.682619
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 25 )
 text = "Speed boost 4 sec
 Cooldown 6 sec"
 align = 3
@@ -354,7 +354,7 @@ anchor_top = 0.207959
 anchor_right = 0.603476
 anchor_bottom = 0.299626
 margin_right = -10.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 26 )
 text = "KNIGHT"
 flat = true
 align = 0
@@ -367,7 +367,7 @@ anchor_left = 0.419633
 anchor_top = 0.396667
 anchor_right = 0.569047
 anchor_bottom = 0.488333
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 26 )
 text = "MAGE"
 flat = true
 align = 0
@@ -381,14 +381,13 @@ anchor_top = 0.590631
 anchor_right = 0.585589
 anchor_bottom = 0.682298
 margin_right = -13.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 26 )
 text = "NINJA"
 flat = true
 align = 0
 __meta__ = {
 "_edit_use_anchors_": true
 }
-
 [connection signal="pressed" from="btn_Warrior" to="." method="_on_btn_Warrior_pressed"]
 [connection signal="pressed" from="btn_mage" to="." method="_on_btn_mage_pressed"]
 [connection signal="pressed" from="btn_assasin" to="." method="_on_btn_assasin_pressed"]

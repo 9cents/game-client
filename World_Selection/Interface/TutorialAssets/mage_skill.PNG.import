@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/warrior_mockup.PNG-b9ee706665548638528d6564a4a216cd.stex"
+path="res://.import/mage_skill.PNG-f9703b94f924e2153c22820af1dd729d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://splashscreen/sprite/warrior_mockup.PNG"
-dest_files=[ "res://.import/warrior_mockup.PNG-b9ee706665548638528d6564a4a216cd.stex" ]
+source_file="res://World_Selection/Interface/TutorialAssets/mage_skill.PNG"
+dest_files=[ "res://.import/mage_skill.PNG-f9703b94f924e2153c22820af1dd729d.stex" ]
 
 [params]
 

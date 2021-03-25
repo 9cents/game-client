@@ -7,6 +7,7 @@ extends Node
 var params
 
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
 	params = ScreenSwitcher._params
 	$Label.text = params["text"]

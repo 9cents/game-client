@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://World_Selection/Interface/SettingsPage.gd" type="Script" id=1]
 [ext_resource path="res://Leaderboard/close button.png" type="Texture" id=2]
 [ext_resource path="res://Login/Resources/background.jpg" type="Texture" id=3]
+[ext_resource path="res://World_Selection/Interface/Help.png" type="Texture" id=4]
+[ext_resource path="res://World_Selection/Interface/Audio.png" type="Texture" id=5]
+[ext_resource path="res://World_Selection/Interface/Quit.png" type="Texture" id=6]
 
 [node name="SettingsScreen" type="Node2D"]
 scale = Vector2( 2.5, 2.5 )
@@ -20,36 +23,51 @@ position = Vector2( 203.398, 124.022 )
 scale = Vector2( 0.372131, 0.404022 )
 texture = ExtResource( 3 )
 
-[node name="Audio_Button" type="Button" parent="Settings"]
-margin_left = 111.589
-margin_top = 114.189
-margin_right = 303.59
-margin_bottom = 134.189
-text = "Audio"
+[node name="Help_Button" type="Button" parent="Settings"]
+margin_left = 99.9355
+margin_top = 94.0468
+margin_right = 153.936
+margin_bottom = 147.047
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Video_Button" type="Button" parent="Settings"]
-visible = false
-margin_left = 80.0
-margin_top = 88.0
-margin_right = 272.0
-margin_bottom = 108.0
-text = "Video"
+[node name="Sprite" type="Sprite" parent="Settings/Help_Button"]
+position = Vector2( 26.457, 25.2993 )
+scale = Vector2( 0.125158, 0.125158 )
+texture = ExtResource( 4 )
+
+[node name="Audio_Button" type="Button" parent="Settings"]
+margin_left = 182.0
+margin_top = 94.0
+margin_right = 241.0
+margin_bottom = 148.0
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="Settings/Audio_Button"]
+position = Vector2( 29.7181, 27.5136 )
+scale = Vector2( 0.108496, 0.101232 )
+texture = ExtResource( 5 )
 
 [node name="Quit_Button" type="Button" parent="Settings"]
-margin_left = 165.843
-margin_top = 158.638
-margin_right = 237.843
-margin_bottom = 178.638
+margin_left = 270.0
+margin_top = 94.0
+margin_right = 324.0
+margin_bottom = 148.0
 text = "Quit"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="Settings/Quit_Button"]
+position = Vector2( 26.6641, 26.8657 )
+scale = Vector2( 0.103931, 0.103931 )
+texture = ExtResource( 6 )
 
 [node name="Close_Button" type="TextureButton" parent="Settings"]
 margin_left = 13.5563

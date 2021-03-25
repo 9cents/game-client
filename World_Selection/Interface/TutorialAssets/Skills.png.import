@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mage mockup.PNG-abeaa55a90e5b3b3edb371d809a96a11.stex"
+path="res://.import/Skills.png-2d07deb526e69b32e382af02974569c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://splashscreen/sprite/mage mockup.PNG"
-dest_files=[ "res://.import/mage mockup.PNG-abeaa55a90e5b3b3edb371d809a96a11.stex" ]
+source_file="res://World_Selection/Interface/TutorialAssets/Skills.png"
+dest_files=[ "res://.import/Skills.png-2d07deb526e69b32e382af02974569c1.stex" ]
 
 [params]
 

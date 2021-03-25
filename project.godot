@@ -10,14 +10,16 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
+
 }
 
 [application]
 
 config/name="DodgeGame"
 run/main_scene="res://Login/LoginScreen.tscn"
-run/flush_stdout_on_print.debug=false
 config/icon="res://icon.png"
+config/windows_native_icon="res://Dodgeware_Logo.ico"
+run/flush_stdout_on_print.debug=false
 
 [autoload]
 
