@@ -121,6 +121,8 @@ func _on_ProceedButton_pressed():
 		
 	# If condition not met, this button does nothing
 		pass
+	else:
+		$ErrorLabel.text = "Pick 5 item before proceeding! \n"+str(student_questions_num)+'/'+str(QUESTIONS_ALLOWED)
 
 func move_to_questions_list():
 	$BackgroundColor.hide() # Change to question selection page scene

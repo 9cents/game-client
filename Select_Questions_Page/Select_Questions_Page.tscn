@@ -225,6 +225,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question4/Panel/Q4button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.00455
+margin_right = 2.00452
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "<CLICK HERE>"
@@ -291,7 +293,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ErrorLabel" type="Label" parent="."]
+anchor_left = 0.00151801
+anchor_right = 0.00151801
+margin_left = 116.0
+margin_top = 512.0
+margin_right = 686.0
+margin_bottom = 575.0
+rect_scale = Vector2( 1.4, 1.4 )
+custom_colors/font_color = Color( 0.921569, 0.133333, 0.133333, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="QuestionsListPage" parent="." instance=ExtResource( 5 )]
+
 [connection signal="pressed" from="BackgroundColor/ProceedButton" to="." method="_on_ProceedButton_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question1/Panel/Q1button" to="." method="_on_Q1button_pressed"]
 [connection signal="pressed" from="BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question2/Panel/Q2button" to="." method="_on_Q2button_pressed"]
