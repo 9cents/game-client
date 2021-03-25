@@ -7,9 +7,6 @@ var BASE_URL = 'http://172.21.148.168:5000'
 var pending_req = {}
 signal call_done(json_response)
 
-func _ready():
-	pass # Replace with function body.
-
 # LOGIN
 func login(data):
 	var url = BASE_URL + '/login'
@@ -18,14 +15,18 @@ func login(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"login_done\")
+	req.set_timeout(3)
 	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_POST, body)
 	pending_req[\"login_key\"] = req
 
 func login_done(result, response_code, headers, body):
 	var req = pending_req.get(\"login_key\")
 	remove_child(req)
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		emit_signal(\"call_done\", {'error':true})
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
@@ -37,14 +38,18 @@ func signin(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"signin_done\")
+	req.set_timeout(3)
 	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_POST, body)
 	pending_req[\"signin_key\"] = req
 
 func signin_done(result, response_code, headers, body):
 	var req = pending_req.get(\"signin_key\")
 	remove_child(req)
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		emit_signal(\"call_done\", {'error':true})
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
@@ -57,15 +62,19 @@ func get_leaderboard_all(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"leaderboard_all_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"leaderboard_all\"] = req
 
 func leaderboard_all_done(result, response_code, headers, body):
 	var req = pending_req.get(\"leaderboard_all\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = {\"value\": parse_json(body.get_string_from_utf8())}
 	json['type'] = 'all'
@@ -78,15 +87,19 @@ func get_leaderboard_user(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"leaderboard_user_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"leaderboard_user\"] = req
 
 func leaderboard_user_done(result, response_code, headers, body):
 	var req = pending_req.get(\"leaderboard_user\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = {\"value\": parse_json(body.get_string_from_utf8())}
 	json['type'] = 'single'
@@ -100,15 +113,19 @@ func get_leaderboard2_all(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"leaderboard2_all_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"leaderboard2_all\"] = req
 
 func leaderboard2_all_done(result, response_code, headers, body):
 	var req = pending_req.get(\"leaderboard2_all\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = {\"value\": parse_json(body.get_string_from_utf8())}
 	json['type'] = 'all'
@@ -121,15 +138,19 @@ func get_leaderboard2_user(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"leaderboard2_user_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"leaderboard2_user\"] = req
 
 func leaderboard2_user_done(result, response_code, headers, body):
 	var req = pending_req.get(\"leaderboard2_user\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = {\"value\": parse_json(body.get_string_from_utf8())}
 	json['type'] = 'single'
@@ -143,15 +164,19 @@ func get_challenge_data(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"challenge_data_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"challenge_data\"] = req
 
 func challenge_data_done(result, response_code, headers, body):
 	var req = pending_req.get(\"challenge_data\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
@@ -164,15 +189,19 @@ func get_world_name(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"world_name_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"world_name\"] = req
 
 func world_name_done(result, response_code, headers, body):
 	var req = pending_req.get(\"world_name\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
@@ -185,15 +214,19 @@ func get_tower_name(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"tower_name_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"tower_name\"] = req
 
 func tower_name_done(result, response_code, headers, body):
 	var req = pending_req.get(\"tower_name\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
@@ -205,15 +238,19 @@ func get_qns_list(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"get_qns_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"qns_list\"] = req
 
 func get_qns_done(result, response_code, headers, body):
 	var req = pending_req.get(\"qns_list\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
@@ -227,16 +264,19 @@ func update_dungeon(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"update_dungeon_done\")
+	req.set_timeout(3)
 	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
 	pending_req[\"update_dungeon\"] = req
 
 func update_dungeon_done(result, response_code, headers, body):
 	var req = pending_req.get(\"udpate_dungeon\")
 	remove_child(req)
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		var json = {\"error\": true}
-		json['dungeon'] = 'update'
-		emit_signal(\"call_done\", json)
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = {\"value\": parse_json(body.get_string_from_utf8())}
 	json['dungeon'] = 'update'
@@ -249,15 +289,19 @@ func get_world_qns(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"world_qns_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"world_qns\"] = req
 
 func world_qns_done(result, response_code, headers, body):
 	var req = pending_req.get(\"world_qns\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = {\"value\": parse_json(body.get_string_from_utf8())}
 	json['qns'] = 'all'
@@ -271,14 +315,19 @@ func update_char(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"update_char_done\")
+	req.set_timeout(3)
 	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
 	pending_req[\"update_char\"] = req
 
 func update_char_done(result, response_code, headers, body):
 	var req = pending_req.get(\"udpate_char\")
 	remove_child(req)
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
@@ -292,6 +341,7 @@ func send_response(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"send_response_done\")
+	req.set_timeout(3)
 	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
 	pending_req[\"update_dungeon\"] = req
 
@@ -309,6 +359,7 @@ func win_response(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"win_response_done\")
+	req.set_timeout(3)
 	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
 	pending_req[\"win_dungeon\"] = req
 
@@ -325,6 +376,7 @@ func lose_response(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"lose_response_done\")
+	req.set_timeout(3)
 	req.request(url, [\"Content-Type: application/json\"], false, HTTPClient.METHOD_PUT, body)
 	pending_req[\"lose_dungeon\"] = req
 
@@ -339,15 +391,19 @@ func get_assignment_qns(data):
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.connect(\"request_completed\", self, \"assignment_qns_done\")
+	req.set_timeout(3)
 	req.request(url)
 	pending_req[\"assignment_qns\"] = req
 
 func assignment_qns_done(result, response_code, headers, body):
 	var req = pending_req.get(\"assignment_qns\")
 	remove_child(req)
-	
+	if response_code == 0:
+		var text = \"Oops!\\nserver takes too long to respond\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 	if response_code != 200 || result != HTTPRequest.RESULT_SUCCESS:
-		emit_signal(\"call_done\", {\"error\": true})
+		var text = \"Oops!\\nSomething went wrong\\n try again later :(\"
+		ScreenSwitcher.change_scene(\"res://ErrorPage/Error.tscn\", {\"text\": text})
 		return
 	var json = parse_json(body.get_string_from_utf8())
 	emit_signal(\"call_done\", json)
