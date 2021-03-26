@@ -155,7 +155,7 @@ visible = false
 polygon = PoolVector2Array( 4.49802, -19.6213, 16.3901, -13.9131, 22.0983, -5.35079, 24.001, 7.96832, 13.0603, 17.9577, 5.92505, 18.4333, 8.30347, 22.7145, -0.734497, 23.1902, 1.64392, 17.9577, -10.7238, 15.5793, -17.3834, 6.54128, -17.3834, -1.54534, -13.1022, -9.15626, -6.91837, -17.2429 )
 
 [node name="TreeBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 157.079, 102.253 )
+position = Vector2( 154.701, 147.919 )
 
 [node name="Tree" type="Sprite" parent="TreeBody2D2"]
 position = Vector2( 3.25769, 2.58392 )
@@ -201,7 +201,7 @@ scale = Vector2( 0.690641, 0.690641 )
 texture = ExtResource( 3 )
 
 [node name="Sunflower3" type="Sprite" parent="."]
-position = Vector2( 158.904, 140.303 )
+position = Vector2( 157.953, 110.811 )
 scale = Vector2( 0.690641, 0.690641 )
 texture = ExtResource( 3 )
 

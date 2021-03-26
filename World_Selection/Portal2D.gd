@@ -26,9 +26,11 @@ func _on_Assignment_body_entered(body):
 func teleport() -> void:
 	if world_name != "assignment":
 		animation_player.play("fade_in")
+		animation_player.playback_speed = 2.0
 		yield(animation_player, "animation_finished")
 		ScreenSwitcher.change_scene_to(next_scene, {'world': world_name, 'world_id': world_id})
 		return
 	animation_player.play("fade_in")
+	animation_player.playback_speed = 2.0
 	yield(animation_player, "animation_finished")
 	ScreenSwitcher.change_scene_to(next_scene, {'world': world_name, 'world_id': world_id, 'qns': q, 'tower':''})
