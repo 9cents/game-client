@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="DodgeGame"
 run/main_scene="res://Login/LoginScreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://Dodgeware_Logo.png"
 config/windows_native_icon="res://Dodgeware_Logo.ico"
 run/flush_stdout_on_print.debug=false
 
