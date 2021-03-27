@@ -89,13 +89,14 @@ func handle_health():
 		handle_despawn()
 		params['win'] = false
 		params.erase("qns")
-		params["text"] = "You Lose :( Keep trying!\n" + params["world"] + "-" + params["tower"]
 		if params["world"] == "challenge":
+			params["text"] = "You Lose :( Keep trying!\n" + params["world"] + "-" + params["tower"]
 			params["next_scene"] = "res://World_Selection/Map/ChallengeMode.tscn"
 		elif params["world"] == "assignment":
 			params["text"] = "You Lose :( Keep trying!\n" + params["world"] + " dungeon"
 			params["next_scene"] = "res://World_Selection/Map/MainPage.tscn"
 		else:
+			params["text"] = "You Lose :( Keep trying!\n" + params["world"] + "-" + params["tower"] +"\n" + params["level"]
 			var body = {"tower": params["tower"], "body":{}}
 			Api.lose_response(body)
 			params["next_scene"] = "res://World_Selection/Map/Story Mode.tscn"	
@@ -132,13 +133,15 @@ func _on_Player_defreeze():
 func _on_EndTimer_timeout():
 	params['win'] = true
 	params.erase("qns")
-	params["text"] = "Congratulation! You win!\n" + params["world"] + "-" + params["tower"]
+	
 	if params["world"] == "challenge":
+		params["text"] = "Congratulation! You win!\n" + params["world"] + "-" + params["tower"]
 		params["next_scene"] = "res://World_Selection/Map/ChallengeMode.tscn"
 	elif params["world"] == "assignment":
 		params["text"] = "Congratulation! You win!\n" + params["world"] + " dungeon"
 		params["next_scene"] = "res://World_Selection/Map/MainPage.tscn"
 	else:
+		params["text"] = "Congratulation! You win!\n" + params["world"] + "-" + params["tower"] +"\n" + params["level"]
 		var body = {"tower": params["tower"], "body":{}}
 		Api.win_response(body)
 		params["next_scene"] = "res://World_Selection/Map/Story Mode.tscn"
