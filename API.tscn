@@ -283,7 +283,7 @@ func update_dungeon_done(result, response_code, headers, body):
 	emit_signal(\"call_done\", json)
 
 func get_world_qns(data):
-	var url = BASE_URL + '/game/worldquestions'
+	var url = BASE_URL + '/game/possiblechallengequestions?player_name=' + Main.username.percent_encode()
 	var body = to_json(data)
 	
 	var req = HTTPRequest.new()
