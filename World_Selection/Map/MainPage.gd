@@ -1,9 +1,11 @@
 extends Node2D
 
+# Called when the node enters the scene tree for the first time.
+#HTTP request to get the assignment questions.
 func _ready():
 	Api.connect("call_done", self, "get_assignment_done")
 	Api.get_assignment_qns({})
-	#HTTP request to get the assignment questions.
+	
 
 #When locked the assignment portal will disappear,when unlocked player can access assignment
 func get_assignment_done(result):

@@ -2,8 +2,6 @@ extends CanvasLayer
 
 signal leaderboard
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#FUNCTION: DO 2 HTTP REQUESTS TO GET NECESSARY INFO, EVERY TIME THIS PAGE IS ACCESSED
@@ -21,23 +19,24 @@ func _ready():
 	$ColorRect/TextureButton.connect("pressed", self , "Close")
 	pass # Replace with function body.
 	
+#On button press, change scene
 func Close():
 	ScreenSwitcher.change_scene("res://World_Selection/Map/MainPage.tscn")
-#TODO
-#Function for on button press going to leaderboard (Not this scene)
 
 #Function to update scores. Receive databse information
 #Required:
 #	Top 10 students' names in terms of levels cleared, in sorted order of rank
 #	and the number of levels cleared
-
+#Get the leaderboard ranking of every users
+#param result store the leaderboard ranking
 func get_leaderboard_all_done(result):
 	if result["type"] == 'all':
 		update_leaderboard(result["value"])
 	else:
 		update_student_info(result["value"])
 	
-	
+#Show the top 10 ranking on the Leaderboard 
+#param top_10_list array to store the top 10 ranking user
 func update_leaderboard(top_10_list):
 	#For now assume top_10_list format is:
 		#[ [student_name, score], [student_name, score] ...]
@@ -64,7 +63,6 @@ func update_leaderboard(top_10_list):
 
 
 #Function to update scores. Receive databse information
-#Required:
 #The current student's number of levels cleared, and overall rank
 func update_student_info(student_data):
 #and assume current_student format is:

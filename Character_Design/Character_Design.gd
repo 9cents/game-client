@@ -5,6 +5,7 @@ export(bool) var start_focused = false
 
 var char_type = null
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.play()
 
@@ -39,6 +40,7 @@ func _on_btn_Confirm_pressed():
 	pass # Replace with function body.
 
 #Switch to MainPage Scene after character selection
+#param result store the selected character
 func update_char_done(result):
 	print(result)
 	if "error" in result:

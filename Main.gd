@@ -1,11 +1,9 @@
 extends Control
 
-# Declare member variables here. Examples:
+# VARIABLES
 var username
 var char_name
 var user_id
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -26,6 +26,8 @@ var ulti_dict = {
 	}
 }
 
+#On starting of the game 
+#param pos get the starting position
 func start(pos):
 	position = pos
 	show()
@@ -36,6 +38,7 @@ func start(pos):
 	$UltiTimer.wait_time = ulti_dict[char_type]['ulti_time']
 	$CooldownTimer.wait_time = ulti_dict[char_type]['cd_time']
 
+# Called when the node enters the scene tree for the first time.
 #Set screen size
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -54,7 +57,11 @@ func input():
 		$AnimatedSprite.play()
 		$UltiTimer.start()
 
+# Update on every idle frame 
+# param delta control the frames drawn every second
 func _process(delta):
+	
+	#HANDLE PLAYER MOVEMENT
 	var velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -81,7 +88,7 @@ func _process(delta):
 	
 	if velocity.x != 0:
 		$AnimatedSprite.flip_h = velocity.x < 0
-		
+	# HANDLE THE SPECIAL SKILLS	
 	if $UltiTimer.is_stopped() and $CooldownTimer.is_stopped():
 		$Label.text = 'Press Shift'
 	elif !$UltiTimer.is_stopped():
@@ -110,11 +117,12 @@ func _on_UltiTimer_timeout():
 	$AnimatedSprite.animation = char_type
 	$AnimatedSprite.play()
 
-
+#Stop Cooldown Timer
 func _on_CooldownTimer_timeout():
 	$CooldownTimer.stop()
 
 #Player collision 
+#param area the area is the area of enermy 
 func _on_Player_area_entered(area):
 	if $UltiTimer.is_stopped():
 		$AnimatedSprite.animation = "attack_"+char_type

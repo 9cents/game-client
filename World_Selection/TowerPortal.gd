@@ -4,6 +4,7 @@ extends Area2D
 export var next_scene: PackedScene
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+# VARIABLES
 var world_name
 var tower_names = []
 var world_id

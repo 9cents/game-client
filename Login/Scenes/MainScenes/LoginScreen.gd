@@ -19,6 +19,7 @@ func _ready():
 	Api.connect("call_done", self, "request_finished")
 	pass # Replace with function body.
 
+#On Login button press, check for the validity of user from the database
 func _on_LoginButton_pressed():
 	if login_user.get_text() == "":
 		$ErrorMessages.text = "Please enter a valid username"
@@ -36,7 +37,8 @@ func _on_LoginButton_pressed():
 		Main.username = username
 		
 		Api.login({"name": username, "password": password})
-
+		
+#On Create button press,show the create account screen 
 func _on_CreateAccountButton_pressed():
 	login_screen.hide()
 	create_account_screen.show()
@@ -45,7 +47,8 @@ func _on_CreateAccountButton_pressed():
 	create_password_input.clear()
 	create_passwordrep_input.clear()
 	$ErrorMessages.text = ''
-
+	
+#On Back button press,show the login screen
 func _on_BackButton_pressed():
 	login_screen.show()
 	create_account_screen.hide()
@@ -53,7 +56,7 @@ func _on_BackButton_pressed():
 	login_password.clear()
 	$ErrorMessages.text = ''
 
-
+#On Confirm button press, check for the validity of the username and password to create new account
 func _on_ConfirmButton_pressed():
 	
 	if create_username_input.get_text() == "":
@@ -78,6 +81,8 @@ func _on_ConfirmButton_pressed():
 		$ErrorMessages.text =("Attemping to create account")
 		Api.signin({"name": username, "password": password})
 
+#Check with the server to see if the user created a character 
+#param response check the user input
 func request_finished(response):
 	if login_screen.is_visible_in_tree():
 		if "error" in response:

@@ -1,5 +1,8 @@
+tool
 extends Area2D
 
+
+# VARIABLES
 var id
 
 #movement speed
@@ -9,7 +12,8 @@ var velocity = Vector2()
 
 signal hit(value, other_value)
 
-#set the screen dimensions on game start 
+#Set the screen dimensions on game start 
+#param i index of the question
 func start(i):
 	position.x = randi() % (int(screen_size.x)-80) +  40
 	position.y = randi() % (int(screen_size.y*0.6)-60) + int(screen_size.y*0.4) + 30
@@ -17,13 +21,19 @@ func start(i):
 	velocity.y = 0
 	id = i
 	
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.animation = "respawn"
 	$AnimatedSprite.play()
 	$CollisionShape2D.set_deferred("disabled", false)
 	screen_size = get_viewport_rect().size
 
+
+# Update on every idle frame 
+# param delta control the frames drawn every second
 func _process(delta):
+	
+	#HANDLE ENERMY MOVEMENT AREA
 	if position.x>=screen_size.x-30:
 		velocity.x = -randi()%9+1
 	if position.x<= 30:
@@ -40,6 +50,7 @@ func _process(delta):
 	
 	$AnimatedSprite.flip_h = velocity.x < 0
 
+#
 func end():
 	hide()
 	queue_free()
@@ -50,6 +61,7 @@ func _on_Enemy_area_entered(area):
 	hide()
 	$CollisionShape2D.set_deferred("disabled", true)
 
+#Start Movement
 func start_moving():
 	move()
 	$Label.text= char(65+id)
@@ -60,7 +72,7 @@ func start_moving():
 	$AnimatedSprite.animation = "wormwalk"
 	$AnimatedSprite.play()
 
-#Enable the movement of the enermy
+#Control the movement of the enermy
 func move():
 	$AnimatedSprite.animation = "wormwalk"
 	$AnimatedSprite.play()

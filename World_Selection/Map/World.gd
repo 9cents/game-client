@@ -4,6 +4,7 @@ var world_id
 var current_world = ''
 
 # Called when the node enters the scene tree for the first time.
+#HTTP Request to get the tower name
 func _ready():
 	current_world = ScreenSwitcher.get_param("world")
 	world_id = ScreenSwitcher.get_param("world_id")
@@ -11,7 +12,6 @@ func _ready():
 	
 	Api.connect("call_done", self, "get_tower_name_done")
 	Api.get_tower_name({})
-	#HTTP Request to get the tower name
 	
 #Display Tower name
 func get_tower_name_done(result):

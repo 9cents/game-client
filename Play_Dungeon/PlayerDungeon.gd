@@ -32,6 +32,7 @@ func _on_ConfirmButton_pressed():
 		#Return boolean variable and navigate to next scene if true
 		player_name = username.get_text()
 
+#On Enter button press, change to the user created gameplay scene
 func _on_EnterDungeonButton_pressed():
 	$ColorRect/ErrorMessage.text = "Entering user created dungeon"
 	#Change scene to dungeon
@@ -43,7 +44,8 @@ func _on_CloseButton_toggled(button_pressed):
 	ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn")
 	pass # Replace with function body.
 
-#Display text if user's dungeon is not found 
+#Display text if user's dungeon is not found
+#param result store the dungeon info 
 func challenge_data_done(result):
 	if result == []:
 		confirm_button.disabled = false

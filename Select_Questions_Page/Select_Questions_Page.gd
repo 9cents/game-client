@@ -1,22 +1,23 @@
 extends CanvasLayer
 
+# VARIABLES
 var QUESTIONS_ALLOWED = 5
 var student_questions_num = 0
 var selected_question_box
 
 var arr = []
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	# note, every time this page is accessed from outside menu, query the database
 	# for the 5 questions
 	Api.connect("call_done", self, "user_query_done")
 	Api.get_challenge_data({"player_name": Main.username})
-#	Api.get_challenge_data({"player_name": 'Desmond'})
-	
-	# For the array, if they never do before, it will be [None, None....]
-	# If it is None, count = 0, text will display <CLICK HERE TO SELECT A QUESTION>
-	#get_tree().change_scene("res://Map/Main Page.tscn")
 
+	
+	
+# For the array, if they never do before, it will be [None, None....]
+# If it is None, count = 0, text will display <CLICK HERE TO SELECT A QUESTION>
 func user_query_done(results):
 	if typeof(results)==TYPE_ARRAY && len(results) != 3:
 		update_user_qns(results)
@@ -29,8 +30,8 @@ func user_query_done(results):
 		params["next_scene"] = "res://World_Selection/Map/ChallengeMode.tscn"
 		ScreenSwitcher.change_scene("res://TransitionScreen/TransitionScreen.tscn", params)
 
+#Store the selected question from the list
 
-#
 func update_user_qns(results):
 	if results == []:
 		arr = ['','','','','']
@@ -71,6 +72,9 @@ func update_Question5_text(question):
 	question = processQuestion(question)
 	$BackgroundColor/ScrollBar/ScrollContainer/VBoxContainer/Question5/Panel/Q5button/Label.text = str(question)
 
+#Choose question from a list of question
+#param question chosen question
+#return question 
 func processQuestion(question):
 	#CHECK THE LOGIC FOR THIS, should it be empty string? Depends on what HTTP request returns
 	if question == "":
@@ -106,12 +110,12 @@ func _on_Q5button_pressed():
 	move_to_questions_list()
 	pass
 
-#Change Scene back to the ChallengeMode
+#On bBtton press, Change Scene back to the ChallengeMode
 func _on_GoBackButton_pressed():
 	ScreenSwitcher.change_scene("res://World_Selection/Map/ChallengeMode.tscn")
 	pass
 
-
+#On Button press ,check if the 5 question is chosen and update dungeon 
 func _on_ProceedButton_pressed():
 	# Only possible when student_questions_num == QUESTIONS_ALLOWED, the number of questions (we use 5)
 	if student_questions_num == QUESTIONS_ALLOWED:
@@ -124,6 +128,7 @@ func _on_ProceedButton_pressed():
 	else:
 		$ErrorLabel.text = "Pick 5 item before proceeding! \n"+str(student_questions_num)+'/'+str(QUESTIONS_ALLOWED)
 
+#Show the question list scene
 func move_to_questions_list():
 	$BackgroundColor.hide() # Change to question selection page scene
 	$QuestionsListPage/BackgroudColor.show() # Show instanced scene
@@ -150,7 +155,7 @@ func _on_QuestionsListPage_question_was_selected(question):
 		_:
 			pass # There shouldn't be a situation where this happens
 
-
+# Show the question selection scene
 func _on_QuestionsListPage_go_back_from_QuestionsList():
 	$BackgroundColor.show() # Change to question selection page scene
 	$QuestionsListPage/BackgroudColor.hide() # Hide instanced scene

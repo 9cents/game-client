@@ -1,10 +1,8 @@
 extends Control
 
-
 func _ready():
 	$Label/TextureButton.connect("pressed", self,"Back")
 	pass
-
 
 #On/Off the background music 
 func _on_CheckButton_toggled(on):
